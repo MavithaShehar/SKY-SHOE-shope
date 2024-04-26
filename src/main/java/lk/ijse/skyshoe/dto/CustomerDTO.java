@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -27,4 +28,5 @@ public class CustomerDTO {
     private String addressCity;
     private String addressState;
     private String postalCode;
+   // private List<SaleDTO> saleList;
 }
