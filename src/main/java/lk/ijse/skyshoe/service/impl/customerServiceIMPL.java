@@ -42,7 +42,6 @@ public class customerServiceIMPL implements CustomerService {
     @Override
     public String update(CustomerDTO customerDTO) {
         if (customerRepo.existsById(customerDTO.getCustomerId())){
-            System.out.println("////////////////"+customerDTO);
             customerRepo.save(modelMapper.map(customerDTO, Customer.class));
             return VarList.RSP_SUCCESS;
         }else {

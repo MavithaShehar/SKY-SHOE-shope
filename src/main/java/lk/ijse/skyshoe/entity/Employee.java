@@ -49,10 +49,10 @@ public class Employee {
     private String emergencyContactPerson;
     private String emergencyContactNumber;
 
-    @OneToMany(mappedBy = "employee" , cascade = CascadeType.ALL , orphanRemoval = true , fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "employee" , cascade = CascadeType.ALL , fetch = FetchType.LAZY)
     private List<Sale> saleList;
 
-    @OneToMany(mappedBy = "employee" , cascade = CascadeType.ALL , orphanRemoval = true , fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "employee" , cascade = CascadeType.ALL , fetch = FetchType.LAZY)
     private List<Refund> refundList;
 
 

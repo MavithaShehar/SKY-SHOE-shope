@@ -24,7 +24,7 @@ public class SuppliersController {
         return "i am good";
     }
 
-    @PostMapping("saveSupp")
+    @PostMapping("saveSuppliers")
     public ResponseEntity saveSuppliers(@RequestBody SuppliersDTO suppliersDTO) {
         System.out.println("im am hear");
         try {

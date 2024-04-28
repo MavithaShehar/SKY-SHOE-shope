@@ -12,7 +12,7 @@ import java.util.List;
 @NoArgsConstructor
 @Data
 @Entity
-public class Supplier {
+public class Suppliers {
     @Id
     private String supplierId;
     private String supplierName;
@@ -33,7 +33,7 @@ public class Supplier {
     private String postalCode;
     private String country;
 
-    @OneToMany(mappedBy = "supplier" , cascade = CascadeType.ALL , orphanRemoval = true , fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "suppliers" , cascade = CascadeType.ALL , fetch = FetchType.LAZY)
     private List<Item> itemList;
 
 }

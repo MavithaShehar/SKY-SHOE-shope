@@ -13,22 +13,22 @@ import java.util.List;
 @Entity
 public class Item {
     @Id
-    private String iCode;
+    private String itemCode;
     private String description;
     private String category;
     private double priceBuy;
     private double priceSell;
 
-    @OneToMany(mappedBy = "item" , cascade = CascadeType.ALL , orphanRemoval = true , fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "item" , cascade = CascadeType.ALL ,  fetch = FetchType.LAZY)
     private List<ItemSale> itemSaleList;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    private Supplier supplier;
+    private Suppliers suppliers;
 
-    @OneToMany(mappedBy = "item" , cascade = CascadeType.ALL , orphanRemoval = true , fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "item" , cascade = CascadeType.ALL ,  fetch = FetchType.LAZY)
     private List<Stock> stockList;
 
-    @OneToMany(mappedBy = "item" , cascade = CascadeType.ALL , orphanRemoval = true , fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "item" , cascade = CascadeType.ALL ,  fetch = FetchType.LAZY)
     private List<ItemResupply> itemResupplyList;
 
 
