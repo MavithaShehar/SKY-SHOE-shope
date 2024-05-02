@@ -1,0 +1,106 @@
+#employee-page{
+    background-color: #8de02c;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+}
+
+
+#emp-select-option{
+    background-color: #ff253a;
+    width: 80%;
+    height: 80px;
+    margin-left: 20px;
+    margin-top: 60px;
+    margin-bottom: 5px;
+    display: flex;
+}
+
+.emp-select{
+    background-color: #15cce3;
+    width: 600px;
+    height: 50px;
+    margin: 10px;
+
+}
+.form-group{
+    margin-top: 12px;
+
+}
+#emp-select{
+    margin-top: 20px;
+}
+.select-name{
+    font-size: 12px;
+    padding-left: 10px;
+    opacity: 60%;
+}
+
+#emp-btn-option{
+    background-color: #ff253a;
+    width: 80%;
+    height: 78px;
+    margin-left: 20px;
+    display: flex;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+#emp-add{
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 100px;
+    height: 50px;
+    border-radius: 0;
+}
+
+#serch-emp-id {
+    position: relative;
+    top: 30px;
+    left: 393px;
+    width: 250px;
+}
+#emp-tbl{
+    width: 95%;
+    height: 500px;
+    background-color: #0F91DA;
+    margin-left: 20px;
+    overflow-y: scroll;
+
+}
+/*------------------------------------------------------------------------*/
+
+#employee-form{
+    position: relative;
+    display: flex;
+    background-color: #e9b10a;
+    width: 100vw;
+    height: 100vh;
+
+}
+.form-feel{
+    width: 36%;
+    height: 80%;
+    background: #ff253a;
+    margin: 20px;
+    margin-top: 75px;
+
+}
+#emp-reg{
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    left: 400px;
+    top: 50px;
+}
+#emp-btn-area{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 140px;
+    left: 400px;
+    bottom: 20px;
+    background: #2fd4e8;
+}

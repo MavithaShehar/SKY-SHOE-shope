@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+<!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-thin-rounded/css/uicons-thin-rounded.css'>
+
+    <link rel="stylesheet" href="assets/lib/bootstrap/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/customer.css">
+    <link rel="stylesheet" href="assets/employee.css">
+</head>
+<body>
+
+<main class="contain">
+
+    <!-- =============== Navigation ================ -->
+
+    <section class="navigation">
+        <ul>
+            <li>
+                <a href="#" >
+                        <span class="icon">
+                            <img id="logo" src="assets/image/logo-removebg-preview.png" alt="">
+                        </span>
+                    <span id="title" class="title">.... Sky Shoe</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#" id="dash-nav">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                    <span class="title">Dashboard</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#" id="sale-nav">
+                        <span class="icon">
+                            <i class="fi fi-tr-point-of-sale-bill"></i>
+                        </span>
+                    <span class="title">Sale</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#" id="customer-nav">
+                        <span class="icon">
+                            <i class="fi fi-tr-review"></i>
+                        </span>
+                    <span class="title">Customer</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#" id="item-nav">
+                        <span class="icon">
+                            <i class="fi fi-tr-boot-heeled"></i>
+                        </span>
+                    <span class="title">Items</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#" id="supplier-nav">
+                        <span class="icon">
+                            <i class="fi fi-tr-supplier-alt"></i>
+                        </span>
+                    <span class="title">suppliers</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#" id="employee-nav">
+                        <span class="icon">
+                            <i class="fi fi-tr-employee-man"></i>
+                        </span>
+                    <span class="title">Employee</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" id="resupply-nav">
+                        <span class="icon">
+                            <i class="fi fi-tr-restock"></i>
+                        </span>
+                    <span class="title">Resupply</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" id="user-nav">
+                        <span class="icon">
+                            <i class="fi fi-tr-user-key"></i>
+                        </span>
+                    <span class="title">Users</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                        <span class="icon">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </span>
+                    <span class="title">Sign Out</span>
+                </a>
+            </li>
+        </ul>
+    </section>
+
+    <!-- ========================= Services ==================== -->
+    <section class="main">
+
+    <!-- ========================= Top Bar ===================== -->
+
+        <div class="topbar">
+            <div class="toggle">
+                <ion-icon name="menu-outline"></ion-icon>
+            </div>
+
+            <div class="search">
+                <label>
+                    <input type="text" placeholder="Search here">
+                    <ion-icon name="search-outline"></ion-icon>
+                </label>
+            </div>
+
+            <div id="users">
+                <span id="syst-user01">shehar</span><br>
+                <span id="syst-user02">Admin</span>
+            </div>
+            <div class="user">
+                <img src="assets/image/customer01.jpg" alt="">
+            </div>
+        </div>
+
+    <!-- ============  [01] Dash Bord  -->
+        <div id="dash-bord">
+
+
+       <!-- ======================= Description Cards ================== -->
+       <div class="cardBox">
+           <div class="card">
+               <div>
+                   <div class="numbers">1,504</div>
+                   <div class="cardName">Daily Views</div>
+               </div>
+
+               <div class="iconBx">
+                   <ion-icon name="eye-outline"></ion-icon>
+               </div>
+           </div>
+
+           <div class="card">
+               <div>
+                   <div class="numbers">80</div>
+                   <div class="cardName">Sales</div>
+               </div>
+
+               <div class="iconBx">
+                   <ion-icon name="cart-outline"></ion-icon>
+               </div>
+           </div>
+
+           <div class="card">
+               <div>
+                   <div class="numbers">284</div>
+                   <div class="cardName">Comments</div>
+               </div>
+
+               <div class="iconBx">
+                   <ion-icon name="chatbubbles-outline"></ion-icon>
+               </div>
+           </div>
+
+           <div class="card">
+               <div>
+                   <div class="numbers">$7,842</div>
+                   <div class="cardName">Earning</div>
+               </div>
+
+               <div class="iconBx">
+                   <ion-icon name="cash-outline"></ion-icon>
+               </div>
+           </div>
+       </div>
+
+       <!-- ================ Order Details List ================= -->
+       <div class="details">
+           <div class="recentOrders">
+               <div class="cardHeader">
+                   <h2>Recent Orders</h2>
+                   <a href="#" class="btn">View All</a>
+               </div>
+
+               <table>
+                   <thead>
+                   <tr>
+                       <td>Name</td>
+                       <td>Price</td>
+                       <td>Payment</td>
+                       <td>Status</td>
+                   </tr>
+                   </thead>
+
+                   <tbody>
+                   <tr>
+                       <td>Star Refrigerator</td>
+                       <td>$1200</td>
+                       <td>Paid</td>
+                       <td><span class="status delivered">Delivered</span></td>
+                   </tr>
+
+                   <tr>
+                       <td>Dell Laptop</td>
+                       <td>$110</td>
+                       <td>Due</td>
+                       <td><span class="status pending">Pending</span></td>
+                   </tr>
+
+                   <tr>
+                       <td>Apple Watch</td>
+                       <td>$1200</td>
+                       <td>Paid</td>
+                       <td><span class="status return">Return</span></td>
+                   </tr>
+
+                   <tr>
+                       <td>Addidas Shoes</td>
+                       <td>$620</td>
+                       <td>Due</td>
+                       <td><span class="status inProgress">In Progress</span></td>
+                   </tr>
+
+                   </tbody>
+               </table>
+           </div>
+
+           <!-- ================= New Customers ================ -->
+           <div class="recentCustomers">
+               <div class="cardHeader">
+                   <h2>Recent Customers</h2>
+               </div>
+
+               <table>
+                   <tr>
+                       <td width="60px">
+                           <div class="imgBx"><img src="assets/image/customer02.jpg" alt=""></div>
+                       </td>
+                       <td>
+                           <h4>David <br> <span>Italy</span></h4>
+                       </td>
+                   </tr>
+
+                   <tr>
+                       <td width="60px">
+                           <div class="imgBx"><img src="assets/image/customer01.jpg" alt=""></div>
+                       </td>
+                       <td>
+                           <h4>Amit <br> <span>India</span></h4>
+                       </td>
+                   </tr>
+
+                   <tr>
+                       <td width="60px">
+                           <div class="imgBx"><img src="assets/image/customer02.jpg" alt=""></div>
+                       </td>
+                       <td>
+                           <h4>David <br> <span>Italy</span></h4>
+                       </td>
+                   </tr>
+
+                   <tr>
+                       <td width="60px">
+                           <div class="imgBx"><img src="assets/image/customer01.jpg" alt=""></div>
+                       </td>
+                       <td>
+                           <h4>Amit <br> <span>India</span></h4>
+                       </td>
+                   </tr>
+
+
+                   </tr>
+               </table>
+           </div>
+       </div>
+
+   </div>
+
+    <!-- ============  [02] customer service =============-->
+        <div id="customer-page">
+
+            <!--   ===========  select customer =========== -->
+            <div id="cust-select-option">
+
+                <div class="cust-select">
+                    <span class="select-name">Loyalty</span>
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>All Customer</option>
+                        <option value="1">GOLD</option>
+                        <option value="2">BRONZE</option>
+                        <option value="3">SILVER</option>
+                    </select>
+                </div>
+
+                <div class="cust-select" id="cust-select">
+                    <div class="form-group">
+                        <input type="date" class="form-control" >
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!------------ ADD NEW customer ------------->
+
+            <div id="cust-btn-option">
+                <button id="cut-add" type="button"  class="btn btn-primary">ADD+</button>
+
+                <form>
+                    <fieldset disabled>
+                        <div class="mb-3" id="serch-cust-id">
+                            <input type="text" id="disabledTextInput" class="form-control" placeholder="search customer ID or Name ">
+                        </div>
+                    </fieldset>
+                </form>
+
+            </div>
+
+            <!------------ customer table ------------->
+
+            <div id="cust-tbl">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">customerId</th>
+                        <th scope="col">customerName</th>
+                        <th scope="col">gender</th>
+                        <th scope="col">joinDate</th>
+                        <th scope="col">level</th>
+                        <th scope="col">totalPoints</th>
+                        <th scope="col">birthday</th>
+                        <th scope="col">contactNo</th>
+                        <th scope="col">email</th>
+                        <th scope="col">addressNoOrName</th>
+                    </tr>
+                    </thead>
+                    <tbody class="table-group-divider">
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td colspan="2">Larry the Bird</td>
+                        <td>@twitter</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+    <!----- Customer save page ------->
+        <div  id="customer-form">
+            <h4 id="cus-reg">Customer Rgistation</h4>
+            <div class="form-feel">
+                <form action="">
+                    <div class="form-group" style="width: 350px">
+                        <label for="customerId">Customer ID</label>
+                        <input type="text" class="form-control" id="customerId" placeholder="Enter customer ID" readonly>
+                    </div>
+                    <div class="form-group" style="width: 350px">
+                        <label for="customerName">Customer Name</label>
+                        <input type="text" class="form-control" id="customerName" placeholder="Enter customer name">
+                    </div>
+                    <div class="form-group" style="width: 200px; display: inline-block; margin-right: 20px">
+                        <label for="gender">Gender</label>
+                        <select class="form-control" id="gender">
+                            <option selected>select</option>
+                            <option value="Male">MALE</option>
+                            <option value="Female">FEMALE</option>
+                            <option value="Other">OTHER</option>
+                        </select>
+                    </div>
+                    <div class="form-group" style="width: 200px; display: inline-block;">
+                        <label for="joinDate">Join Date</label>
+                        <input type="date" class="form-control" id="joinDate">
+                    </div>
+                    <div class="form-group" style="width: 200px;display: inline-block;margin-right: 20px">
+                        <label for="gender">Loyalty Level</label>
+                        <select class="form-control" id="loyalty">
+                            <option selected>NORMAL</option>
+                            <option value="gold">Gold</option>
+                            <option value="silver">SILVER</option>
+                            <option value="bronze">BRONZE</option>
+                        </select>
+                    </div>
+                    <div class="form-group"style="width: 200px; display: inline-block;">
+                        <label for="totalPoints">Total Points</label>
+                        <input type="number" class="form-control" id="totalPoints" placeholder="Enter total points">
+                    </div>
+                    <div class="form-group" style="width:200px">
+                        <label for="birthday">Birthday</label>
+                        <input type="date" class="form-control" id="birthday">
+                    </div>
+                    <div class="form-group" style="width: 300px">
+                        <label for="contactNo">Contact Number</label>
+                        <input type="tel" class="form-control" id="contactNo" placeholder="Enter contact number">
+                    </div>
+                </form>
+            </div>
+            <div class="form-feel">
+                <form action="">
+                    <div class="form-group" style="width: 350px">
+                        <label for="email">Email Address</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter email">
+                    </div>
+                    <div class="form-group" style="width: 300px">
+                        <label for="addressNoOrName">Address Number or Name</label>
+                        <input type="text" class="form-control" id="addressNoOrName" placeholder="Enter address number or name">
+                    </div>
+                    <div class="form-group" style="width: 300px">
+                        <label for="addressLane">Address Lane</label>
+                        <input type="text" class="form-control" id="addressLane" placeholder="Enter address lane">
+                    </div>
+                    <div class="form-group " style="width: 300px">
+                        <label for="addressCity">City</label>
+                        <input type="text" class="form-control" id="addressCity" placeholder="Enter city">
+                    </div>
+                    <div class="form-group" style="width: 250px">
+                        <label for="addressState">State</label>
+                        <input type="text" class="form-control" id="addressState" placeholder="Enter state">
+                    </div>
+                    <div class="form-group" style="width: 200px">
+                        <label for="postalCode">Postal Code</label>
+                        <input type="text" class="form-control" id="postalCode" placeholder="Enter postal code">
+                    </div>
+
+                </form>
+            </div>
+
+            <div id="cus-btn-area"class="d-grid gap-2 col-6 mx-auto">
+                <button type="button" class="btn btn-primary">Save</button>
+                <button type="button" class="btn btn-success">update</button>
+            </div>
+
+        </div>
+
+    <!-- ============= [03] Employee service =============-->
+        <div id="employee-page">
+
+            <!--   ===========  select customer =========== -->
+            <div id="emp-select-option">
+
+                <div class="emp-select">
+                    <span class="select-name">Loyalty</span>
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Employee</option>
+                        <option value="1">USER</option>
+                        <option value="2">ADMIN</option>
+                    </select>
+                </div>
+
+                <div class="emp-select" id="emp-select">
+                    <div class="form-group">
+                        <input type="date" class="form-control" >
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div id="emp-btn-option">
+                <button id="emp-add" type="button"  class="btn btn-primary">ADD+</button>
+
+                <form>
+                    <fieldset disabled>
+                        <div class="mb-3" id="serch-emp-id">
+                            <input type="text"  class="form-control" placeholder="search customer ID or Name ">
+                        </div>
+                    </fieldset>
+                </form>
+
+            </div>
+
+            <div id="emp-tbl">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">employeeId</th>
+                        <th scope="col">employeeName</th>
+                        <th scope="col">pic</th>
+                        <th scope="col">joinDate</th>
+                        <th scope="col">status</th>
+                        <th scope="col">designation</th>
+                        <th scope="col">Role</th>
+                        <th scope="col">birthday</th>
+                        <th scope="col">joinDate</th>
+                        <th scope="col">contactNo</th>
+                        <th scope="col">email</th>
+                        <th scope="col">addressNoOrName</th>
+                    </tr>
+                    </thead>
+                    <tbody class="table-group-divider">
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td colspan="2">Larry the Bird</td>
+                        <td>@twitter</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+    <!--    Employee save page -->
+        <div id="employee-form">
+            <h4 id="emp-reg">Employee Rgistation</h4>
+            <div class="form-feel">
+                <form action="">
+                    <div class="form-group" style="width: 350px">
+                        <label for="employeeId">Employee ID</label>
+                        <input type="text" class="form-control" id="employeeId" placeholder="Enter customer ID" readonly>
+                    </div>
+                    <div class="form-group" style="width: 350px">
+                        <label for="employeeName">Customer Name</label>
+                        <input type="text" class="form-control" id="employeeName" placeholder="Enter customer name">
+                    </div>
+                    <div class="form-group" style="width: 200px; display: inline-block; margin-right: 20px">
+                        <label for="emp-gender">Gender</label>
+                        <select class="form-control" id="emp-gender">
+                            <option selected>select</option>
+                            <option value="Male">MALE</option>
+                            <option value="Female">FEMALE</option>
+                            <option value="Other">OTHER</option>
+                        </select>
+                    </div>
+                    <div class="form-group" style="width: 200px; display: inline-block;">
+                        <label for="emp-status">Status</label>
+                        <input type="date" class="form-control" id="emp-status">
+                    </div>
+                    <div class="form-group" style="width: 200px; display: inline-block; margin-right: 20px">
+                        <label for="emp-desi">Designation</label>
+                        <select class="form-control" id="emp-desi">
+                            <option selected>Position</option>
+                            <option value="Male">Cashier</option>
+                            <option value="Female">Manager</option>
+                            <option value="Other">OTHER</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" style="width:200px">
+                        <label for="emp-birthday">Birthday</label>
+                        <input type="date" class="form-control" id="emp-birthday">
+                    </div>
+
+                    <div class="form-group" style="width: 200px; display: inline-block;">
+                        <label for="emp-joinDate">Join Date</label>
+                        <input type="date" class="form-control" id="emp-joinDate">
+                    </div>
+                    <div class="form-group" style="width: 200px; display: inline-block; margin-right: 20px">
+                        <label for="emp-rol">Role</label>
+                        <select class="form-control" id="emp-rol">
+                            <option selected>Position</option>
+                            <option value="Male">USER</option>
+                            <option value="Female">ADMIN</option>
+                            <option value="Other">OTHER</option>
+                        </select>
+                    </div>
+                    <div class="form-group" style="width: 300px">
+                        <label for="emp-bran">Branch</label>
+                        <input type="tel" class="form-control" id="emp-bran" placeholder="Enter contact number">
+                    </div>
+                    <div class="form-group" style="width: 300px">
+                        <label for="emp-contactNo">Contact Number</label>
+                        <input type="tel" class="form-control" id="emp-contactNo" placeholder="Enter contact number">
+                    </div>
+                </form>
+            </div>
+
+            <div class="form-feel">
+                <form action="">
+
+                      <input type="file" id="fileInput" accept="image/png, image/jpeg" style="">
+<!--                    <button id="fileSelectButton">Select PNG or JPG File</button>-->
+
+                    <div class="form-group" style="width: 250px;display: inline-block">
+                        <label for="emp-email">Email Address</label>
+                        <input type="email" class="form-control" id="emp-email" placeholder="Enter email">
+                    </div>
+                    <div class="form-group" style="width: 200px;display: inline-block">
+                        <label for="emp-addressNoOrName">Address Number or Name</label>
+                        <input type="text" class="form-control" id="emp-addressNoOrName" placeholder="Enter address number or name">
+                    </div>
+                    <div class="form-group" style="width: 200px;">
+                        <label for="emp-addressLane">Address Lane</label>
+                        <input type="text" class="form-control" id="emp-addressLane" placeholder="Enter address lane">
+                    </div>
+                    <div class="form-group " style="width: 150px;display: inline-block">
+                        <label for="emp-addressCity">City</label>
+                        <input type="text" class="form-control" id="emp-addressCity" placeholder="Enter city">
+                    </div>
+                    <div class="form-group" style="width: 150px; display: inline-block">
+                        <label for="emp-addressState">State</label>
+                        <input type="text" class="form-control" id="emp-addressState" placeholder="Enter state">
+                    </div>
+                    <div class="form-group" style="width: 150px;display: inline-block">
+                        <label for="emp-postalCode">Postal Code</label>
+                        <input type="text" class="form-control" id="emp-postalCode" placeholder="Enter postal code">
+                    </div>
+                    <div class="form-group" style="width: 200px">
+                        <label for="emp-password">Password</label>
+                        <input type="password" class="form-control" id="emp-password" placeholder="Enter postal code">
+                    </div>
+                    <div class="form-group" style="width: 200px;display: inline-block">
+                        <label for="emp-c-p">Emergency Contact Person</label>
+                        <input type="text" class="form-control" id="emp-c-p" placeholder="Enter postal code">
+                    </div>
+                    <div class="form-group" style="width: 200px;display: inline-block">
+                        <label for="emp-c-n">Emergency Contact Person</label>
+                        <input type="text" class="form-control" id="emp-c-n" placeholder="Enter postal code">
+                    </div>
+
+                </form>
+            </div>
+
+            <div id="emp-btn-area"class="d-grid gap-2 col-6 mx-auto">
+                <button type="button" class="btn btn-primary">Save</button>
+                <button type="button" class="btn btn-success">update</button>
+            </div>
+
+        </div>
+
+    </section>
+</main>
+
+<!-- =========== Scripts =========  -->
+<script src="assets/lib/jquery.min.js"></script>
+
+<script src="controller/indexController.js"></script>
+
+<!-- ====== ionicons ======= -->
+<script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>
