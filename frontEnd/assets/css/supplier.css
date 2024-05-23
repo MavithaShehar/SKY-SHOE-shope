@@ -1,0 +1,68 @@
+* {
+    font-family: "Ubuntu", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#supplier-save-section{
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    padding: 20px;
+}
+
+#supplier-search{
+    width: 81%;
+    height: 60px;
+    background-color: white;
+    position: relative;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    padding-left: 20px ;
+
+}
+
+
+#formGroupExampleInput{
+    width: 40%;
+    height: 45px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+
+}
+
+#supplier-form{
+    width: 81%;
+    height: 225px;
+    background-color: white;
+    margin-bottom: 20px;
+    display: flex;
+}
+
+.form-part{
+    width: fit-content;
+    height: fit-content;
+    background-color: #e9b10a;
+    margin-left: 25px;
+}
+#supp-save-btn {
+    width: 100px;
+    margin-left: 200px;
+}
+#supp-update-btn {
+    width: 100px;
+}
+
+#supplier-table{
+    width: 81%;
+    height: 53%;
+    background-color: #29a1a1;
+}
+
+#supplier-table{
+     overflow-y: scroll;
+ }

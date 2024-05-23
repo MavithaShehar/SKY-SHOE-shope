@@ -1,0 +1,229 @@
+* {
+    font-family: "Ubuntu", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#about-item-section{
+    background-color: purple;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    padding-left: 20px;
+    padding-top: 55px;
+}
+
+#select-itm-option{
+    position: relative;
+    width: calc(100% - 335px);
+    height: 34px;
+    background-color: white;
+    display: flex;
+    padding: 2px;
+    justify-content: flex-end;
+    margin-bottom: 5px;
+
+}
+#select-itm-option .btn-outline-primary{
+    margin-left: 10px;
+}
+#select-itm-option .btn-outline-primary:active{
+    background-color: #2fd4e8;
+    box-shadow: 0 5px #666;
+    transform: translateY(2px);
+}
+
+
+/*-------------------------------------------------------------*/
+
+#item-form{
+    position: relative;
+    width: calc(100% - 335px);
+    height: 206px;
+    background-color: #eaefd9;
+    padding: 4px;
+}
+
+#item-form #save-item-form{
+    position: absolute;
+    display: flex;
+    width: 99%;
+    height: 200px;
+    background-color: #0F91DA;
+
+
+}
+
+#item-form #save-item-form-01{
+    width: 300px;
+    height: 190px;
+    background-color: #8de02c;
+    margin-right: 10px;
+}
+#item-form #save-item-form-02{
+    width: 200px;
+    height: 190px;
+    background-color: #8de02c;
+    margin-right: 10px;
+    padding: 2px;
+
+}
+#item-form #save-item-form-03{
+    width: 300px;
+    height: 190px;
+    background-color: #8de02c;
+    margin-right: 10px;
+    padding: 2px;
+}
+
+#item-form #itm-img{
+    width: 170px;
+    height: 150px;
+    margin-right: 40px;
+    background-color: #8de02c;
+    padding: 2px;
+}
+#item-form #itm-btn-optin{
+    flex-direction: column;
+    padding: 40px;
+    width: 250px;
+    height: 150px;
+    background-color: #8de02c;
+    margin-top: 40px;
+}
+
+/*---------------------------------------------------------------------*/
+#item-form #save-inventory-form{
+    position: absolute;
+    display: flex;
+    width: 99%;
+    height: 200px;
+    background-color: #f63a72;
+
+}
+
+
+#item-form #save-inve-form-01{
+    width: 300px;
+    height: 190px;
+    background-color: #8de02c;
+    margin-right: 10px;
+    padding: 2px;
+}
+#item-form #save-inve-form-02{
+    width: 250px;
+    height: 190px;
+    background-color: #8de02c;
+    margin-right: 10px;
+    padding: 2px;
+
+}
+#item-form #save-inve-form-03{
+    width: 300px;
+    height: 190px;
+    background-color: #8de02c;
+    margin-right: 10px;
+    padding: 2px;
+}
+
+#item-form #inve-img{
+    width: 170px;
+    height: 150px;
+    margin-right: 40px;
+    background-color: #8de02c;
+    padding: 2px;
+}
+#item-form #inve-btn-optin{
+    flex-direction: column;
+    padding: 40px;
+    width: 250px;
+    height: 150px;
+    background-color: #8de02c;
+    margin-top: 40px;
+}
+
+/*------------------------------------------------------------------------------*/
+
+#select-itm-tbl-option{
+
+    margin-top: 8px;
+    position: relative;
+    width: calc(100% - 335px);
+    height: 34px;
+    background-color: white;
+    display: flex;
+    padding: 2px;
+    justify-content: flex-end;
+    margin-bottom: 5px;
+
+}
+#select-itm-tbl-option .btn-outline-primary{
+    margin-left: 10px;
+}
+#select-itm-tbl-option .btn-outline-primary:active{
+    background-color: #2fd4e8;
+    box-shadow: 0 5px #666;
+    transform: translateY(2px);
+}
+
+/*-------------------------------------------------------------------------------------0*/
+
+#item-section-tbls{
+    position: relative;
+    width: calc(100% - 335px);
+    height: 430px;
+    background-color: #eaefd9;
+    padding: 5px;
+}
+#item-section-tbls #items-tbl{
+    position: absolute;
+    width: 99%;
+    height: 98%;
+    background-color: #bbfc76;
+    padding: 10px;
+    overflow-y: scroll;
+
+}
+
+#item-section-tbls #inve-tbl{
+    position: absolute;
+    width: 99%;
+    height: 98%;
+    background-color: #e3fc76;
+    padding: 10px;
+    display: none;
+    overflow-y: scroll;
+}
+
+/*--------------pic--------------*/
+
+
+.itm-card{
+    width: 140px;
+    height: 140px;
+    background: #ddf5f5;
+    text-align: center;
+    color: #333;
+}
+
+.itm-card img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    /* margin-top: 40px; */
+    /* margin-bottom: 30px; */
+}
+#itm-pic,#inve-pic{
+    margin-top: 5px;
+    display: block;
+    height: 50px;
+    /* width: 200px; */
+    background: #d6f662;
+    color: #fff;
+    padding: 12px;
+    /* margin: 10px auto; */
+    border-radius: 5px;
+    border: 2px solid #0F91DA;
+    cursor: pointer;
+}
