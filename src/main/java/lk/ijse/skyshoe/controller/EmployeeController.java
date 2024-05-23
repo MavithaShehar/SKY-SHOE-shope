@@ -15,6 +15,7 @@ import java.util.List;
 @RestController
 @RequestMapping("api/v1/employee")
 @RequiredArgsConstructor
+@CrossOrigin
 public class EmployeeController {
 
     private final ResponseDTO responseDTO;
@@ -22,6 +23,8 @@ public class EmployeeController {
 
     @PostMapping("saveEmployee")
     public ResponseEntity saveEmployee(@RequestBody EmployeeDTO employeeDTO) {
+
+
 
         try {
             String req = employeeService.save(employeeDTO);
@@ -104,7 +107,7 @@ public class EmployeeController {
         }
     }
 
-    @GetMapping("/getCustomer/{empID}")
+    @GetMapping("/getEmployee/{empID}")
     public ResponseEntity getEmployee(@PathVariable String empID){
 
         try {
@@ -154,8 +157,6 @@ public class EmployeeController {
         }
     }
 
-    @GetMapping("health")
-    public String healthChecking(){
-        return "i am good employee";
-    }
 }
+
+

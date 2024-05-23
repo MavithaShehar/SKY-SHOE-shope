@@ -20,12 +20,13 @@ import java.util.UUID;
 @Transactional
 @RequiredArgsConstructor
 
-public class customerServiceIMPL implements CustomerService {
+public class CustomerServiceIMPL implements CustomerService {
     private final CustomerRepo customerRepo;
     private final ModelMapper modelMapper;
 
     @Override
     public String save(CustomerDTO customerDTO) {
+
         if (customerRepo.existsById(customerDTO.getCustomerId())){
             return VarList.RSP_DUPLICATED;
         }else {

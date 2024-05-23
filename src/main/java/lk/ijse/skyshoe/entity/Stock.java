@@ -16,6 +16,8 @@ import lombok.NoArgsConstructor;
 @Entity
 public class Stock {
     @Id
+
+    @Enumerated(EnumType.STRING)
     private Size size;
     private int qty;
     private int maxQty;
@@ -28,7 +30,7 @@ public class Stock {
     private StockStatus status;
 
     @ManyToOne
-    @Id
+//    @Id
     private Item item;
 
     @ManyToOne

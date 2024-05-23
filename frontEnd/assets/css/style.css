@@ -527,3 +527,11 @@ body {
 
 /*============== sale ========================*/
 
+.table>thead {
+    vertical-align: bottom;
+    font-size: 15px;
+}
+.table-group-divider >tr>td {
+    font-size: 13px;
+}
+

@@ -25,5 +25,4 @@ public class SuppliersDTO {
     private String addressCity;
     private String postalCode;
     private String country;
-    private List<ItemDTO> itemList;
 }

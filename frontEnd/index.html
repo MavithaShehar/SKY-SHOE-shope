@@ -2,17 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title> sky shoe</title>
 
-<!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">-->
+    <link rel="icon" href="assets/image/download%20(4).jpg" type="image/x-icon" >
+
+
+    <!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-thin-rounded/css/uicons-thin-rounded.css'>
 
     <link rel="stylesheet" href="assets/lib/bootstrap/css/bootstrap.min.css">
 
-    <link rel="stylesheet" href="assets/style.css">
-    <link rel="stylesheet" href="assets/customer.css">
-    <link rel="stylesheet" href="assets/employee.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/customer.css">
+    <link rel="stylesheet" href="assets/css/employee.css">
+    <link rel="stylesheet" href="assets/css/supplier.css">
+    <link rel="stylesheet" href="assets/css/item.css">
+    <link rel="stylesheet" href="assets/css/sale.css">
 </head>
 <body>
 
@@ -299,17 +305,17 @@
 
                 <div class="cust-select">
                     <span class="select-name">Loyalty</span>
-                    <select class="form-select" aria-label="Default select example">
-                        <option selected>All Customer</option>
-                        <option value="1">GOLD</option>
-                        <option value="2">BRONZE</option>
-                        <option value="3">SILVER</option>
+                    <select class="form-select" aria-label="Default select example" id="select-loyalty">
+                        <option selected value="ALLCUSTOMER">All Customer</option>
+                        <option value="GOLD">GOLD</option>
+                        <option value="BRONZE">BRONZE</option>
+                        <option value="SILVER">SILVER</option>
                     </select>
                 </div>
 
                 <div class="cust-select" id="cust-select">
                     <div class="form-group">
-                        <input type="date" class="form-control" >
+                        <input id="cust-date-piker" type="text" class="form-control" >
                     </div>
                 </div>
 
@@ -322,9 +328,9 @@
                 <button id="cut-add" type="button"  class="btn btn-primary">ADD+</button>
 
                 <form>
-                    <fieldset disabled>
+                    <fieldset >
                         <div class="mb-3" id="serch-cust-id">
-                            <input type="text" id="disabledTextInput" class="form-control" placeholder="search customer ID or Name ">
+                            <input type="text" id="customer-search" class="form-control" placeholder="search customer ID or Name ">
                         </div>
                     </fieldset>
                 </form>
@@ -334,7 +340,7 @@
             <!------------ customer table ------------->
 
             <div id="cust-tbl">
-                <table class="table">
+                <table class="table table-bordered">
                     <thead>
                     <tr>
                         <th scope="col">customerId</th>
@@ -346,119 +352,12 @@
                         <th scope="col">birthday</th>
                         <th scope="col">contactNo</th>
                         <th scope="col">email</th>
-                        <th scope="col">addressNoOrName</th>
+                        <th scope="col">address No <br> Or Name</th>
+                        <th scope="col">delete</th>
                     </tr>
                     </thead>
-                    <tbody class="table-group-divider">
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
+                    <tbody class="table-group-divider" id="customerTable">
 
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
                     </tbody>
                 </table>
             </div>
@@ -466,13 +365,14 @@
         </div>
 
     <!----- Customer save page ------->
+
         <div  id="customer-form">
             <h4 id="cus-reg">Customer Rgistation</h4>
             <div class="form-feel">
                 <form action="">
                     <div class="form-group" style="width: 350px">
                         <label for="customerId">Customer ID</label>
-                        <input type="text" class="form-control" id="customerId" placeholder="Enter customer ID" readonly>
+                        <input type="text" class="form-control" id="customerId" placeholder="Enter customer ID" readonly >
                     </div>
                     <div class="form-group" style="width: 350px">
                         <label for="customerName">Customer Name</label>
@@ -482,9 +382,9 @@
                         <label for="gender">Gender</label>
                         <select class="form-control" id="gender">
                             <option selected>select</option>
-                            <option value="Male">MALE</option>
-                            <option value="Female">FEMALE</option>
-                            <option value="Other">OTHER</option>
+                            <option selected="Male">MALE</option>
+                            <option selected="Female">FEMALE</option>
+                            <option selected="Other">OTHER</option>
                         </select>
                     </div>
                     <div class="form-group" style="width: 200px; display: inline-block;">
@@ -495,9 +395,9 @@
                         <label for="gender">Loyalty Level</label>
                         <select class="form-control" id="loyalty">
                             <option selected>NORMAL</option>
-                            <option value="gold">Gold</option>
-                            <option value="silver">SILVER</option>
-                            <option value="bronze">BRONZE</option>
+                            <option selected="gold">GOLD</option>
+                            <option selected="silver">SILVER</option>
+                            <option selected="bronze">BRONZE</option>
                         </select>
                     </div>
                     <div class="form-group"style="width: 200px; display: inline-block;">
@@ -506,7 +406,7 @@
                     </div>
                     <div class="form-group" style="width:200px">
                         <label for="birthday">Birthday</label>
-                        <input type="date" class="form-control" id="birthday">
+                        <input type="text" class="form-control" id="birthday">
                     </div>
                     <div class="form-group" style="width: 300px">
                         <label for="contactNo">Contact Number</label>
@@ -545,8 +445,8 @@
             </div>
 
             <div id="cus-btn-area"class="d-grid gap-2 col-6 mx-auto">
-                <button type="button" class="btn btn-primary">Save</button>
-                <button type="button" class="btn btn-success">update</button>
+                <button type="button" class="btn btn-primary" onclick="saveCustomer()">Save</button>
+                <button type="button" class="btn btn-success" onclick="updateCustomer()">update</button>
             </div>
 
         </div>
@@ -554,23 +454,25 @@
     <!-- ============= [03] Employee service =============-->
         <div id="employee-page">
 
-            <!--   ===========  select customer =========== -->
+            <!--   ===========  select employee =========== -->
             <div id="emp-select-option">
 
                 <div class="emp-select">
-                    <span class="select-name">Loyalty</span>
-                    <select class="form-select" aria-label="Default select example">
+                    <span class="select-name">Access Role</span>
+                    <select class="form-select" aria-label="Default select example" id="systemAccess">
                         <option selected>Employee</option>
-                        <option value="1">USER</option>
-                        <option value="2">ADMIN</option>
+                        <option value="USER">USER</option>
+                        <option value="ADMIN">ADMIN</option>
                     </select>
                 </div>
 
                 <div class="emp-select" id="emp-select">
-                    <div class="form-group">
-                        <input type="date" class="form-control" >
+                    <div class="form-group" >
+                        <input id="emp-date-piker" type="text" class="form-control">
                     </div>
                 </div>
+
+
 
             </div>
 
@@ -579,9 +481,9 @@
                 <button id="emp-add" type="button"  class="btn btn-primary">ADD+</button>
 
                 <form>
-                    <fieldset disabled>
+                    <fieldset >
                         <div class="mb-3" id="serch-emp-id">
-                            <input type="text"  class="form-control" placeholder="search customer ID or Name ">
+                            <input id="employee-search" type="text"  class="form-control" placeholder="search customer ID or Name ">
                         </div>
                     </fieldset>
                 </form>
@@ -592,131 +494,23 @@
                 <table class="table">
                     <thead>
                     <tr>
+                        <th scope="col">pic</th>
                         <th scope="col">employeeId</th>
                         <th scope="col">employeeName</th>
-                        <th scope="col">pic</th>
-                        <th scope="col">joinDate</th>
+                        <th scope="col">Gender</th>
                         <th scope="col">status</th>
+                        <th scope="col">joinDate</th>
                         <th scope="col">designation</th>
                         <th scope="col">Role</th>
                         <th scope="col">birthday</th>
-                        <th scope="col">joinDate</th>
                         <th scope="col">contactNo</th>
+                        <th scope="col">address</th>
                         <th scope="col">email</th>
-                        <th scope="col">addressNoOrName</th>
+                        <th scope="col">option</th>
                     </tr>
                     </thead>
-                    <tbody class="table-group-divider">
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
+                    <tbody class="table-group-divider" id="employeeTable">
 
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
                     </tbody>
                 </table>
             </div>
@@ -730,60 +524,60 @@
                 <form action="">
                     <div class="form-group" style="width: 350px">
                         <label for="employeeId">Employee ID</label>
-                        <input type="text" class="form-control" id="employeeId" placeholder="Enter customer ID" readonly>
+                        <input type="text" class="form-control" id="employeeId" placeholder="Enter customer ID" >
                     </div>
                     <div class="form-group" style="width: 350px">
                         <label for="employeeName">Customer Name</label>
                         <input type="text" class="form-control" id="employeeName" placeholder="Enter customer name">
                     </div>
                     <div class="form-group" style="width: 200px; display: inline-block; margin-right: 20px">
-                        <label for="emp-gender">Gender</label>
-                        <select class="form-control" id="emp-gender">
+                        <label for="empGender">Gender</label>
+                        <select class="form-control" id="empGender">
                             <option selected>select</option>
-                            <option value="Male">MALE</option>
-                            <option value="Female">FEMALE</option>
-                            <option value="Other">OTHER</option>
+                            <option selected="Male">MALE</option>
+                            <option selected="Female">FEMALE</option>
+                            <option selected="Other">OTHER</option>
                         </select>
                     </div>
                     <div class="form-group" style="width: 200px; display: inline-block;">
-                        <label for="emp-status">Status</label>
-                        <input type="date" class="form-control" id="emp-status">
+                        <label for="empStatus">Status</label>
+                        <input type="text" class="form-control" id="empStatus">
                     </div>
                     <div class="form-group" style="width: 200px; display: inline-block; margin-right: 20px">
-                        <label for="emp-desi">Designation</label>
-                        <select class="form-control" id="emp-desi">
+                        <label for="empDesi">Designation</label>
+                        <select class="form-control" id="empDesi">
                             <option selected>Position</option>
-                            <option value="Male">Cashier</option>
-                            <option value="Female">Manager</option>
-                            <option value="Other">OTHER</option>
+                            <option value="CASHIER">CASHIER</option>
+                            <option value="MANAGER">MANAGER</option>
+                            <option value="OTHER">OTHER</option>
                         </select>
                     </div>
 
                     <div class="form-group" style="width:200px">
-                        <label for="emp-birthday">Birthday</label>
-                        <input type="date" class="form-control" id="emp-birthday">
+                        <label for="empBirthday">Birthday</label>
+                        <input type="text" class="form-control" id="empBirthday">
                     </div>
 
                     <div class="form-group" style="width: 200px; display: inline-block;">
-                        <label for="emp-joinDate">Join Date</label>
-                        <input type="date" class="form-control" id="emp-joinDate">
+                        <label for="empJoinDate">Join Date</label>
+                        <input type="text" class="form-control" id="empJoinDate">
                     </div>
                     <div class="form-group" style="width: 200px; display: inline-block; margin-right: 20px">
-                        <label for="emp-rol">Role</label>
-                        <select class="form-control" id="emp-rol">
+                        <label for="empRol">Role</label>
+                        <select class="form-control" id="empRol">
                             <option selected>Position</option>
-                            <option value="Male">USER</option>
-                            <option value="Female">ADMIN</option>
-                            <option value="Other">OTHER</option>
+                            <option value="USER">USER</option>
+                            <option value="ADMIN">ADMIN</option>
+                            <option value="OTHER">OTHER</option>
                         </select>
                     </div>
                     <div class="form-group" style="width: 300px">
-                        <label for="emp-bran">Branch</label>
-                        <input type="tel" class="form-control" id="emp-bran" placeholder="Enter contact number">
+                        <label for="empBranch">Branch</label>
+                        <input type="tel" class="form-control" id="empBranch" placeholder="Enter contact number">
                     </div>
                     <div class="form-group" style="width: 300px">
-                        <label for="emp-contactNo">Contact Number</label>
-                        <input type="tel" class="form-control" id="emp-contactNo" placeholder="Enter contact number">
+                        <label for="empContactNo">Contact Number</label>
+                        <input type="tel" class="form-control" id="empContactNo" placeholder="Enter contact number">
                     </div>
                 </form>
             </div>
@@ -791,54 +585,681 @@
             <div class="form-feel">
                 <form action="">
 
-                      <input type="file" id="fileInput" accept="image/png, image/jpeg" style="">
-<!--                    <button id="fileSelectButton">Select PNG or JPG File</button>-->
+<!--                    <div id="profilePic" style="width: 100px;height: 100px; background-color: #2c3034">-->
+<!--                      <input type="file"  id="empFileInput" accept="image/png, image/jpeg" style="display: none">-->
+<!--&lt;!&ndash;                        <input style="display: none" id="employee-profile-pic-file-chooser" type="file"&ndash;&gt;-->
+<!--&lt;!&ndash;                               accept="image/png, image/jpeg">&ndash;&gt;-->
+<!--                    </div>-->
 
-                    <div class="form-group" style="width: 250px;display: inline-block">
-                        <label for="emp-email">Email Address</label>
-                        <input type="email" class="form-control" id="emp-email" placeholder="Enter email">
+
+                    <div class="emp-card" style="display:inline-block;">
+                        <img src="assets/image/photo-camera.png" alt="" id="profile-pic">
+                    </div>
+                    <div style="display:inline-block;">
+                        <label for="empFileInput" id="emp-pic">update image
+                            <input type="file" accept="image/png, image/jpeg, image/jpg" id="empFileInput" style="display: none">
+                        </label>
+                    </div>
+
+                    <div class="form-group" style="width: 250px;display: block">
+                        <label for="empEmail">Email Address</label>
+                        <input type="email" class="form-control" id="empEmail" placeholder="Enter email">
                     </div>
                     <div class="form-group" style="width: 200px;display: inline-block">
-                        <label for="emp-addressNoOrName">Address Number or Name</label>
-                        <input type="text" class="form-control" id="emp-addressNoOrName" placeholder="Enter address number or name">
+                        <label for="empAddressNoOrName">Address Number or Name</label>
+                        <input type="text" class="form-control" id="empAddressNoOrName" placeholder="Enter address number or name">
                     </div>
                     <div class="form-group" style="width: 200px;">
-                        <label for="emp-addressLane">Address Lane</label>
-                        <input type="text" class="form-control" id="emp-addressLane" placeholder="Enter address lane">
+                        <label for="empAddressLane">Address Lane</label>
+                        <input type="text" class="form-control" id="empAddressLane" placeholder="Enter address lane">
                     </div>
                     <div class="form-group " style="width: 150px;display: inline-block">
-                        <label for="emp-addressCity">City</label>
-                        <input type="text" class="form-control" id="emp-addressCity" placeholder="Enter city">
+                        <label for="empCity">City</label>
+                        <input type="text" class="form-control" id="empCity" placeholder="Enter city">
                     </div>
                     <div class="form-group" style="width: 150px; display: inline-block">
-                        <label for="emp-addressState">State</label>
-                        <input type="text" class="form-control" id="emp-addressState" placeholder="Enter state">
+                        <label for="empState">State</label>
+                        <input type="text" class="form-control" id="empState" placeholder="Enter state">
                     </div>
                     <div class="form-group" style="width: 150px;display: inline-block">
-                        <label for="emp-postalCode">Postal Code</label>
-                        <input type="text" class="form-control" id="emp-postalCode" placeholder="Enter postal code">
+                        <label for="empPostalCode">Postal Code</label>
+                        <input type="text" class="form-control" id="empPostalCode" placeholder="Enter postal code">
                     </div>
                     <div class="form-group" style="width: 200px">
-                        <label for="emp-password">Password</label>
-                        <input type="password" class="form-control" id="emp-password" placeholder="Enter postal code">
+                        <label for="empPassword">Password</label>
+                        <input type="password" class="form-control" id="empPassword" placeholder="Enter Password">
                     </div>
                     <div class="form-group" style="width: 200px;display: inline-block">
-                        <label for="emp-c-p">Emergency Contact Person</label>
-                        <input type="text" class="form-control" id="emp-c-p" placeholder="Enter postal code">
+                        <label for="emp_con_per">Emergency Contact Person</label>
+                        <input type="text" class="form-control" id="emp_con_per" placeholder="Enter postal code">
                     </div>
                     <div class="form-group" style="width: 200px;display: inline-block">
-                        <label for="emp-c-n">Emergency Contact Person</label>
-                        <input type="text" class="form-control" id="emp-c-n" placeholder="Enter postal code">
+                        <label for="emp_con_num">Emergency Contact Number</label>
+                        <input type="text" class="form-control" id="emp_con_num" placeholder="Enter postal code">
                     </div>
 
                 </form>
             </div>
 
             <div id="emp-btn-area"class="d-grid gap-2 col-6 mx-auto">
-                <button type="button" class="btn btn-primary">Save</button>
-                <button type="button" class="btn btn-success">update</button>
+                <button type="button" class="btn btn-primary" onclick="saveEmployee()">Save</button>
+                <button type="button" class="btn btn-success" onclick="updateEmployee()">update</button>
             </div>
 
+        </div>
+
+
+   <!-- ============= [04] supplier service =============-->
+
+        <div id="supplier-save-section">
+
+            <!--   supplier search bar-->
+            <div id="supplier-search">
+                <div class="mb-3">
+                     <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Search Supplier ...">
+                </div>
+            </div>
+
+            <!--   supplier form -->
+            <div id="supplier-form">
+
+                <!--  part 01-->
+                <div class="form-part">
+
+                    <form action="">
+
+                        <div class="form-group">
+                            <label for="supplierId">Supplier ID</label>
+                            <input type="text" class="form-control" id="supplierId" placeholder="Enter Supplier ID" style="width: 200px;" >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="supplierName">Supplier Name</label>
+                            <input type="text" class="form-control" id="supplierName" placeholder="Enter Supplier Name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="supplierCategory">Supplier Category</label>
+                            <select class="form-control" id="supplierCategory">
+                                <option selected="LOCAL">LOCAL</option>
+                                <option selected="INTERNATIONAL">INTERNATIONAL</option>
+                                <option selected>Category</option>
+                            </select>
+                        </div>
+
+                    </form>
+
+                </div>
+
+                <!--  part 02-->
+                <div class="form-part">
+
+                    <form action="">
+
+                        <div class="form-group">
+                            <label for="mobileNo">Mobile Number</label>
+                            <input type="text" class="form-control" id="mobileNo" placeholder="Enter Mobile Number" style="width: 200px">
+                        </div>
+                        <div class="form-group">
+                            <label for="landLineNo">Landline Number</label>
+                            <input type="text" class="form-control" id="landLineNo" placeholder="Enter Landline Number" style="width: 200px">
+                        </div>
+                        <div class="form-group">
+                            <label for="supp-email">Email</label>
+                            <input type="email" class="form-control" id="supp-email" placeholder="Enter Email" style="width: 250px">
+                        </div>
+
+
+                    </form>
+
+                </div>
+
+                <!--  part 03-->
+                <div class="form-part">
+
+                    <form action="">
+                        <div class="form-group">
+                            <label for="address">Address</label>
+                            <input type="text" class="form-control" id="address" placeholder="Enter Address" style="width: 200px">
+                        </div>
+                        <div class="form-group">
+                            <label for="city">City</label>
+                            <input type="text" class="form-control" id="city" placeholder="Enter City" style="width: 150px">
+                        </div>
+                        <div class="form-group">
+                            <label for="state">State</label>
+                            <input type="text" class="form-control" id="state" placeholder="Enter State" style="width: 150px">
+                        </div>
+                    </form>
+
+                </div>
+
+                <!--  part 04-->
+                <div class="form-part">
+
+                    <form action="">
+                        <div class="form-group">
+                            <label for="supp-postalCode">Postal Code</label>
+                            <input type="text" class="form-control" id="supp-postalCode" placeholder="Enter Postal Code" style="width: 110px">
+                        </div>
+                        <div class="form-group">
+                            <label for="country">Country</label>
+                            <input type="text" class="form-control" id="country" placeholder="Enter Country" style="width: 150px">
+                        </div>
+                    </form>
+
+                    <button type="submit" onclick="saveSupplier()" class="btn btn-primary" id="supp-save-btn" style="display: inline-block">Save</button>
+                    <button type="submit" onclick="updateSupplier()" class="btn btn-primary" id="supp-update-btn"style="display: inline-block">Update</button>
+                </div>
+
+                <div>
+
+                </div>
+
+            </div>
+
+            <!-- supp-table-->
+
+            <div id="supplier-table">
+                <div id="supp-tbl">
+                    <table class="table table-hover item-table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Supplier Name</th>
+                            <th scope="col">Contact</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Country</th>
+                        </tr>
+                        </thead>
+                        <tbody id="supplierTable">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+
+   <!-- ============= [05] item service =============-->
+
+        <div id="about-item-section">
+
+            <div id="select-itm-option">
+                <button type="button" class="btn btn-outline-primary">Add Items</button>
+                <button type="button"  class="btn btn-outline-primary">Inventory</button>
+            </div>
+
+            <!----------------------------------------------------------------------->
+            <div id="item-form">
+
+                <div id="save-item-form">
+
+                    <div id="save-item-form-01">
+                        <form action="">
+                            <div class="form-group">
+                                <label for="itemId">Item ID</label>
+                                <input type="text" class="form-control" id="itemId" placeholder="Enter Item ID" style="width: 200px;" >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="item_description">Item Description</label>
+                                <input type="text" class="form-control" id="item_description" placeholder="Enter Item Description">
+                            </div>
+
+                        </form>
+                    </div>
+
+                    <div id="save-item-form-02">
+                        <form action="">
+                            <div class="form-group">
+                                <label for="price_buy">Price Buy</label>
+                                <input type="text" class="form-control" id="price_buy" placeholder="Enter Price Buy" style="width: 150px;" >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="price_sale">Price Sale</label>
+                                <input type="text" class="form-control" id="price_sale" placeholder="Enter Price Sale" style="width: 150px;" >
+                            </div>
+                        </form>
+                    </div>
+
+                    <div id="save-item-form-03" style="width: 250px;">
+                        <form action="">
+                            <div class="form-group">
+                                <label for="itemCategory">Items Category</label>
+                                <select class="form-control" id="itemCategory">
+                                    <option value="SHOE">SHOE</option>
+                                    <option value="SANDALS">SANDALS</option>
+                                    <option value="SLIPPERS">SLIPPERS</option>
+                                    <option value="HEEL">HEEL</option>
+                                    <option value="FLATS">FLATS</option>
+                                    <option value="WEDGES">WEDGES</option>
+                                    <option value="FLIPFLOPS">FLIPFLOPS</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div id="itm-img">
+
+                        <div class="itm-card">
+                            <img src="assets/image/photo-camera.png" alt="" id="itm-profile-pic">
+                        </div>
+                        <div style="display:inline-block;">
+                            <label for="itmFileInput" id="itm-pic">update image
+                                <input type="file" accept="image/png, image/jpeg, image/jpg" id="itmFileInput" style="display: none">
+                            </label>
+                        </div>
+
+                    </div>
+
+                    <div id="itm-btn-optin">
+                        <div class="d-grid gap-2 col-6 mx-auto">
+                            <button onclick="saveItem()" class="btn btn-primary" type="button">Save</button>
+                            <button onclick="updateItem()" class="btn btn-primary" type="button">Update</button>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+            <!--************************************************************************************* -->
+
+                <div id="save-inventory-form">
+
+                    <div id="save-inve-form-01">
+                        <form action="">
+                            <div class="form-group" style="width: 200px;">
+                                <label for="inve-itemId">Select Item ID</label>
+                                <select class="form-control" id="inve-itemId">
+                                    <option value="1">Category A</option>
+                                    <option value="2">Category B</option>
+                                    <option value="3">Category C</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group" style="width: 140px;display: inline-block">
+                                <label for="inve-description">Item name</label>
+                                <input type="text" class="form-control" id="inve-description" placeholder="Item Name" >
+                            </div>
+
+                            <div class="form-group" style="width: 140px;display: inline-block">
+                                <label for="inve-item-cataegory">Category</label>
+                                <input type="text" class="form-control" id="inve-item-cataegory" placeholder="Cataegory" >
+                            </div>
+
+                        </form>
+                    </div>
+
+                    <div id="save-inve-form-02">
+                        <form action="">
+                            <div class="form-group">
+                                <label for="itm-color">color</label>
+                                <select class="form-control" id="itm-color">
+                                    <option value="1">Category A</option>
+                                    <option value="2">Category B</option>
+                                    <option value="3">Category C</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group" style="width: 100px;display: inline-block">
+                                <label for="itm-qty">Item Qty</label>
+                                <input type="number" class="form-control" id="itm-qty" placeholder="Qty"  readonly>
+                            </div>
+
+                            <div class="form-group" style="width: 100px;display: inline-block">
+                                <label for="itm-size">Item Size</label>
+                                <input type="number" class="form-control" id="itm-size" placeholder="Size"  readonly>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div id="save-inve-form-03" style="width: 250px;">
+                        <form action="">
+                            <div class="form-group" style="width: 140px;display: inline-block">
+                                <label for="itm-date">Date</label>
+                                <input type="date" class="form-control" id="itm-date" placeholder="date"  readonly>
+                            </div>
+                            <div class="form-group" style="width: 100px;display: inline-block">
+                                <label for="itm-total-value">Total Value</label>
+                                <input type="text" class="form-control" id="itm-total-value" placeholder="Total Value"  readonly>
+                            </div>
+                            <div class="form-group" style="width: 100px;display: inline-block">
+                                <label for="itm-total-qty">Total Qty</label>
+                                <input type="text" class="form-control" id="itm-total-Qty" placeholder="Total Value"  readonly>
+                            </div>
+                            <div class="form-group" style="width: 140px;display: inline-block">
+                                <label for="inve-item-status">status</label>
+                                <input type="text" class="form-control" id="inve-item-status" placeholder="Item status" >
+                            </div>
+                        </form>
+                    </div>
+
+                    <div id="inve-img">
+
+                        <div class="itm-card">
+                            <img src="assets/image/photo-camera.png" alt="" id="inve-profile-pic">
+                        </div>
+                        <div style="display:inline-block;">
+                            <label for="inveFileInput" id="inve-pic">update image
+                                <input type="file" accept="image/png, image/jpeg, image/jpg" id="inveFileInput" style="display: none">
+                            </label>
+                        </div>
+
+                    </div>
+
+
+
+
+
+
+                    <div id="inve-btn-optin">
+                        <div class="d-grid gap-2 col-6 mx-auto">
+                            <button class="btn btn-primary" type="button">Save</button>
+                            <button class="btn btn-primary" type="button">Update</button>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+
+            <!----------------------------------------------------------------------->
+
+            <div id="select-itm-tbl-option">
+                <button type="button" class="btn btn-outline-primary">View Add Items Table </button>
+                <button type="button" class="btn btn-outline-primary">view Inventory Table</button>
+            </div>
+
+            <!------------------------------------------------------------------------>
+
+            <div id="item-section-tbls">
+
+                <div id="items-tbl">
+                    <table class="table table-striped table-hover">
+                        <thead >
+                        <tr>
+                            <th scope="col">Item Id</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">category</th>
+                            <th scope="col">priceBuy</th>
+                            <th scope="col">priceSell</th>
+                        </tr>
+                        </thead>
+                        <tbody id="itemTable">
+
+                        </tbody>
+                    </table>
+                </div>
+
+             <!------------------------------------------------------------------------>
+
+                <div id="inve-tbl">
+                    <table class="table table-striped table-hover">
+                        <thead >
+                        <tr>
+                            <th scope="col">Item ID</th>
+                            <th scope="col">Item Name</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Color</th>
+                            <th scope="col">Size</th>
+                            <th scope="col">Buy Price</th>
+                            <th scope="col">Sell Price</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>Rs.100</td>
+                            <td>Rs.200</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>Rs.100</td>
+                            <td>Rs.200</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>Rs.100</td>
+                            <td>Rs.200</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>Rs.100</td>
+                            <td>Rs.200</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>Rs.100</td>
+                            <td>Rs.200</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>Rs.100</td>
+                            <td>Rs.200</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>Rs.100</td>
+                            <td>Rs.200</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>Rs.100</td>
+                            <td>Rs.200</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>Rs.100</td>
+                            <td>Rs.200</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+        </div>
+
+   <!-- ============= [06] sale service =============-->
+
+        <div id="sale-section">
+
+<!--            <div id="purchase-order-section">-->
+
+<!--            </div>-->
+
+            <div id="sale-item-section">
+                <div id="customer-data">
+                    <div class="mb-3 feeld">
+                        <label for="order_id" class="form-label">Order ID</label>
+                        <input type="text" class="form-control" id="order_id" placeholder="Select ID" style="width: 200px;border-color: #0a58ca; " >
+                    </div>
+                    <div class="mb-3 feeld">
+                        <label for="ordr-cust-id" class="form-label">Customer ID</label>
+                        <input type="text" class="form-control" id="ordr-cust-id" placeholder="Select customer" style="width: 200px;">
+                    </div>
+                    <div class="mb-3 feeld">
+                        <label for="order-cust-name" class="form-label">Customer Name</label>
+                        <input type="text" class="form-control" id="order-cust-name" placeholder="" style="width: 200px;">
+                    </div>
+                    <div class="mb-3 feeld">
+                        <label for="order-cust-loyalty" class="form-label">Loyalty</label>
+                        <input type="text" class="form-control" id="order-cust-loyalty" placeholder="" style="width: 200px;">
+                    </div>
+                </div>
+
+                <div id="main-order-itm-data">
+
+                    <div id="order-itm-data01">
+                         <div id="order-itm-pic"> </div>
+                        <div class="mb-3 feeld">
+                            <label for="order-select-itm-id" class="form-label"> Item Id</label>
+                            <input type="text" class="form-control" id="order-select-itm-id" placeholder="Select Item" style="width: 200px;">
+                        </div>
+                    </div>
+
+                <div id="order-itm-data02">
+                    <div class="mb-3 feeld">
+                        <label for="order-itm-catagory" class="form-label">Catagory</label>
+                        <input type="text" class="form-control" id="order-itm-catagory" placeholder="Select Item" style="width: 200px;">
+                    </div>
+                    <div class="mb-3 feeld">
+                        <label for="order-itm-price" class="form-label">Price</label>
+                        <input type="text" class="form-control" id="order-itm-price" placeholder="Select Item" style="width: 200px;">
+                    </div>
+                    <div class="mb-3 feeld">
+                        <label for="order-itm-available-qty" class="form-label">Available Qty</label>
+                        <input type="text" class="form-control" id="order-itm-available-qty" placeholder="Select Item" style="width: 200px;">
+                    </div>
+                </div>
+
+                <div id="order-itm-data03">
+                    <div class="mb-3 feeld">
+                        <label for="order-itm-size" class="form-label">Size</label>
+                        <input type="text" class="form-control" id="order-itm-size" placeholder="" style="width: 80px;margin-left: 5px">
+                    </div>
+                    <div class="mb-3 feeld">
+                        <label for="order-itm-color" class="form-label">Color</label>
+                        <input type="text" class="form-control" id="order-itm-color" placeholder="" style="width: 100px;margin-left: 5px">
+                    </div>
+                    <div class="mb-3 feeld" style="margin-left: 5px">
+                        <label for="order-qty" class="form-label">Order Qty</label>
+                        <input type="text" class="form-control" id="order-qty" placeholder="Select Item" style="width: 80px;margin-left: 5px">
+                    </div>
+                    <div class="mb-3 feeld" style="margin-left: 5px">
+                        <label for="order-qty" class="form-label">Discount</label>
+                        <input type="text" class="form-control" id="discount" placeholder="%" style="width: 80px;">
+                    </div>
+                    <div class="mb-3 feeld" style="left: 0;right: 0;margin: auto">
+                        <button type="button" class="btn btn-outline-success">Order</button>
+                    </div>
+                </div>
+
+                <div id="order-itm-data04">
+                    <div class="total-wrapper">
+                        <h4 class="sub-total">Sub Total</h4>
+                        <h4 class="sub-total-value">17 550 LKR</h4>
+                        <h4 class="discount">Discount(10%)</h4>
+                        <h4 class="discount-value">1 755 LKR</h4>
+                        <div class="line">-------------------------</div>
+                        <h4 class="total-amount">Total Amount</h4>
+                        <h4 class="total-amount-value">15 795 LKR</h4>
+                    </div>
+                </div>
+
+                <div id="order-itm-data05">
+                    <div class="mb-3 feeld" style="margin-left: 5px">
+                        <label for="order-date" class="form-label">Date</label>
+                        <input type="text" class="form-control" id="order-date" placeholder="" style="width: 200px;margin-bottom: 20px">
+                    </div>
+
+                    <div id="select-pemant-option">
+                        <button type="button" class="pament-img" >
+                            <img src="assets/image/money.png" alt="" style="width: 40px;height: 40px">
+                        </button>
+                        <button class="pament-img">
+                            <img src="assets/image/credit-card.png" alt="" style="width: 40px;height: 40px">
+                        </button>
+                    </div>
+
+                    <button id="purchase-btn">Purchase</button>
+
+                </div>
+
+
+                </div>
+
+            </div>
+
+            <div id="sale-tbl-section">
+
+                <!--        table   -->
+                <div class="row">
+
+                    <div class="col table_card">
+                        <table class="table table-bordered">
+                            <thead>
+                            <th>Items Pic</th>
+                            <th>Items ID</th>
+                            <th>Name</th>
+                            <th>Order Qty</th>
+                            <th>Price</th>
+                            <th>Total</th>
+                            <th>Selection</th>
+                            </thead>
+
+                            <tbody id="order-tbl-body">
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                                <td>@mdo</td>
+                                <td>@mdo</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>@fat</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td colspan="2">Larry the Bird</td>
+                                <td>@twitter</td>
+                            </tr>
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
         </div>
 
     </section>
@@ -848,6 +1269,10 @@
 <script src="assets/lib/jquery.min.js"></script>
 
 <script src="controller/indexController.js"></script>
+<script src="controller/customerController.js"></script>
+<script src="controller/itemController.js"></script>
+<script src="controller/employeeController.js"></script>
+<script src="controller/supplierController.js"></script>
 
 <!-- ====== ionicons ======= -->
 <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -856,4 +1281,4 @@
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 </body>
-</html>
+</html>0

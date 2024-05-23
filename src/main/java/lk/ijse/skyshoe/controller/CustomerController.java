@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping("api/v1/customer")
 @RequiredArgsConstructor
@@ -21,8 +22,9 @@ public class CustomerController {
     private final ResponseDTO responseDTO;
     private final CustomerService customerService;
 
-    @PostMapping("saveCustomer")
+    @PostMapping("/saveCustomer")
     public ResponseEntity saveCustomer(@RequestBody CustomerDTO customerDTO) {
+
 
         try {
             String req = customerService.save(customerDTO);
@@ -156,5 +158,10 @@ public class CustomerController {
         }
     }
 
+    @GetMapping("/customerHealthCheck")
+    public String getCustomer() {
+
+        return "i am good";
+    }
 
 }

@@ -1,45 +1,48 @@
-$('#dash-bord').css ('display', 'none');
-$('#customer-page').css ('display', 'none');
-$('#employee-page').css ('display', 'none');
-$('#customer-form').css ('display', 'none');
-$('#employee-form').css ('display', 'none');
+// Helper function to show one section and hide the rest
+function showSection(sectionToShow) {
+    const sections = [
+        '#dash-bord',
+        '#customer-page',
+        '#employee-page',
+        '#customer-form',
+        '#employee-form',
+        '#supplier-save-section',
+        '#about-item-section',
+        '#sale-section'
+    ];
 
-$('#dash-nav').on('click', () => {
-    $('#dash-bord').show();
-    $('#customer-page').css ('display', 'none');
-    $('#employee-page').css ('display', 'none');
-    $('#customer-form').css ('display', 'none');
-    $('#employee-form').css ('display', 'none');
-});
+    sections.forEach(section => {
+        if (section === sectionToShow) {
+            $(section).show();
+        } else {
+            $(section).hide();
+        }
+    });
+}
 
-$('#customer-nav').on('click', () => {
-    $('#dash-bord').css ('display', 'none');
-    $('#customer-page').show();
-    $('#customer-form').css ('display', 'none');
-    $('#employee-form').css ('display', 'none');
-    $('#employee-page').css ('display', 'none');
-});
-$('#cut-add').on('click', () => {
-    $('#dash-bord').css ('display', 'none');
-    $('#customer-page').css ('display', 'none');
-    $('#employee-page').css ('display', 'none');
-    $('#customer-form').show();
-});
-$('#employee-nav').on('click', () => {
-    $('#dash-bord').css ('display', 'none');
-    $('#employee-page').show();
-    $('#customer-page').css ('display', 'none');
-    $('#customer-form').css ('display', 'none');
-    $('#employee-form').css ('display', 'none');
-});
+// Initial state: Show dashboard
+showSection('#dash-bord');
 
-$('#emp-add').on('click', () => {
-    $('#dash-bord').css ('display', 'none');
-    $('#customer-page').css ('display', 'none');
-    $('#customer-form').css('display', 'none');
-    $('#employee-page').css ('display', 'none');
-    $('#employee-form').show();
+// Dashboard navigation click handler
+$('#dash-nav').on('click', () => showSection('#dash-bord'));
 
-});
+// Customer navigation click handler
+$('#customer-nav').on('click', () => showSection('#customer-page'));
 
+// Customer add button click handler
+$('#cut-add').on('click', () => showSection('#customer-form'));
 
+// Employee navigation click handler
+$('#employee-nav').on('click', () => showSection('#employee-page'));
+
+// Employee add button click handler
+$('#emp-add').on('click', () => showSection('#employee-form'));
+
+// Supplier navigation click handler
+$('#supplier-nav').on('click', () => showSection('#supplier-save-section'));
+
+// Supplier navigation click handler
+$('#item-nav').on('click', () => showSection('#about-item-section'));
+
+// Sale navigation click handler
+$('#sale-nav').on('click', () => showSection('#sale-section'));

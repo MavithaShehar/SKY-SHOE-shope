@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping("api/v1/suppliers")
 @RequiredArgsConstructor
@@ -19,10 +20,6 @@ public class SuppliersController {
     private final ResponseDTO responseDTO;
     private final SuppliersService suppliersService;
 
-    @GetMapping("health")
-    private String healthCheck(){
-        return "i am good";
-    }
 
     @PostMapping("saveSuppliers")
     public ResponseEntity saveSuppliers(@RequestBody SuppliersDTO suppliersDTO) {
