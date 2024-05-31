@@ -3,3 +3,4 @@ export var employee_db = [];
 export var supplier_db = [];
 export var items_db = [];
 export var inventory_db = [];
+export var resupply_db = [];

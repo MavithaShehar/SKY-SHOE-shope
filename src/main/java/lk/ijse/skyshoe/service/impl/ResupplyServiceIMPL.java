@@ -1,6 +1,8 @@
 package lk.ijse.skyshoe.service.impl;
 
 import jakarta.transaction.Transactional;
+import lk.ijse.skyshoe.dto.CustomerDTO;
+import lk.ijse.skyshoe.dto.InventoryDTO;
 import lk.ijse.skyshoe.dto.ResupplyDTO;
 import lk.ijse.skyshoe.entity.Customer;
 import lk.ijse.skyshoe.entity.Resupply;
@@ -9,8 +11,10 @@ import lk.ijse.skyshoe.service.ResuplyService;
 import lk.ijse.skyshoe.util.VarList;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -54,7 +58,9 @@ public class ResupplyServiceIMPL implements ResuplyService {
 
     @Override
     public List<ResupplyDTO> getAll() {
-        return null;
+        List<Resupply> resupplyDTOList = resuplyRepo.findAll();
+        return modelMapper.map(resupplyDTOList,new TypeToken<ArrayList<ResupplyDTO>>(){}.getType());
+
     }
 
     @Override
