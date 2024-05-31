@@ -77,13 +77,20 @@ itm_inputFile.addEventListener("change",e =>{
 
 // Function to load item IDs into the dropdown
 function loadItemsId() {
+
     const itemIdSelect = $("#inve-itemId");
+    const orderItemIdSelect = $("#order-select-itm-id");
+
    itemIdSelect.empty(); // Clear existing options
+    orderItemIdSelect.empty(); // Clear existing options
+
     itemIdSelect.append(`<option selected hidden>Select Item</option>`); // Add default hidden option
+    orderItemIdSelect.append(`<option selected hidden>Select Item</option>`); // Add default hidden option
 
     items_db.map((itm) => {
       //  console.log("Item ID is", itm.itemCode);
         itemIdSelect.append(`<option value="${itm.itemCode}">${itm.itemCode}</option>`); // Append item options
+        orderItemIdSelect.append(`<option value="${itm.itemCode}">${itm.itemCode}</option>`); // Append item options
     });
 }
 

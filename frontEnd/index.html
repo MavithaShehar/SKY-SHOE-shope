@@ -1077,7 +1077,9 @@
                     </div>
                     <div class="mb-3 feeld">
                         <label for="ordr-cust-id" class="form-label">Customer ID</label>
-                        <input type="text" class="form-control" id="ordr-cust-id" placeholder="Select customer" style="width: 200px;">
+                        <select type="select" class="form-control" id="ordr-cust-id"  style="width: 200px;">
+
+                        </select>
                     </div>
                     <div class="mb-3 feeld">
                         <label for="order-cust-name" class="form-label">Customer Name</label>
@@ -1092,10 +1094,24 @@
                 <div id="main-order-itm-data">
 
                     <div id="order-itm-data01">
-                         <div id="order-itm-pic"> </div>
+
+                         <div id="order-itm-pic">
+
+                             <div class="itm-card">
+                                 <img src="assets/image/photo-camera.png" alt="" id="order-itm-profile-pic">
+                             </div>
+                             <div style="display:inline-block;">
+                                 <label for="order-itm-FileInput" id="order-item-pic">
+                                     <input type="file" accept="image/png, image/jpeg, image/jpg" id="order-itm-FileInput" style="display: none">
+                                 </label>
+                             </div>
+
+                         </div>
+
+
                         <div class="mb-3 feeld">
                             <label for="order-select-itm-id" class="form-label"> Item Id</label>
-                            <input type="text" class="form-control" id="order-select-itm-id" placeholder="Select Item" style="width: 200px;">
+                            <select type="text" class="form-control" id="order-select-itm-id" placeholder="Select Item" style="width: 200px;"></select>
                         </div>
                     </div>
 
@@ -1132,26 +1148,26 @@
                         <input type="text" class="form-control" id="discount" placeholder="%" style="width: 80px;">
                     </div>
                     <div class="mb-3 feeld" style="left: 0;right: 0;margin: auto">
-                        <button type="button" class="btn btn-outline-success">Order</button>
+                        <button  id="orderBtn" type="button" class="btn btn-outline-success">Order</button>
                     </div>
                 </div>
 
                 <div id="order-itm-data04">
                     <div class="total-wrapper">
-                        <h4 class="sub-total">Sub Total</h4>
-                        <h4 class="sub-total-value">17 550 LKR</h4>
-                        <h4 class="discount">Discount(10%)</h4>
-                        <h4 class="discount-value">1 755 LKR</h4>
+                        <h4 class="sub-total">Total</h4>
+                        <h4 class="sub-total-value" id="total-value">  </h4>
+                        <h4 class="discount" >Price :</h4>
+                        <h4 class="discount-value" id="price"> </h4>
                         <div class="line">-------------------------</div>
-                        <h4 class="total-amount">Total Amount</h4>
-                        <h4 class="total-amount-value">15 795 LKR</h4>
+                        <h4 class="total-amount" style="font-size: 20px">Total Amount</h4>
+                        <h4 class="total-amount-value" id="sub-total-value" style="font-size: 25px"> </h4>
                     </div>
                 </div>
 
                 <div id="order-itm-data05">
                     <div class="mb-3 feeld" style="margin-left: 5px">
                         <label for="order-date" class="form-label">Date</label>
-                        <input type="text" class="form-control" id="order-date" placeholder="" style="width: 200px;margin-bottom: 20px">
+                        <input type="text" class="form-control" id="order-date" placeholder="" style="width: 200px;margin-bottom: 20px;font-size: 25px">
                     </div>
 
                     <div id="select-pemant-option">
@@ -1290,6 +1306,7 @@
 <script src="controller/supplierController.js" type="module"></script>
 <script src="controller/resupplyController.js" type="module"></script>
 <script src="controller/inventoryController.js" type="module"></script>
+<script src="controller/salesController.js" type="module"></script>
 
 <!-- ====== ionicons ======= -->
 

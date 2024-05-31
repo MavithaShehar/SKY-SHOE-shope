@@ -22,6 +22,12 @@ public class CustomerController {
     private final ResponseDTO responseDTO;
     private final CustomerService customerService;
 
+
+    @GetMapping("/abc")
+    public String getMessage() {
+        return "Hello";
+    }
+
     @PostMapping("/saveCustomer")
     public ResponseEntity saveCustomer(@RequestBody CustomerDTO customerDTO) {
 
