@@ -49,13 +49,25 @@
     background-color: #e9b10a;
     margin-left: 25px;
 }
+#form-part05{
+    width:300px;
+
+}
 #supp-save-btn {
-    width: 100px;
-    margin-left: 200px;
+    width: 150px;
+    margin-bottom: 20px;
+
 }
 #supp-update-btn {
-    width: 100px;
+    width: 150px;
 }
+
+#form-part06{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
 
 #supplier-table{
     width: 81%;

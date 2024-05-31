@@ -21,5 +21,5 @@ public class StockDTO {
     private Colour colour;
     private StockStatus status;
     private Item item;
-    private ItemImage itemImage;
+    private String itemImage;
 }

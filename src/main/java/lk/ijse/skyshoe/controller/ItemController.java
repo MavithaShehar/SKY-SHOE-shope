@@ -11,6 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
 import java.util.List;
 
 @CrossOrigin
@@ -24,6 +25,8 @@ public class ItemController {
 
     @PostMapping("saveItem")
     public ResponseEntity saveItem(@RequestBody ItemDTO itemDTO) {
+
+        System.out.println("new item is :"+itemDTO);
 
         try {
             String req = itemService.save(itemDTO);
@@ -46,7 +49,6 @@ public class ItemController {
                 return new ResponseEntity(responseDTO, HttpStatus.BAD_REQUEST);
             }
         } catch (Exception ex) {
-            System.out.println(itemDTO);
             responseDTO.setCode(VarList.RSP_ERROR);
             responseDTO.setMessage(ex.getMessage());
             responseDTO.setContent("wrone Id");
@@ -92,6 +94,13 @@ public class ItemController {
     public ResponseEntity getAllItem() {
         try {
             List<ItemDTO> itemDTOList = itemService.getAll();
+
+//            System.out.println(itemDTOList.size());
+//            for (ItemDTO dto : itemDTOList) {
+//                System.out.println(dto);
+//            }
+
+            System.out.println("**************"+itemDTOList);
 
             responseDTO.setCode(VarList.RSP_SUCCESS);
             responseDTO.setMessage("SUCCESS");
@@ -157,5 +166,11 @@ public class ItemController {
         }
     }
 
+    @PostMapping("check")
+    public String deleteItem(){
+        return "i am good";
+    }
 
 }
+
+

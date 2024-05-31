@@ -20,7 +20,7 @@ public class InventoryDTO {
     private Colour colour;
     private StockStatus status;
     private Item item;
-    private ItemImage itemImage;
+    private String itemImage;
 
    // private String resupplyId;
     private String date;

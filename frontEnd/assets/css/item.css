@@ -56,13 +56,13 @@
 }
 
 #item-form #save-item-form-01{
-    width: 300px;
+    width: 220px;
     height: 190px;
-    background-color: #8de02c;
+    background-color: #dea41c;
     margin-right: 10px;
 }
 #item-form #save-item-form-02{
-    width: 200px;
+    width: 250px;
     height: 190px;
     background-color: #8de02c;
     margin-right: 10px;
@@ -100,6 +100,7 @@
     width: 99%;
     height: 200px;
     background-color: #f63a72;
+
 
 }
 

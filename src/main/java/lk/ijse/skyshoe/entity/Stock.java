@@ -16,7 +16,6 @@ import lombok.NoArgsConstructor;
 @Entity
 public class Stock {
     @Id
-
     @Enumerated(EnumType.STRING)
     private Size size;
     private int qty;
@@ -33,7 +32,7 @@ public class Stock {
 //    @Id
     private Item item;
 
-    @ManyToOne
-    private ItemImage itemImage;
+    @Column(columnDefinition = "LONGTEXT")
+    private String itemImage;
 
 }

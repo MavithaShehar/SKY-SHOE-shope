@@ -1,9 +1,12 @@
+import {supplier_db} from "../db/db.js";
+import {Supplier} from "../modeule/supplierModel.js";
+
 
 getAllSupplier();
 
-var supplier_db = [];
 
-function saveSupplier() {
+
+$('#supp-save-btn').on('click', () => {
     var supplierId = $('#supplierId').val();
     var supplierName = $('#supplierName').val();
     var supplierCategory = $('#supplierCategory').val();
@@ -13,6 +16,7 @@ function saveSupplier() {
     var addressNoOrName = $('#address').val();
     var addressCity = $('#city').val();
     var addressState = $('#state').val();
+    var itemCode = $('#item-code').val();
     var postalCode = $('#supp-postalCode').val();
     var country = $('#country').val();
 
@@ -30,6 +34,7 @@ function saveSupplier() {
             addressNoOrName: addressNoOrName,
             addressState: addressState,
             addressCity: addressCity,
+            itemCode:itemCode,
             postalCode: postalCode,
             country: country
         }),
@@ -42,7 +47,7 @@ function saveSupplier() {
             console.log(error);
         }
     });
-}
+})
 
 function getAllSupplier() {
     $.ajax({
@@ -52,9 +57,8 @@ function getAllSupplier() {
         success: function(data) {
             if (data.code === "00") {
                 $('#supplierTable').empty();
-                supplier_db = data.content;
 
-                for (let sup of supplier_db ) {
+                for (let sup of data.content ) {
                     // var userColor = accessRoleCheck(emp.accessRole); // Call accessRoleCheck function to get the userColor
 
                     var row = `<tr>
@@ -66,6 +70,22 @@ function getAllSupplier() {
                         
                     </tr>`;
                     $('#supplierTable').append(row);
+
+                    let newSupplier = new Supplier(
+
+                        sup.supplierId,
+                        sup.supplierName,
+                        sup.supplierCategory,
+                        sup.mobileNo,
+                        sup.landLineNo,
+                        sup.email,
+                        sup.addressNoOrName,
+                        sup.addressCity,
+                        sup.addressState,
+                        sup.postalCode,
+                        sup.country
+                    );
+                    supplier_db.push(newSupplier);
 
                 }
             }
@@ -123,7 +143,7 @@ function getSupplier(sup_id) {
     });
 }
 
-    function updateSupplier() {
+$('#supp-update-btn').on('click', () => {
         var supplierId = $('#supplierId').val();
         var supplierName = $('#supplierName').val();
         var supplierCategory = $('#supplierCategory').val();
@@ -162,7 +182,7 @@ function getSupplier(sup_id) {
                 console.log(error);
             }
         });
-    }
+    })
 
 // search supplier
 $('#formGroupExampleInput').on('input', () => {

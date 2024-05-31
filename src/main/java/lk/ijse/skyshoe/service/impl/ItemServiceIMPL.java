@@ -39,7 +39,24 @@ public class ItemServiceIMPL implements ItemService {
 //            itemDTO.setItemCode(newItemId);
 //            itemRepo.save(modelMapper.map(itemDTO, Item.class));
 //            return VarList.RSP_SUCCESS;
-            itemRepo.save(modelMapper.map(itemDTO, Item.class));
+
+
+            Item item = new Item(
+                    itemDTO.getItemCode(),
+                    itemDTO.getDescription(),
+                    itemDTO.getCategory(),
+                    itemDTO.getPriceBuy(),
+                    itemDTO.getPriceSell(),
+                    itemDTO.getItemImg(),
+                    itemDTO.getSuppliers(),
+                    null,
+                    null,
+                    null
+            );
+         //   System.out.println("itm entity : "+item);
+//        itemRepo.save(modelMapper.map(itemDTO,Item.class));
+            itemRepo.save(item);
+
             return VarList.RSP_SUCCESS;
         }
     }

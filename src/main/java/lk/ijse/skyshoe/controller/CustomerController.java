@@ -93,6 +93,7 @@ public class CustomerController {
     public ResponseEntity getAllCustomer() {
         try {
             List<CustomerDTO> customerDTOList = customerService.getAll();
+            System.out.println("============="+customerDTOList);
 
             responseDTO.setCode(VarList.RSP_SUCCESS);
             responseDTO.setMessage("SUCCESS");

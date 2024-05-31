@@ -1,16 +1,17 @@
 package lk.ijse.skyshoe.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lk.ijse.skyshoe.entity.enums.SupplierCategory;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+//@Data
+@Setter
+@Getter
 @Entity
 public class Suppliers {
     @Id
@@ -34,6 +35,7 @@ public class Suppliers {
     private String country;
 
     @OneToMany(mappedBy = "suppliers" , cascade = CascadeType.ALL , fetch = FetchType.LAZY)
+   @JsonBackReference
     private List<Item> itemList;
 
 }

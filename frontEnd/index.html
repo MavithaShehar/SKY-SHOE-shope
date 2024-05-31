@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="assets/css/supplier.css">
     <link rel="stylesheet" href="assets/css/item.css">
     <link rel="stylesheet" href="assets/css/sale.css">
+    <link rel="stylesheet" href="assets/css/resupply.css">
+    <link rel="stylesheet" href="assets/css/login.css">
 </head>
 <body>
 
@@ -445,8 +447,8 @@
             </div>
 
             <div id="cus-btn-area"class="d-grid gap-2 col-6 mx-auto">
-                <button type="button" class="btn btn-primary" onclick="saveCustomer()">Save</button>
-                <button type="button" class="btn btn-success" onclick="updateCustomer()">update</button>
+                <button type="button" id="customerSave" class="btn btn-primary" >Save</button>
+                <button type="button" id="customerUpdate" class="btn btn-success" >update</button>
             </div>
 
         </div>
@@ -596,7 +598,7 @@
                         <img src="assets/image/photo-camera.png" alt="" id="profile-pic">
                     </div>
                     <div style="display:inline-block;">
-                        <label for="empFileInput" id="emp-pic">update image
+                        <label for="empFileInput" id="emp-pic">upload image
                             <input type="file" accept="image/png, image/jpeg, image/jpg" id="empFileInput" style="display: none">
                         </label>
                     </div>
@@ -642,8 +644,8 @@
             </div>
 
             <div id="emp-btn-area"class="d-grid gap-2 col-6 mx-auto">
-                <button type="button" class="btn btn-primary" onclick="saveEmployee()">Save</button>
-                <button type="button" class="btn btn-success" onclick="updateEmployee()">update</button>
+                <button type="button" class="btn btn-primary" id="saveEmployee"  >Save</button>
+                <button type="button mo" class="btn btn-success" id="updateEmployee">update</button>
             </div>
 
         </div>
@@ -734,22 +736,31 @@
 
                 </div>
 
-                <!--  part 04-->
-                <div class="form-part">
+                <!--  part 05-->
+                <div class="form-part" id="form-part05">
 
                     <form action="">
-                        <div class="form-group">
+                        <div class="form-group" style="display: inline-block">
                             <label for="supp-postalCode">Postal Code</label>
                             <input type="text" class="form-control" id="supp-postalCode" placeholder="Enter Postal Code" style="width: 110px">
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" style="display: inline-block">
                             <label for="country">Country</label>
-                            <input type="text" class="form-control" id="country" placeholder="Enter Country" style="width: 150px">
+                            <input type="text" class="form-control" id="country" placeholder="Enter Country" style="width: 120px">
                         </div>
                     </form>
 
-                    <button type="submit" onclick="saveSupplier()" class="btn btn-primary" id="supp-save-btn" style="display: inline-block">Save</button>
-                    <button type="submit" onclick="updateSupplier()" class="btn btn-primary" id="supp-update-btn"style="display: inline-block">Update</button>
+                    </div>
+
+
+                <div>
+
+                    <div class="form-part" id="form-part06">
+
+                        <button type="submit"  class="btn btn-primary" id="supp-save-btn" >Save</button>
+                        <button type="submit"  class="btn btn-primary" id="supp-update-btn">Update</button>
+                    </div>
+
                 </div>
 
                 <div>
@@ -800,27 +811,35 @@
                         <form action="">
                             <div class="form-group">
                                 <label for="itemId">Item ID</label>
-                                <input type="text" class="form-control" id="itemId" placeholder="Enter Item ID" style="width: 200px;" >
+                                <input  class="form-control" id="itemId"  style="width: 200px;" aria-label="Default select example">
                             </div>
 
                             <div class="form-group">
                                 <label for="item_description">Item Description</label>
-                                <input type="text" class="form-control" id="item_description" placeholder="Enter Item Description">
+                                <input type="text" class="form-control" id="item_description" placeholder="Enter Item Description" style="width: 200px">
                             </div>
 
                         </form>
                     </div>
 
                     <div id="save-item-form-02">
+
+                        <div class="form-group">
+                            <label for="supp-id">Supplier ID</label>
+                            <select type="text" class="form-control" id="supp-id"  style="width: 200px;" >
+                                <option value="S001">S001</option>
+                            </select>
+                        </div>
+
                         <form action="">
-                            <div class="form-group">
+                            <div class="form-group" style="display: inline-block">
                                 <label for="price_buy">Price Buy</label>
-                                <input type="text" class="form-control" id="price_buy" placeholder="Enter Price Buy" style="width: 150px;" >
+                                <input type="text" class="form-control" id="price_buy" placeholder="Enter Price Buy" style="width: 110px;" >
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group" style="display: inline-block">
                                 <label for="price_sale">Price Sale</label>
-                                <input type="text" class="form-control" id="price_sale" placeholder="Enter Price Sale" style="width: 150px;" >
+                                <input type="text" class="form-control" id="price_sale" placeholder="Enter Price Sale" style="width: 110px;" >
                             </div>
                         </form>
                     </div>
@@ -848,7 +867,7 @@
                             <img src="assets/image/photo-camera.png" alt="" id="itm-profile-pic">
                         </div>
                         <div style="display:inline-block;">
-                            <label for="itmFileInput" id="itm-pic">update image
+                            <label for="itmFileInput" id="itm-pic">upload image
                                 <input type="file" accept="image/png, image/jpeg, image/jpg" id="itmFileInput" style="display: none">
                             </label>
                         </div>
@@ -857,8 +876,8 @@
 
                     <div id="itm-btn-optin">
                         <div class="d-grid gap-2 col-6 mx-auto">
-                            <button onclick="saveItem()" class="btn btn-primary" type="button">Save</button>
-                            <button onclick="updateItem()" class="btn btn-primary" type="button">Update</button>
+                            <button id="saveItem" class="btn btn-primary" type="button">Save</button>
+                            <button id="updateItem" class="btn btn-primary" type="button">Update</button>
                         </div>
                     </div>
 
@@ -875,9 +894,7 @@
                             <div class="form-group" style="width: 200px;">
                                 <label for="inve-itemId">Select Item ID</label>
                                 <select class="form-control" id="inve-itemId">
-                                    <option value="1">Category A</option>
-                                    <option value="2">Category B</option>
-                                    <option value="3">Category C</option>
+
                                 </select>
                             </div>
 
@@ -899,20 +916,37 @@
                             <div class="form-group">
                                 <label for="itm-color">color</label>
                                 <select class="form-control" id="itm-color">
-                                    <option value="1">Category A</option>
-                                    <option value="2">Category B</option>
-                                    <option value="3">Category C</option>
+                                    <option value="BLACK">BLACK </option>
+                                    <option value="WHITE">WHITE </option>
+                                    <option value="BROWN">BROWN </option>
+                                    <option value="GREY">GREY </option>
+                                    <option value="PINK">PINK </option>
+                                    <option value="RED">RED </option>
+                                    <option value="BLUE">BLUE </option>
+                                    <option value="GREEN">GREEN </option>
+                                    <option value="OTHER">OTHER </option>
                                 </select>
                             </div>
 
                             <div class="form-group" style="width: 100px;display: inline-block">
                                 <label for="itm-qty">Item Qty</label>
-                                <input type="number" class="form-control" id="itm-qty" placeholder="Qty"  readonly>
+                                <input type="number" class="form-control" id="itm-qty" placeholder="Qty"  >
                             </div>
 
                             <div class="form-group" style="width: 100px;display: inline-block">
                                 <label for="itm-size">Item Size</label>
-                                <input type="number" class="form-control" id="itm-size" placeholder="Size"  readonly>
+                                <select type="select" class="form-control" id="itm-size" placeholder="Size"  readonly>
+                                    <option value="SIZE_5">SIZE 5</option>
+                                    <option value="SIZE_6">SIZE 6</option>
+                                    <option value="SIZE_7">SIZE 7</option>
+                                    <option value="SIZE_8">SIZE 8</option>
+                                    <option value="SIZE_9">SIZE 9</option>
+                                    <option value="SIZE_10">SIZE 10</option>
+                                    <option value="SIZE_11">SIZE 11</option>
+                                    <option value="SMALL">SMALL</option>
+                                    <option value="MEDIUM">MEDIUM</option>
+                                    <option value="LARGE">LARGE</option>
+                                </select>
                             </div>
                         </form>
                     </div>
@@ -921,7 +955,7 @@
                         <form action="">
                             <div class="form-group" style="width: 140px;display: inline-block">
                                 <label for="itm-date">Date</label>
-                                <input type="date" class="form-control" id="itm-date" placeholder="date"  readonly>
+                                <input type="date" class="form-control" id="itm-date" placeholder="date"  >
                             </div>
                             <div class="form-group" style="width: 100px;display: inline-block">
                                 <label for="itm-total-value">Total Value</label>
@@ -929,7 +963,7 @@
                             </div>
                             <div class="form-group" style="width: 100px;display: inline-block">
                                 <label for="itm-total-qty">Total Qty</label>
-                                <input type="text" class="form-control" id="itm-total-Qty" placeholder="Total Value"  readonly>
+                                <input type="text" class="form-control" id="itm-total-Qty" placeholder="Total Value"  >
                             </div>
                             <div class="form-group" style="width: 140px;display: inline-block">
                                 <label for="inve-item-status">status</label>
@@ -958,8 +992,8 @@
 
                     <div id="inve-btn-optin">
                         <div class="d-grid gap-2 col-6 mx-auto">
-                            <button class="btn btn-primary" type="button">Save</button>
-                            <button class="btn btn-primary" type="button">Update</button>
+                            <button id="inveSaveBtn" class="btn btn-primary" type="button">Save</button>
+                            <button id="inveUpdateBtn" class="btn btn-primary" type="button">Update</button>
                         </div>
                     </div>
 
@@ -985,11 +1019,13 @@
                     <table class="table table-striped table-hover">
                         <thead >
                         <tr>
+                            <th scope="col">Item</th>
                             <th scope="col">Item Id</th>
                             <th scope="col">Description</th>
                             <th scope="col">category</th>
                             <th scope="col">priceBuy</th>
                             <th scope="col">priceSell</th>
+                            <th scope="col">Supplier Id</th>
                         </tr>
                         </thead>
                         <tbody id="itemTable">
@@ -1004,97 +1040,19 @@
                     <table class="table table-striped table-hover">
                         <thead >
                         <tr>
+                            <th scope="col">image</th>
                             <th scope="col">Item ID</th>
                             <th scope="col">Item Name</th>
                             <th scope="col">Category</th>
                             <th scope="col">Color</th>
                             <th scope="col">Size</th>
+                            <th scope="col">Qty</th>
                             <th scope="col">Buy Price</th>
                             <th scope="col">Sell Price</th>
                         </tr>
                         </thead>
-                        <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>Rs.100</td>
-                            <td>Rs.200</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>Rs.100</td>
-                            <td>Rs.200</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>Rs.100</td>
-                            <td>Rs.200</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>Rs.100</td>
-                            <td>Rs.200</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>Rs.100</td>
-                            <td>Rs.200</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>Rs.100</td>
-                            <td>Rs.200</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>Rs.100</td>
-                            <td>Rs.200</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>Rs.100</td>
-                            <td>Rs.200</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>Rs.100</td>
-                            <td>Rs.200</td>
-                        </tr>
+                        <tbody id="inventoryTable">
+
                         </tbody>
                     </table>
                 </div>
@@ -1262,23 +1220,83 @@
             </div>
         </div>
 
+    <!-- ============= [07] resupply service =============-->
+
+        <div id="resupply-section">
+
+            <div id="select-resup-tbl-option">
+                <input class="form-control" id="resup-select-date" placeholder="Search Date...." style="width: 300px">
+                <input class="form-control" id="resup-select-id" placeholder="Search Date...." style="width: 300px;margin-left: 20px">
+            </div>
+
+        <!--***********************************************************************************-->
+
+            <div id="resup-section-tbls">
+
+
+                <!------------------------------------------------------------------------>
+
+                <div id="resup-tbl">
+                    <table class="table table-striped table-hover">
+                        <thead >
+                        <tr>
+                            <th scope="col">Item ID</th>
+                            <th scope="col">Item Name</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Color</th>
+                            <th scope="col">Size</th>
+                            <th scope="col">Buy Price</th>
+                            <th scope="col">Sell Price</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
     </section>
 </main>
 
+<main id="loginSection">
+    <div class="login-container">
+        <h2>Login</h2>
+        <form action="/login" method="post">
+            <div class="input-group">
+                <label for="userEmail">Email:</label>
+                <input type="email" id="userEmail" name="email" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button id="loginBtn" type="submit">Login</button>
+        </form>
+    </div>
+</main>
 <!-- =========== Scripts =========  -->
 <script src="assets/lib/jquery.min.js"></script>
 
-<script src="controller/indexController.js"></script>
-<script src="controller/customerController.js"></script>
-<script src="controller/itemController.js"></script>
-<script src="controller/employeeController.js"></script>
-<script src="controller/supplierController.js"></script>
-
-<!-- ====== ionicons ======= -->
 <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
+
+<script src="controller/login.js" type="module"></script>
+<script src="controller/indexController.js" type="module"></script>
+<script src="controller/customerController.js" type="module"></script>
+<script src="controller/itemController.js" type="module"></script>
+<script src="controller/employeeController.js" type="module"></script>
+<script src="controller/supplierController.js" type="module"></script>
+
+<script src="controller/inventoryController.js" type="module"></script>
+
+
+
+<!-- ====== ionicons ======= -->
+
 </body>
-</html>0
+</html>
