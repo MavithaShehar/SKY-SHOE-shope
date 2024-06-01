@@ -106,17 +106,16 @@ $('#orderBtn').on('click', () => {
 });
 
 function createOrderItem() {
-    //let orderItemCatagory = $('#order-itm-catagory').val();
+    let orderItemCatagory = $('#order-itm-catagory').val();
     let orderItemPrice = parseFloat($('#order-itm-price').val());
     let orderQty = parseInt($('#order-qty').val());
-    // let orderItmSize = $('#order-itm-size').val();
-    // let orderItmColor = $('#order-itm-color').val();
-    // let orderItmPic = $('#order-itm-profile-pic').attr();
+    let orderItmSize = $('#order-itm-size').val();
+    let orderItmColor = $('#order-itm-color').val();
+    let orderItmPic = $('#order-itm-profile-pic').attr();
     let discount = parseFloat($('#discount').val());
 
-    console.log(orderQty);
-    console.log(discount);
-    console.log(orderItemPrice);
+
+
 
     calculateMount(discount, orderQty, orderItemPrice);
 }
