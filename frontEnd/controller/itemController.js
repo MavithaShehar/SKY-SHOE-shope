@@ -1,11 +1,52 @@
 import {Items} from "../modeule/itemModel.js";
-import {customer_db, items_db} from "../db/db.js";
-
+import {supplier_db,items_db} from "../db/db.js";
+import {Supplier} from "../modeule/supplierModel.js";
 
 getAllItems();
+loadSupplierId();
+getAllSupplier();
 
+// Ensure the DOM is fully loaded before calling the function
+$(document).ready(() => {
+    loadItemsId();
+    loadSupplierId();
+});
 
+function getAllSupplier() {
+    $.ajax({
+        method: "GET",
+        url: "http://localhost:8080/api/v1/suppliers/getAllSuppliers",
+        async: true,
+        success: function(data) {
+            if (data.code === "00") {
+                $('#supplierTable').empty();
+                for (let sup of data.content ) {
 
+                    let newSupplier = new Supplier(
+
+                        sup.supplierId,
+                        sup.supplierName,
+                        sup.supplierCategory,
+                        sup.mobileNo,
+                        sup.landLineNo,
+                        sup.email,
+                        sup.addressNoOrName,
+                        sup.addressCity,
+                        sup.addressState,
+                        sup.postalCode,
+                        sup.country
+                    );
+                    supplier_db.push(newSupplier);
+
+                }
+                loadSupplierId();
+            }
+        },
+        error: function(xhr, exception) {
+            alert("Error");
+        }
+    });
+}
 
 $("#select-itm-option>button").eq(0).on("click", () => {
 
@@ -37,22 +78,21 @@ $("#select-itm-tbl-option>button").eq(1).on("click", () => {
 let itm_profilePic = document.getElementById("itm-profile-pic");
 let itm_inputFile = document.getElementById("itmFileInput");
 
-itm_inputFile.onchange = function (){
-    itm_profilePic.src = URL.createObjectURL(itm_inputFile.files[0]);
+// itm_inputFile.onchange = function (){
+//     itm_profilePic.src = URL.createObjectURL(itm_inputFile.files[0]);
+//
+// }
 
-}
-
-var itemImg;
-itm_inputFile.addEventListener("change",e =>{
-    const file = itm_inputFile.files[0];
-    const reader = new FileReader();
-
-    reader.addEventListener("load", () =>{
-        itemImg = reader.result
-        console.log(reader.result);
-    });
-    reader.readAsDataURL(file);
-});
+// var itemImg;
+// itm_inputFile.addEventListener("change",e =>{
+//     const file = itm_inputFile.files[0];
+//     const reader = new FileReader();
+//
+//     reader.addEventListener("load", () =>{
+//         itemImg = reader.result
+//     });
+//     reader.readAsDataURL(file);
+// });
 
 
 //-------------------------inventory----------------------------------
@@ -76,28 +116,35 @@ itm_inputFile.addEventListener("change",e =>{
 
 
 // Function to load item IDs into the dropdown
-function loadItemsId() {
-
+export function loadItemsId() {
     const itemIdSelect = $("#inve-itemId");
-    const orderItemIdSelect = $("#order-select-itm-id");
-
-   itemIdSelect.empty(); // Clear existing options
-    orderItemIdSelect.empty(); // Clear existing options
-
+    itemIdSelect.empty(); // Clear existing options
     itemIdSelect.append(`<option selected hidden>Select Item</option>`); // Add default hidden option
-    orderItemIdSelect.append(`<option selected hidden>Select Item</option>`); // Add default hidden option
 
-    items_db.map((itm) => {
-      //  console.log("Item ID is", itm.itemCode);
-        itemIdSelect.append(`<option value="${itm.itemCode}">${itm.itemCode}</option>`); // Append item options
-        orderItemIdSelect.append(`<option value="${itm.itemCode}">${itm.itemCode}</option>`); // Append item options
+    // Use a Set to store unique item codes
+    const uniqueItemCodes = new Set();
+
+    items_db.forEach((itm) => {
+        uniqueItemCodes.add(itm.itemCode);
+    });
+
+    // Append each unique item code to the select element
+    uniqueItemCodes.forEach((itemCode) => {
+        itemIdSelect.append(`<option value="${itemCode}">${itemCode}</option>`);
     });
 }
 
-// Ensure the DOM is fully loaded before calling the function
-$(document).ready(() => {
-    // loadItemsId();
-});
+ function loadSupplierId() {
+    const SupplierSelect = $("#supp-id");
+     SupplierSelect.empty(); // Clear existing options
+     SupplierSelect.append('<option selected hidden>Select Supplier</option>'); // Add default hidden option
+
+         supplier_db.map((itm) => {
+        SupplierSelect.append(`<option value="${itm.supplierId}">${itm.supplierId}</option>`); // Append customer options
+    });
+}
+
+
 
 $('#saveItem').on('click', () => {
 
@@ -118,7 +165,7 @@ $('#saveItem').on('click', () => {
                 category: category,
                 priceBuy: priceBuy,
                 priceSell: priceSell,
-                itemImg:itemImg,
+                itemImg:"",
                 suppliers: {
                     supplierId: supplierId
                 }
@@ -135,7 +182,6 @@ $('#saveItem').on('click', () => {
         });
 
     })
-
 
 $('#updateItem').on('click', () => {
 
@@ -251,9 +297,6 @@ async function getAllItems() {
         throw error;
     }
 
-
-
-
     console.log(response)
     generateItems();
     console.log("content: " + d);
@@ -281,13 +324,13 @@ export async function getAllItems() {
                 });
 
                 var row = `<tr>
-                    <td class="col01">${img.prop('outerHTML')}</td>
-                    <td class="col02">${itm.itemCode}</td>
-                    <td class="col03">${itm.description}</td>
-                    <td class="col04">${itm.category}</td>
-                    <td class="col05">${itm.priceBuy}</td>
-                    <td class="col06">${itm.priceSell}</td>
-                    <td class="col07">${itm.suppliers.supplierId}</td>
+                 
+                    <td class="col01">${itm.itemCode}</td>
+                    <td class="col02">${itm.description}</td>
+                    <td class="col03">${itm.category}</td>
+                    <td class="col04">${itm.priceBuy}</td>
+                    <td class="col05">${itm.priceSell}</td>
+                    <td class="col06">${itm.suppliers.supplierId}</td>
                 </tr>`;
                 $('#itemTable').append(row);
 
@@ -303,7 +346,6 @@ export async function getAllItems() {
 
                 items_db.push(items);
                 loadItemsId();
-
             }
            // console.log(items_db)
              return data;  // Return the data if needed for further processing
@@ -316,8 +358,6 @@ export async function getAllItems() {
     }
 }
 
-
-
 // fill Supplier
 $('#itemTable').on('click', 'tr' , function() {
 
@@ -325,13 +365,11 @@ $('#itemTable').on('click', 'tr' , function() {
 
     let itm_id = items_db[index].itemCode;
 
-
     getItem(itm_id);
 
 });
 
 function getItem(itm_id) {
-
 
     $.ajax({
         method: "GET",
@@ -350,7 +388,6 @@ function getItem(itm_id) {
                 $('#price_sale').val(itm.priceSell);
                 $('#supplierCategory').val(itm.supplierCategory);
 
-
             }
         },
         error: function (xhr, exception) {
@@ -359,9 +396,7 @@ function getItem(itm_id) {
     });
 }
 
-
 ///////////////////////////////////////inventory/////////////////////////////////////////////////////////
-
 
 $('#inve-itemId').on('input', () => {
 

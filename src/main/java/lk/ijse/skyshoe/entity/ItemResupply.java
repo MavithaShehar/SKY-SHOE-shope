@@ -1,9 +1,6 @@
 package lk.ijse.skyshoe.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lk.ijse.skyshoe.entity.enums.Colour;
 import lk.ijse.skyshoe.entity.enums.Size;
 import lombok.AllArgsConstructor;
@@ -24,9 +21,11 @@ public class ItemResupply {
     @Id
     private Resupply resupply;
 
+    @Enumerated(EnumType.STRING)
     @Id
     private Size size;
 
+    @Enumerated(EnumType.STRING)
     @Id
     private Colour colour;
 

@@ -3,6 +3,7 @@ package lk.ijse.skyshoe.service.impl;
 import jakarta.transaction.Transactional;
 import lk.ijse.skyshoe.dto.ItemDTO;
 import lk.ijse.skyshoe.dto.StockDTO;
+import lk.ijse.skyshoe.dto.getStockDTO;
 import lk.ijse.skyshoe.entity.Customer;
 import lk.ijse.skyshoe.entity.Item;
 import lk.ijse.skyshoe.entity.Stock;
@@ -93,10 +94,42 @@ public class StockServiceIMPL implements StockService {
 
     @Override
     public List<StockDTO> getAll() {
-        List<Stock> stockList = stockRepo.findAll();
-        return modelMapper.map(stockList,new TypeToken<ArrayList<StockDTO>>(){}.getType());
-
+        return null;
     }
+
+    @Override
+    public List<getStockDTO> getAllData() {
+        List<Stock> stockList = stockRepo.findAll();
+        List<getStockDTO> stockDTOList = new ArrayList<>();
+
+        // Manually filter and map each Stock entity to StockDTO inside the for-each loop
+        for (Stock stock : stockList) {
+            // Retrieve the associated Item entity
+            Item item = stock.getItem();
+
+            // Map the Stock entity and Item entity fields to StockDTO
+            getStockDTO getStockDTO = new getStockDTO(
+                    stock.getSize(),
+                    stock.getQty(),
+                    stock.getMaxQty(),
+                    stock.getColour(),
+                    stock.getStatus(),
+                    item.getItemCode(), // Field from Item entity
+                    item.getDescription(), // Field from Item entity
+                    item.getCategory(), // Field from Item entity
+                    item.getPriceBuy(), // Field from Item entity
+                    item.getPriceSell(), // Field from Item entity
+                    stock.getItemImage() // Field from Stock entity
+            );
+
+            // Add the mapped StockDTO to the list
+            stockDTOList.add(getStockDTO);
+        }
+
+        return stockDTOList;
+    }
+
+
 
     @Override
     public String delete(String id) {

@@ -136,11 +136,16 @@ public class InventoryController {
     @GetMapping(value = "getAllInventory")
     public ResponseEntity getAllInventory() {
         try {
-            List<StockDTO> stockDTOList = stockService.getAll();
+            List<getStockDTO> getStockDTOS = stockService.getAllData();
+
+
+            System.out.println("///////////////////////////////////");
+
+
 
            responseDTO.setCode(VarList.RSP_SUCCESS);
             responseDTO.setMessage("SUCCESS");
-            responseDTO.setContent(stockDTOList);
+            responseDTO.setContent(getStockDTOS);
             return new ResponseEntity(responseDTO, HttpStatus.ACCEPTED);
 
         } catch (Exception ex) {

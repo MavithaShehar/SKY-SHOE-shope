@@ -1,3 +1,6 @@
+import {customer_db, items_db, supplier_db} from "../db/db.js";
+import { loadCustomerId} from "./salesController.js";
+
 
 function generateShortUUID() {
    let dt = new Date().getTime();
@@ -10,7 +13,22 @@ function generateShortUUID() {
 }
 
 
-
+function CustomerNullField() {
+   $('#customerId').val("");
+   $('#customerName').val("");
+   $('#gender').val("");
+   $('#joinDate').val("");
+   $('#loyalty').val("");
+   $('#totalPoints').val("");
+   $('#birthday').val("");
+   $('#contactNo').val("");
+   $('#email').val("");
+   $('#addressNoOrName').val("");
+   $('#addressLane').val("");
+   $('#addressCity').val("");
+   $('#addressState').val("");
+   $('#postalCode').val("");
+}
 
 
 function CustomerModel (customerId, customerName,gender,joinDate,level,totalPoints,birthday,contactNo,email,addressNoOrName) {
@@ -26,11 +44,26 @@ function CustomerModel (customerId, customerName,gender,joinDate,level,totalPoin
       this.addressNoOrName=addressNoOrName;
    }
 
-var customer_db = [];
 
-getAllCustomer()
+function validateEmail(email) {
+   const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+   return re.test(String(email).toLowerCase());
+}
 
-function saveCustomer() {
+function validatePhoneNumber(phone) {
+   const re = /^(07\d{8})$/; // Adjust the regex as per the phone number format
+   return re.test(String(phone));
+}
+
+function validateNotEmpty(value) {
+   return value.trim() !== '';
+}
+
+function validateDate(date) {
+   return !isNaN(Date.parse(date));
+}
+
+$('#customerSave').on('click', () => {
 
    var customerId= $('#customerId').val();
    var customerName= $('#customerName').val();
@@ -46,6 +79,23 @@ function saveCustomer() {
    var addressCity= $('#addressCity').val();
    var addressState= $('#addressState').val();
    var postalCode= $('#postalCode').val();
+
+   const errors = [];
+
+
+
+   if (!validateNotEmpty(customerName)) errors.push("Customer name is required.");
+   if (!validateNotEmpty(gender)) errors.push("Gender is required.");
+   if (!validateDate(joinDate)) errors.push("Join date is invalid.");
+   if (!validateDate(birthday)) errors.push("Birthday is invalid.");
+   if (!validatePhoneNumber(contactNo)) errors.push("Contact number is invalid. It should be in the format 07XXXXXXXX.");
+   if (!validateEmail(email)) errors.push("Email is invalid.");
+   if (!validateNotEmpty(addressNoOrName)) errors.push("Address is required.");
+
+   if (errors.length > 0) {
+      alert(errors.join("\n"));
+      return;
+   }
 
    $.ajax({
       method: "POST",
@@ -69,6 +119,8 @@ function saveCustomer() {
       }),
       success: function(data) {
          alert("save")
+         CustomerNullField();
+         loadCustomerId();
          getAllCustomer();
       },
       error: function(xhr, exception) {
@@ -76,9 +128,10 @@ function saveCustomer() {
       }
    });
 
-}
+});
 
-function updateCustomer() {
+$('#customerUpdate').on('click', () => {
+
 
    var customerId= $('#customerId').val();
    var customerName= $('#customerName').val();
@@ -94,6 +147,21 @@ function updateCustomer() {
    var addressCity= $('#addressCity').val();
    var addressState= $('#addressState').val();
    var postalCode= $('#postalCode').val();
+
+   const errors = [];
+
+   if (!validateNotEmpty(customerName)) errors.push("Customer name is required.");
+   if (!validateNotEmpty(gender)) errors.push("Gender is required.");
+   if (!validateDate(joinDate)) errors.push("Join date is invalid.");
+   if (!validateDate(birthday)) errors.push("Birthday is invalid.");
+   if (!validatePhoneNumber(contactNo)) errors.push("Contact number is invalid. It should be in the format 07XXXXXXXX.");
+   if (!validateEmail(email)) errors.push("Email is invalid.");
+   if (!validateNotEmpty(addressNoOrName)) errors.push("Address is required.");
+
+   if (errors.length > 0) {
+      alert(errors.join("\n"));
+      return;
+   }
 
    $.ajax({
       method: "PUT",
@@ -118,17 +186,16 @@ function updateCustomer() {
       success: function(data) {
          getAllCustomer();
          alert("save")
+         CustomerNullField();
       },
       error: function(xhr, exception) {
          alert("Error")
       }
    });
 
-}
+})
 
-function getAllCustomer(){
-
-   console.log(generateShortUUID());
+export function getAllCustomer(){
 
    $.ajax({
       method: "GET",
@@ -154,10 +221,10 @@ function getAllCustomer(){
                let customerId = cust.customerId;
                   let customerName = cust.customerName;
                   let gender = cust.gender;
-                  let joinDate = cust.joinDate;
+                  let joinDate = cust.joinDate.split('T')[0];
                   let level = cust.level;
                   let totalPoints = cust.totalPoints;
-                  let birthday = cust.birthday;
+                  let birthday = cust.birthday.split('T')[0];;
                   let contactNo = cust.contactNo;
                   let email = cust.email;
                   let addressNoOrName = cust.addressNoOrName;
@@ -175,10 +242,11 @@ function getAllCustomer(){
                             <td class="col10" >${addressNoOrName}</td>
                              <td class="selection"><button type="button"  class="btn btn-danger">X</button></i></td>
                                                         </tr>`;
-
                $('#customerTable').append(row);
 
-               let customer = new CustomerModel(customerId,
+               let customer = new CustomerModel(
+
+                   customerId,
                customerName,
                gender,
                joinDate,
@@ -189,14 +257,17 @@ function getAllCustomer(){
                email,
                addressNoOrName);
                customer_db.push(customer);
-
             }
          }
+         loadCustomerId();
+
       },
       error: function(xhr, exception) {
          alert("Error")
       }
    });
+
+
 
 }
 
@@ -226,7 +297,9 @@ function getCustomer(customer_id){
             $('#customerId').val(cust.customerId);
             $('#customerName').val(cust.customerName);
             $('#gender').val(cust.gender.toUpperCase()); // Assign the uppercase value
-            $('#joinDate').val(cust.joinDate);
+            const formattedDate = cust.joinDate.split('T')[0];
+            console.log("date is "+formattedDate );
+            $('#joinDate').val(formattedDate);
             $('#loyalty').val(cust.level.toUpperCase()); // Assign the uppercase value
             $('#totalPoints').val(cust.totalPoints !== undefined ? cust.totalPoints : '');
             $('#birthday').val(cust.birthday);
@@ -272,10 +345,6 @@ $('#customerTable').on('click', '.selection button', function () {
 // serch customer
 $('#customer-search').on('input', () => {
    let search_term = $('#customer-search').val();
-
-   console.log(search_term);
-
-   console.log(search_term)
 
    let results = customer_db.filter((item) =>
 
@@ -456,4 +525,9 @@ $('#cust-date-piker').on('input', () => {
    });
 
 });
+
+export function testingActions() {
+   console.log("Hello");
+
+}
 

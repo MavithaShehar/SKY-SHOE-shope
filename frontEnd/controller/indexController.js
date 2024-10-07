@@ -8,7 +8,9 @@ function showSection(sectionToShow) {
         '#employee-form',
         '#supplier-save-section',
         '#about-item-section',
-        '#sale-section'
+        '#sale-section',
+        '#resupply-section',
+        '#sale-history-section'
     ];
 
     sections.forEach(section => {
@@ -46,3 +48,8 @@ $('#item-nav').on('click', () => showSection('#about-item-section'));
 
 // Sale navigation click handler
 $('#sale-nav').on('click', () => showSection('#sale-section'));
+
+// resupply navigation click handler
+$('#resupply-nav').on('click', () => showSection('#resupply-section'));
+
+$('#sale-his-nav').on('click', () => showSection('#sale-history-section'));

@@ -83,6 +83,8 @@ public class ItemServiceIMPL implements ItemService {
 
     @Override
     public List<ItemDTO> getAll() {
+
+
         List<Item> itemList = itemRepo.findAll();
         return modelMapper.map(itemList,new TypeToken<ArrayList<ItemDTO>>(){}.getType());
 

@@ -1,5 +1,5 @@
 #employee-page{
-    background-color: #8de02c;
+    /*background-color: #8de02c;*/
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -8,7 +8,7 @@
 
 
 #emp-select-option{
-    background-color: #ff253a;
+    /*background-color: #ff253a;*/
     width: 80%;
     height: 80px;
     margin-left: 20px;
@@ -18,7 +18,7 @@
 }
 
 .emp-select{
-    background-color: #15cce3;
+    /*background-color: #15cce3;*/
     width: 600px;
     height: 50px;
     margin: 10px;
@@ -38,7 +38,7 @@
 }
 
 #emp-btn-option{
-    background-color: #ff253a;
+    /*background-color: #ff253a;*/
     width: 80%;
     height: 78px;
     margin-left: 20px;
@@ -64,7 +64,7 @@
 #emp-tbl{
     width: 98%;
     height: 520px;
-    background-color: #0F91DA;
+    /*background-color: #0F91DA;*/
     margin-left: 20px;
     overflow-y: scroll;
 
@@ -74,7 +74,7 @@
 #employee-form{
     position: relative;
     display: flex;
-    background-color: #e9b10a;
+    /*background-color: #e9b10a;*/
     width: 100vw;
     height: 100vh;
 
@@ -82,7 +82,7 @@
 .form-feel{
     width: 36%;
     height: 80%;
-    background: #ff253a;
+    /*background: #ff253a;*/
     margin: 20px;
     margin-top: 75px;
 
@@ -101,7 +101,7 @@
     height: 60px;
     left: 400px;
     bottom: 20px;
-    background: #2fd4e8;
+    /*background: #2fd4e8;*/
 }
 #emp-btn-area .btn-primary {
     position: absolute;
@@ -124,9 +124,8 @@
 .emp-card{
     width: 140px;
     height: 140px;
-    background: #ddf5f5;
     text-align: center;
-    color: #333;
+    /*color: #333;*/
 }
 
 .card img {
@@ -140,17 +139,15 @@
     display: block;
     /* width: 200px; */
     background: #d6f662;
-    color: #fff;
+    color: #000000;
     padding: 12px;
     /* margin: 10px auto; */
     border-radius: 5px;
-    border: 2px solid #0F91DA;
+    /*border: 2px solid #0F91DA;*/
     cursor: pointer;
 }
 #profile-pic {
     width: 140px;
     height: 140px;
-    border-radius: 50%;
-    /* margin-top: 40px; */
-    /* margin-bottom: 30px; */
+
 }

@@ -1,10 +1,7 @@
 import {supplier_db} from "../db/db.js";
 import {Supplier} from "../modeule/supplierModel.js";
 
-
 getAllSupplier();
-
-
 
 $('#supp-save-btn').on('click', () => {
     var supplierId = $('#supplierId').val();
@@ -63,7 +60,7 @@ function getAllSupplier() {
 
                     var row = `<tr>
                         <td class="col01">${sup.supplierName}</td>
-                        <td class="col02">${sup.contactNo}</td>
+                        <td class="col02">${sup.mobileNo}</td>
                         <td class="col03">${sup.email}</td>
                         <td class="col04">${sup.supplierCategory}</td>
                         <td class="col05">${sup.country}</td>
@@ -207,7 +204,7 @@ $('#formGroupExampleInput').on('input', () => {
 
 
         let tbl_row = `<tr>
-                             <td class="col01">${item.supplierName}</td>
+                        <td class="col01">${item.supplierName}</td>
                         <td class="col02">${item.contactNo}</td>
                         <td class="col03">${item.email}</td>
                         <td class="col04">${item.supplierCategory}</td>

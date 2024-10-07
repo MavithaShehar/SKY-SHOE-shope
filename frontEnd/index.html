@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title> sky shoe</title>
@@ -20,7 +20,9 @@
     <link rel="stylesheet" href="assets/css/item.css">
     <link rel="stylesheet" href="assets/css/sale.css">
     <link rel="stylesheet" href="assets/css/resupply.css">
+    <link rel="stylesheet" href="assets/css/saleHistory.css">
     <link rel="stylesheet" href="assets/css/login.css">
+
 </head>
 <body>
 
@@ -31,7 +33,7 @@
     <section class="navigation">
         <ul>
             <li>
-                <a href="#" >
+                <a href="#" id="logout-btn" >
                         <span class="icon">
                             <img id="logo" src="assets/image/logo-removebg-preview.png" alt="">
                         </span>
@@ -100,6 +102,18 @@
                     <span class="title">Resupply</span>
                 </a>
             </li>
+
+            <li>
+                <a href="#" id="sale-his-nav">
+                        <span class="icon">
+                            <ion-icon name="list-circle-outline"></ion-icon>
+                        </span>
+                    <span class="title">Sale History</span>
+                </a>
+            </li>
+
+            <hr>
+
             <li>
                 <a href="#" id="user-nav">
                         <span class="icon">
@@ -117,6 +131,8 @@
                     <span class="title">Sign Out</span>
                 </a>
             </li>
+
+
         </ul>
     </section>
 
@@ -130,16 +146,16 @@
                 <ion-icon name="menu-outline"></ion-icon>
             </div>
 
-            <div class="search">
+            <div class="search" style="display: none">
                 <label>
                     <input type="text" placeholder="Search here">
                     <ion-icon name="search-outline"></ion-icon>
                 </label>
             </div>
 
-            <div id="users">
-                <span id="syst-user01">shehar</span><br>
-                <span id="syst-user02">Admin</span>
+            <div id="users" style="margin-left: 730px;">
+                <span id="syst-user01"></span><br>
+                <span id="syst-user02"></span>
             </div>
             <div class="user">
                 <img src="assets/image/customer01.jpg" alt="">
@@ -197,105 +213,6 @@
            </div>
        </div>
 
-       <!-- ================ Order Details List ================= -->
-       <div class="details">
-           <div class="recentOrders">
-               <div class="cardHeader">
-                   <h2>Recent Orders</h2>
-                   <a href="#" class="btn">View All</a>
-               </div>
-
-               <table>
-                   <thead>
-                   <tr>
-                       <td>Name</td>
-                       <td>Price</td>
-                       <td>Payment</td>
-                       <td>Status</td>
-                   </tr>
-                   </thead>
-
-                   <tbody>
-                   <tr>
-                       <td>Star Refrigerator</td>
-                       <td>$1200</td>
-                       <td>Paid</td>
-                       <td><span class="status delivered">Delivered</span></td>
-                   </tr>
-
-                   <tr>
-                       <td>Dell Laptop</td>
-                       <td>$110</td>
-                       <td>Due</td>
-                       <td><span class="status pending">Pending</span></td>
-                   </tr>
-
-                   <tr>
-                       <td>Apple Watch</td>
-                       <td>$1200</td>
-                       <td>Paid</td>
-                       <td><span class="status return">Return</span></td>
-                   </tr>
-
-                   <tr>
-                       <td>Addidas Shoes</td>
-                       <td>$620</td>
-                       <td>Due</td>
-                       <td><span class="status inProgress">In Progress</span></td>
-                   </tr>
-
-                   </tbody>
-               </table>
-           </div>
-
-           <!-- ================= New Customers ================ -->
-           <div class="recentCustomers">
-               <div class="cardHeader">
-                   <h2>Recent Customers</h2>
-               </div>
-
-               <table>
-                   <tr>
-                       <td width="60px">
-                           <div class="imgBx"><img src="assets/image/customer02.jpg" alt=""></div>
-                       </td>
-                       <td>
-                           <h4>David <br> <span>Italy</span></h4>
-                       </td>
-                   </tr>
-
-                   <tr>
-                       <td width="60px">
-                           <div class="imgBx"><img src="assets/image/customer01.jpg" alt=""></div>
-                       </td>
-                       <td>
-                           <h4>Amit <br> <span>India</span></h4>
-                       </td>
-                   </tr>
-
-                   <tr>
-                       <td width="60px">
-                           <div class="imgBx"><img src="assets/image/customer02.jpg" alt=""></div>
-                       </td>
-                       <td>
-                           <h4>David <br> <span>Italy</span></h4>
-                       </td>
-                   </tr>
-
-                   <tr>
-                       <td width="60px">
-                           <div class="imgBx"><img src="assets/image/customer01.jpg" alt=""></div>
-                       </td>
-                       <td>
-                           <h4>Amit <br> <span>India</span></h4>
-                       </td>
-                   </tr>
-
-
-                   </tr>
-               </table>
-           </div>
-       </div>
 
    </div>
 
@@ -317,7 +234,7 @@
 
                 <div class="cust-select" id="cust-select">
                     <div class="form-group">
-                        <input id="cust-date-piker" type="text" class="form-control" >
+                        <input id="cust-date-piker" type="text" class="form-control" placeholder="Enter Search Date" >
                     </div>
                 </div>
 
@@ -342,8 +259,8 @@
             <!------------ customer table ------------->
 
             <div id="cust-tbl">
-                <table class="table table-bordered">
-                    <thead>
+                <table class="table">
+                    <thead class="table-success">
                     <tr>
                         <th scope="col">customerId</th>
                         <th scope="col">customerName</th>
@@ -354,12 +271,11 @@
                         <th scope="col">birthday</th>
                         <th scope="col">contactNo</th>
                         <th scope="col">email</th>
-                        <th scope="col">address No <br> Or Name</th>
+                        <th scope="col">address No Or Name</th>
                         <th scope="col">delete</th>
                     </tr>
                     </thead>
                     <tbody class="table-group-divider" id="customerTable">
-
                     </tbody>
                 </table>
             </div>
@@ -494,7 +410,7 @@
 
             <div id="emp-tbl">
                 <table class="table">
-                    <thead>
+                    <thead class="table-success">
                     <tr>
                         <th scope="col">pic</th>
                         <th scope="col">employeeId</th>
@@ -827,7 +743,7 @@
                         <div class="form-group">
                             <label for="supp-id">Supplier ID</label>
                             <select type="text" class="form-control" id="supp-id"  style="width: 200px;" >
-                                <option value="S001">S001</option>
+
                             </select>
                         </div>
 
@@ -861,18 +777,18 @@
                         </form>
                     </div>
 
-                    <div id="itm-img">
+<!--                    <div id="itm-img">-->
 
-                        <div class="itm-card">
-                            <img src="assets/image/photo-camera.png" alt="" id="itm-profile-pic">
-                        </div>
-                        <div style="display:inline-block;">
-                            <label for="itmFileInput" id="itm-pic">upload image
-                                <input type="file" accept="image/png, image/jpeg, image/jpg" id="itmFileInput" style="display: none">
-                            </label>
-                        </div>
+<!--                        <div class="itm-card">-->
+<!--                            <img src="assets/image/photo-camera.png" alt="" id="itm-profile-pic">-->
+<!--                        </div>-->
+<!--                        <div style="display:inline-block;">-->
+<!--                            <label for="itmFileInput" id="itm-pic">upload image-->
+<!--                                <input type="file" accept="image/png, image/jpeg, image/jpg" id="itmFileInput" style="display: none">-->
+<!--                            </label>-->
+<!--                        </div>-->
 
-                    </div>
+<!--                    </div>-->
 
                     <div id="itm-btn-optin">
                         <div class="d-grid gap-2 col-6 mx-auto">
@@ -1019,7 +935,7 @@
                     <table class="table table-striped table-hover">
                         <thead >
                         <tr>
-                            <th scope="col">Item</th>
+                        <!-- <th scope="col">Item</th>-->
                             <th scope="col">Item Id</th>
                             <th scope="col">Description</th>
                             <th scope="col">category</th>
@@ -1095,6 +1011,12 @@
 
                     <div id="order-itm-data01">
 
+                        <div class="mb-3 feeld">
+                            <label for="order-select-itm-id" class="form-label"> Item Id</label>
+                            <select type="select" class="form-control" id="order-select-itm-id" placeholder="Select Item" style="width: 200px;"></select>
+
+                        </div>
+
                          <div id="order-itm-pic">
 
                              <div class="itm-card">
@@ -1108,49 +1030,80 @@
 
                          </div>
 
+                    </div>
 
+                    <div id="order-itm-data06" >
+
+                        <div class="mb-3 feeld" style="display: inline-block">
+                            <label for="order-itm-size" class="form-label">Size</label>
+                            <select type="text" class="form-control" id="order-itm-size" placeholder="Select Item" style="width: 80px;margin-left: 5px" style="width: 200px;">
+                                <option value="Select_Item">Select Item</option>
+                                <option value="SIZE_5">SIZE 5</option>
+                                <option value="SIZE_6">SIZE 6</option>
+                                <option value="SIZE_7">SIZE 7</option>
+                                <option value="SIZE_8">SIZE 8</option>
+                                <option value="SIZE_9">SIZE 9</option>
+                                <option value="SIZE_10">SIZE 10</option>
+                                <option value="SIZE_11">SIZE 11</option>
+                                <option value="SMALL">SMALL</option>
+                                <option value="MEDIUM">MEDIUM</option>
+                                <option value="LARGE">LARGE</option>
+                            </select>
+                        </div>
+                        <div class="mb-3 feeld" style="display: inline-block">
+                            <label for="order-itm-color" class="form-label">Color</label>
+                            <select type="text" class="form-control" id="order-itm-color" placeholder="Color" style="width: 100px;margin-left: 5px">
+                                <option value="Color">Color </option>
+                                <option value="BLACK">BLACK </option>
+                                <option value="WHITE">WHITE </option>
+                                <option value="BROWN">BROWN </option>
+                                <option value="GREY">GREY </option>
+                                <option value="PINK">PINK </option>
+                                <option value="RED">RED </option>
+                                <option value="BLUE">BLUE </option>
+                                <option value="GREEN">GREEN </option>
+                                <option value="OTHER">OTHER </option>
+
+                            </select>
+                        </div>
+
+                        <div class="mb-3 feeld" style="left: 0;right: 0;margin: auto;display: table;margin-top: 50px">
+                            <button  id="itm-Search-Btn" type="button" class="btn btn-outline-success"><img src="assets/image/magnifying-glass.png"
+                                                                                                            alt=""></button>
+                        </div>
+
+                    </div>
+
+                    <div id="order-itm-data02">
                         <div class="mb-3 feeld">
-                            <label for="order-select-itm-id" class="form-label"> Item Id</label>
-                            <select type="text" class="form-control" id="order-select-itm-id" placeholder="Select Item" style="width: 200px;"></select>
+                            <label for="order-itm-catagory" class="form-label">Catagory</label>
+                            <input type="text" class="form-control" id="order-itm-catagory" placeholder="Select Item" style="width: 150px;">
+                        </div>
+                        <div class="mb-3 feeld">
+                            <label for="order-itm-price" class="form-label">Price</label>
+                            <input type="text" class="form-control" id="order-itm-price" placeholder="Select Item" style="width: 150px;">
+                        </div>
+                        <div class="mb-3 feeld">
+                            <label for="order-itm-available-qty" class="form-label">Available Qty</label>
+                            <input type="text" class="form-control" id="order-itm-available-qty" placeholder="Select Item" style="width: 150px;">
                         </div>
                     </div>
 
-                <div id="order-itm-data02">
-                    <div class="mb-3 feeld">
-                        <label for="order-itm-catagory" class="form-label">Catagory</label>
-                        <input type="text" class="form-control" id="order-itm-catagory" placeholder="Select Item" style="width: 200px;">
+                    <div id="order-itm-data03">
+                        <div class="mb-3 feeld" style="margin-left: 5px">
+                            <label for="order-qty" class="form-label">Order Qty</label>
+                            <input type="text" class="form-control" id="order-qty" placeholder="Select Item" style="width: 80px;margin-left: 5px">
+                        </div>
+                        <div class="mb-3 feeld" style="margin-left: 5px">
+                            <label for="order-qty" class="form-label">Discount</label>
+                            <input type="text" class="form-control" id="discount" placeholder="%" style="width: 80px;">
+                        </div>
+                        <div class="mb-3 feeld" style="left: 0;right: 0;margin: auto;padding-bottom: 46px">
+                            <button  id="orderBtn" type="button" class="btn btn-outline-success">Order</button>
+                        </div>
                     </div>
-                    <div class="mb-3 feeld">
-                        <label for="order-itm-price" class="form-label">Price</label>
-                        <input type="text" class="form-control" id="order-itm-price" placeholder="Select Item" style="width: 200px;">
-                    </div>
-                    <div class="mb-3 feeld">
-                        <label for="order-itm-available-qty" class="form-label">Available Qty</label>
-                        <input type="text" class="form-control" id="order-itm-available-qty" placeholder="Select Item" style="width: 200px;">
-                    </div>
-                </div>
 
-                <div id="order-itm-data03">
-                    <div class="mb-3 feeld">
-                        <label for="order-itm-size" class="form-label">Size</label>
-                        <input type="text" class="form-control" id="order-itm-size" placeholder="" style="width: 80px;margin-left: 5px">
-                    </div>
-                    <div class="mb-3 feeld">
-                        <label for="order-itm-color" class="form-label">Color</label>
-                        <input type="text" class="form-control" id="order-itm-color" placeholder="" style="width: 100px;margin-left: 5px">
-                    </div>
-                    <div class="mb-3 feeld" style="margin-left: 5px">
-                        <label for="order-qty" class="form-label">Order Qty</label>
-                        <input type="text" class="form-control" id="order-qty" placeholder="Select Item" style="width: 80px;margin-left: 5px">
-                    </div>
-                    <div class="mb-3 feeld" style="margin-left: 5px">
-                        <label for="order-qty" class="form-label">Discount</label>
-                        <input type="text" class="form-control" id="discount" placeholder="%" style="width: 80px;">
-                    </div>
-                    <div class="mb-3 feeld" style="left: 0;right: 0;margin: auto">
-                        <button  id="orderBtn" type="button" class="btn btn-outline-success">Order</button>
-                    </div>
-                </div>
+
 
                 <div id="order-itm-data04">
                     <div class="total-wrapper">
@@ -1158,7 +1111,6 @@
                         <h4 class="sub-total-value" id="total-value">  </h4>
                         <h4 class="discount" >Price :</h4>
                         <h4 class="discount-value" id="price"> </h4>
-                        <div class="line">-------------------------</div>
                         <h4 class="total-amount" style="font-size: 20px">Total Amount</h4>
                         <h4 class="total-amount-value" id="sub-total-value" style="font-size: 25px"> </h4>
                     </div>
@@ -1171,10 +1123,10 @@
                     </div>
 
                     <div id="select-pemant-option">
-                        <button type="button" class="pament-img" >
+                        <button type="button" class="pament-img" id="monyPayment" >
                             <img src="assets/image/money.png" alt="" style="width: 40px;height: 40px">
                         </button>
-                        <button class="pament-img">
+                        <button class="pament-img" id="cardPayment">
                             <img src="assets/image/credit-card.png" alt="" style="width: 40px;height: 40px">
                         </button>
                     </div>
@@ -1194,37 +1146,24 @@
                 <div class="row">
 
                     <div class="col table_card">
-                        <table class="table table-bordered">
+
+                        <table class="table caption-top">
                             <thead>
-                            <th>Items Pic</th>
-                            <th>Items ID</th>
-                            <th>Name</th>
-                            <th>Order Qty</th>
-                            <th>Price</th>
-                            <th>Total</th>
-                            <th>Selection</th>
+                            <th class="col">Items Pic</th>
+                            <th class="col">Items ID</th>
+                            <th class="col">Name</th>
+                            <th class="col">Category</th>
+                            <th class="col">Order Qty</th>
+                            <th class="col">Color</th>
+                            <th class="col">Size</th>
+                            <th class="col">Price</th>
+                            <th class="col">Total</th>
+                            <th class="col">Discount</th>
+                            <th class="col">Action</th>
                             </thead>
 
-                            <tbody id="order-tbl-body">
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td colspan="2">Larry the Bird</td>
-                                <td>@twitter</td>
-                            </tr>
+                            <tbody  id="order-tbl-body">
+
                             </tbody>
 
                         </table>
@@ -1270,7 +1209,77 @@
 
         </div>
 
+   <!-- ============= [08] Sale History =============-->
+
+        <div id="sale-history-section">
+
+
+            <div class="row" style="padding-left: 10px">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                    <div class="d-block p-2 custom-height" style="background-color: white; width: 80vw">
+                        <form class="d-flex" role="search" style="width: 400px;padding-left: 50px">
+                            <input class="form-control me-2" type="search" placeholder="Search Date" aria-label="Search" id="saleDate">
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" style="margin: 10px;width: 81vw;height: 83vh">
+
+                <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 col-xxl-8">
+                    <div class="row" style="background-color: #ffffff;width: 100%;height: 83vh">
+
+                        <div>
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th scope="col">Order ID</th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">CAD/CASH</th>
+                                    <th scope="col">Net Price</th>
+                                    <th scope="col">Customer  ID</th>
+                                    <th scope="col">Employee  ID</th>
+                                    <th scope="col">Sale Items</th>
+                                </tr>
+                                </thead>
+                                <tbody  id="saleHistoryTable">
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
+                    <div class="row" style="background-color: #ffffff;width: 100%;height: 83vh">
+
+                        <div>
+                            <table class="table ">
+                                <thead>
+                                <tr>
+                                    <th style="position: relative; text-align: center;" scope="col">Item</th>
+                                    <th scope="col">Item Info</th>
+                                </tr>
+                                </thead>
+                                <tbody id="saleItemInfo_Table">
+
+                                </tbody>
+                            </table>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
     </section>
+
+
 </main>
 
 <main id="loginSection">
@@ -1307,6 +1316,8 @@
 <script src="controller/resupplyController.js" type="module"></script>
 <script src="controller/inventoryController.js" type="module"></script>
 <script src="controller/salesController.js" type="module"></script>
+<script src="controller/logOutController.js" type="module"></script>
+<script src="controller/saleHistoryController.js" type="module"></script>
 
 <!-- ====== ionicons ======= -->
 

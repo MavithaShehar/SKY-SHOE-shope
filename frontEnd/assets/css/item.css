@@ -6,7 +6,6 @@
 }
 
 #about-item-section{
-    background-color: purple;
     width: 100vw;
     height: 100vh;
     position: relative;
@@ -41,7 +40,7 @@
     position: relative;
     width: calc(100% - 335px);
     height: 206px;
-    background-color: #eaefd9;
+
     padding: 4px;
 }
 
@@ -50,7 +49,7 @@
     display: flex;
     width: 99%;
     height: 200px;
-    background-color: #0F91DA;
+    background-color: #ddf5f5;
 
 
 }
@@ -58,13 +57,13 @@
 #item-form #save-item-form-01{
     width: 220px;
     height: 190px;
-    background-color: #dea41c;
+    /*background-color: #dea41c;*/
     margin-right: 10px;
 }
 #item-form #save-item-form-02{
     width: 250px;
     height: 190px;
-    background-color: #8de02c;
+    /*background-color: #8de02c;*/
     margin-right: 10px;
     padding: 2px;
 
@@ -72,7 +71,7 @@
 #item-form #save-item-form-03{
     width: 300px;
     height: 190px;
-    background-color: #8de02c;
+    /*background-color: #8de02c;*/
     margin-right: 10px;
     padding: 2px;
 }
@@ -81,7 +80,7 @@
     width: 170px;
     height: 150px;
     margin-right: 40px;
-    background-color: #8de02c;
+    /*background-color: #8de02c;*/
     padding: 2px;
 }
 #item-form #itm-btn-optin{
@@ -89,7 +88,7 @@
     padding: 40px;
     width: 250px;
     height: 150px;
-    background-color: #8de02c;
+    /*background-color: #8de02c;*/
     margin-top: 40px;
 }
 
@@ -99,7 +98,7 @@
     display: flex;
     width: 99%;
     height: 200px;
-    background-color: #f63a72;
+    background-color: #ddf5f5;
 
 
 }
@@ -108,14 +107,14 @@
 #item-form #save-inve-form-01{
     width: 300px;
     height: 190px;
-    background-color: #8de02c;
+    /*background-color: #8de02c;*/
     margin-right: 10px;
     padding: 2px;
 }
 #item-form #save-inve-form-02{
     width: 250px;
     height: 190px;
-    background-color: #8de02c;
+    /*background-color: #8de02c;*/
     margin-right: 10px;
     padding: 2px;
 
@@ -123,7 +122,7 @@
 #item-form #save-inve-form-03{
     width: 300px;
     height: 190px;
-    background-color: #8de02c;
+    /*background-color: #8de02c;*/
     margin-right: 10px;
     padding: 2px;
 }
@@ -132,7 +131,7 @@
     width: 170px;
     height: 150px;
     margin-right: 40px;
-    background-color: #8de02c;
+    /*background-color: #8de02c;*/
     padding: 2px;
 }
 #item-form #inve-btn-optin{
@@ -140,7 +139,7 @@
     padding: 40px;
     width: 250px;
     height: 150px;
-    background-color: #8de02c;
+    /*background-color: #8de02c;*/
     margin-top: 40px;
 }
 
@@ -161,6 +160,7 @@
 }
 #select-itm-tbl-option .btn-outline-primary{
     margin-left: 10px;
+    padding-bottom: 28px;
 }
 #select-itm-tbl-option .btn-outline-primary:active{
     background-color: #2fd4e8;
@@ -174,14 +174,14 @@
     position: relative;
     width: calc(100% - 335px);
     height: 430px;
-    background-color: #eaefd9;
+    /*background-color: #eaefd9;*/
     padding: 5px;
 }
 #item-section-tbls #items-tbl{
     position: absolute;
     width: 99%;
     height: 98%;
-    background-color: #bbfc76;
+    /*background-color: #bbfc76;*/
     padding: 10px;
     overflow-y: scroll;
 
@@ -191,7 +191,6 @@
     position: absolute;
     width: 99%;
     height: 98%;
-    background-color: #e3fc76;
     padding: 10px;
     display: none;
     overflow-y: scroll;
@@ -203,17 +202,15 @@
 .itm-card{
     width: 140px;
     height: 140px;
-    background: #ddf5f5;
+
     text-align: center;
-    color: #333;
+    /*color: #333;*/
 }
 
 .itm-card img {
     width: 140px;
     height: 140px;
-    border-radius: 50%;
-    /* margin-top: 40px; */
-    /* margin-bottom: 30px; */
+
 }
 #itm-pic,#inve-pic{
     margin-top: 5px;
@@ -225,6 +222,6 @@
     padding: 12px;
     /* margin: 10px auto; */
     border-radius: 5px;
-    border: 2px solid #0F91DA;
+    /*border: 2px solid #0F91DA;*/
     cursor: pointer;
 }

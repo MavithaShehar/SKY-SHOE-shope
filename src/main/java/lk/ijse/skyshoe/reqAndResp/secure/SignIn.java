@@ -1,15 +1,16 @@
-package lk.ijse.skyshoe.reqAndresp.secure;
+package lk.ijse.skyshoe.reqAndResp.secure;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@NoArgsConstructor
-@AllArgsConstructor
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Builder
 public class SignIn {
     private String email;
     private String password;
+
 }

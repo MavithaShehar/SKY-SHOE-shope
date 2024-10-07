@@ -6,7 +6,6 @@
 }
 
 #supplier-save-section{
-    background-color: black;
     width: 100vw;
     height: 100vh;
     position: relative;
@@ -16,7 +15,6 @@
 #supplier-search{
     width: 81%;
     height: 60px;
-    background-color: white;
     position: relative;
     margin-top: 40px;
     margin-bottom: 10px;
@@ -37,16 +35,17 @@
 
 #supplier-form{
     width: 81%;
-    height: 225px;
-    background-color: white;
+    height: fit-content;
+    background-color:#ddf5f5;
     margin-bottom: 20px;
     display: flex;
+    padding-bottom: 10px;
 }
 
 .form-part{
     width: fit-content;
     height: fit-content;
-    background-color: #e9b10a;
+    /*background-color: #e9b10a;*/
     margin-left: 25px;
 }
 #form-part05{
@@ -72,7 +71,7 @@
 #supplier-table{
     width: 81%;
     height: 53%;
-    background-color: #29a1a1;
+    /*background-color: #29a1a1;*/
 }
 
 #supplier-table{

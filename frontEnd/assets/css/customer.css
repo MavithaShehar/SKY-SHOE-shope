@@ -7,17 +7,21 @@
 /*    right: 0;*/
 /*}*/
 
+
+
+
 #customer-page{
-    background-color: #8de02c;
+
     display: flex;
     flex-direction: column;
     height: 100vh;
+
 
 }
 
 
 #cust-select-option{
-    background-color: #ff253a;
+    /*background-color: #ff253a;*/
     width: 80%;
     height: 80px;
     margin-left: 20px;
@@ -27,7 +31,7 @@
 }
 
 .cust-select{
-    background-color: #15cce3;
+    /*background-color: #15cce3;*/
     width: 600px;
     height: 50px;
     margin: 10px;
@@ -47,7 +51,7 @@
 }
 
 #cust-btn-option{
-    background-color: #ff253a;
+    /*background-color: #ff253a;*/
     width: 80%;
     height: 78px;
     margin-left: 20px;
@@ -73,7 +77,7 @@
 #cust-tbl{
     width: 98%;
     height: 520px;
-    background-color: #0F91DA;
+    /*background-color: #0F91DA;*/
     margin-left: 20px;
     overflow-y: scroll;
 
@@ -83,7 +87,7 @@
 #customer-form{
     position: relative;
     display: flex;
-    background-color: #e9b10a;
+
     width: 100vw;
     height: 100vh;
 
@@ -91,7 +95,7 @@
 .form-feel{
     width: 36%;
     height: 80%;
-    background: #ff253a;
+    /*background: #ff253a;*/
     margin: 20px;
     margin-top: 75px;
 
@@ -111,8 +115,11 @@
     height: 140px;
     left: 400px;
     bottom: 20px;
-    background: #2fd4e8;
+    /*background: #2fd4e8;*/
 }
-.table-bordered thead th {
-    background: #0dcaf0;
+input, select {
+    border: 3px solid rgba(0, 155, 193, 0.6) !important;
+    padding: 10px !important;
+    font-size: 16px !important;
+    border-radius: 5px !important;
 }

@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<main class="contain">
+
+  <!-- =============== Navigation ================ -->
+
+  <section class="navigation">
+    <ul>
+      <li>
+        <a href="#" id="logout-btn" >
+                        <span class="icon">
+                            <img id="logo" src="assets/image/logo-removebg-preview.png" alt="">
+                        </span>
+          <span id="title" class="title">.... Sky Shoe</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="#" id="dash-nav">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+          <span class="title">Dashboard</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="#" id="sale-nav">
+                        <span class="icon">
+                            <i class="fi fi-tr-point-of-sale-bill"></i>
+                        </span>
+          <span class="title">Sale</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="#" id="customer-nav">
+                        <span class="icon">
+                            <i class="fi fi-tr-review"></i>
+                        </span>
+          <span class="title">Customer</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="#" id="item-nav">
+                        <span class="icon">
+                            <i class="fi fi-tr-boot-heeled"></i>
+                        </span>
+          <span class="title">Items</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="#" id="supplier-nav">
+                        <span class="icon">
+                            <i class="fi fi-tr-supplier-alt"></i>
+                        </span>
+          <span class="title">suppliers</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="#" id="employee-nav">
+                        <span class="icon">
+                            <i class="fi fi-tr-employee-man"></i>
+                        </span>
+          <span class="title">Employee</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" id="resupply-nav">
+                        <span class="icon">
+                            <i class="fi fi-tr-restock"></i>
+                        </span>
+          <span class="title">Resupply</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" id="user-nav">
+                        <span class="icon">
+                            <i class="fi fi-tr-user-key"></i>
+                        </span>
+          <span class="title">Users</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="#">
+                        <span class="icon">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </span>
+          <span class="title">Sign Out</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="#" id="sale-his-nav">
+                        <span class="icon">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </span>
+          <span class="title">Sale History</span>
+        </a>
+      </li>
+
+    </ul>
+  </section>
+
+  <!-- ========================= Services ==================== -->
+  <section class="main">
+
+    <!-- ========================= Top Bar ===================== -->
+
+    <div class="topbar">
+      <div class="toggle">
+        <ion-icon name="menu-outline"></ion-icon>
+      </div>
+
+      <div class="search" style="display: none">
+        <label>
+          <input type="text" placeholder="Search here">
+          <ion-icon name="search-outline"></ion-icon>
+        </label>
+      </div>
+
+      <div id="users" style="margin-left: 730px;">
+        <span id="syst-user01"></span><br>
+        <span id="syst-user02"></span>
+      </div>
+      <div class="user">
+        <img src="assets/image/customer01.jpg" alt="">
+      </div>
+    </div>
+
+    <!-- ============  [01] Dash Bord  -->
+    <div id="dash-bord">
+
+
+      <!-- ======================= Description Cards ================== -->
+      <div class="cardBox">
+        <div class="card">
+          <div>
+            <div class="numbers">1,504</div>
+            <div class="cardName">Daily Views</div>
+          </div>
+
+          <div class="iconBx">
+            <ion-icon name="eye-outline"></ion-icon>
+          </div>
+        </div>
+
+        <div class="card">
+          <div>
+            <div class="numbers">80</div>
+            <div class="cardName">Sales</div>
+          </div>
+
+          <div class="iconBx">
+            <ion-icon name="cart-outline"></ion-icon>
+          </div>
+        </div>
+
+        <div class="card">
+          <div>
+            <div class="numbers">284</div>
+            <div class="cardName">Comments</div>
+          </div>
+
+          <div class="iconBx">
+            <ion-icon name="chatbubbles-outline"></ion-icon>
+          </div>
+        </div>
+
+        <div class="card">
+          <div>
+            <div class="numbers">$7,842</div>
+            <div class="cardName">Earning</div>
+          </div>
+
+          <div class="iconBx">
+            <ion-icon name="cash-outline"></ion-icon>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================ Order Details List ================= -->
+      <div class="details">
+        <div class="recentOrders">
+          <div class="cardHeader">
+            <h2>Recent Orders</h2>
+            <a href="#" class="btn">View All</a>
+          </div>
+
+          <table>
+            <thead>
+            <tr>
+              <td>Name</td>
+              <td>Price</td>
+              <td>Payment</td>
+              <td>Status</td>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr>
+              <td>Star Refrigerator</td>
+              <td>$1200</td>
+              <td>Paid</td>
+              <td><span class="status delivered">Delivered</span></td>
+            </tr>
+
+            <tr>
+              <td>Dell Laptop</td>
+              <td>$110</td>
+              <td>Due</td>
+              <td><span class="status pending">Pending</span></td>
+            </tr>
+
+            <tr>
+              <td>Apple Watch</td>
+              <td>$1200</td>
+              <td>Paid</td>
+              <td><span class="status return">Return</span></td>
+            </tr>
+
+            <tr>
+              <td>Addidas Shoes</td>
+              <td>$620</td>
+              <td>Due</td>
+              <td><span class="status inProgress">In Progress</span></td>
+            </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+        <!-- ================= New Customers ================ -->
+        <div class="recentCustomers">
+          <div class="cardHeader">
+            <h2>Recent Customers</h2>
+          </div>
+
+          <table>
+            <tr>
+              <td width="60px">
+                <div class="imgBx"><img src="assets/image/customer02.jpg" alt=""></div>
+              </td>
+              <td>
+                <h4>David <br> <span>Italy</span></h4>
+              </td>
+            </tr>
+
+            <tr>
+              <td width="60px">
+                <div class="imgBx"><img src="assets/image/customer01.jpg" alt=""></div>
+              </td>
+              <td>
+                <h4>Amit <br> <span>India</span></h4>
+              </td>
+            </tr>
+
+            <tr>
+              <td width="60px">
+                <div class="imgBx"><img src="assets/image/customer02.jpg" alt=""></div>
+              </td>
+              <td>
+                <h4>David <br> <span>Italy</span></h4>
+              </td>
+            </tr>
+
+            <tr>
+              <td width="60px">
+                <div class="imgBx"><img src="assets/image/customer01.jpg" alt=""></div>
+              </td>
+              <td>
+                <h4>Amit <br> <span>India</span></h4>
+              </td>
+            </tr>
+
+
+            </tr>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ============  [02] customer service =============-->
+    <div id="customer-page">
+
+      <!--   ===========  select customer =========== -->
+      <div id="cust-select-option">
+
+        <div class="cust-select">
+          <span class="select-name">Loyalty</span>
+          <select class="form-select" aria-label="Default select example" id="select-loyalty">
+            <option selected value="ALLCUSTOMER">All Customer</option>
+            <option value="GOLD">GOLD</option>
+            <option value="BRONZE">BRONZE</option>
+            <option value="SILVER">SILVER</option>
+          </select>
+        </div>
+
+        <div class="cust-select" id="cust-select">
+          <div class="form-group">
+            <input id="cust-date-piker" type="text" class="form-control" >
+          </div>
+        </div>
+
+      </div>
+
+
+      <!------------ ADD NEW customer ------------->
+
+      <div id="cust-btn-option">
+        <button id="cut-add" type="button"  class="btn btn-primary">ADD+</button>
+
+        <form>
+          <fieldset >
+            <div class="mb-3" id="serch-cust-id">
+              <input type="text" id="customer-search" class="form-control" placeholder="search customer ID or Name ">
+            </div>
+          </fieldset>
+        </form>
+
+      </div>
+
+      <!------------ customer table ------------->
+
+      <div id="cust-tbl">
+        <table class="table table-bordered">
+          <thead>
+          <tr>
+            <th scope="col">customerId</th>
+            <th scope="col">customerName</th>
+            <th scope="col">gender</th>
+            <th scope="col">joinDate</th>
+            <th scope="col">level</th>
+            <th scope="col">totalPoints</th>
+            <th scope="col">birthday</th>
+            <th scope="col">contactNo</th>
+            <th scope="col">email</th>
+            <th scope="col">address No <br> Or Name</th>
+            <th scope="col">delete</th>
+          </tr>
+          </thead>
+          <tbody class="table-group-divider" id="customerTable">
+
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+    <!----- Customer save page ------->
+
+    <div  id="customer-form">
+      <h4 id="cus-reg">Customer Rgistation</h4>
+      <div class="form-feel">
+        <form action="">
+          <div class="form-group" style="width: 350px">
+            <label for="customerId">Customer ID</label>
+            <input type="text" class="form-control" id="customerId" placeholder="Enter customer ID" readonly >
+          </div>
+          <div class="form-group" style="width: 350px">
+            <label for="customerName">Customer Name</label>
+            <input type="text" class="form-control" id="customerName" placeholder="Enter customer name">
+          </div>
+          <div class="form-group" style="width: 200px; display: inline-block; margin-right: 20px">
+            <label for="gender">Gender</label>
+            <select class="form-control" id="gender">
+              <option selected>select</option>
+              <option selected="Male">MALE</option>
+              <option selected="Female">FEMALE</option>
+              <option selected="Other">OTHER</option>
+            </select>
+          </div>
+          <div class="form-group" style="width: 200px; display: inline-block;">
+            <label for="joinDate">Join Date</label>
+            <input type="date" class="form-control" id="joinDate">
+          </div>
+          <div class="form-group" style="width: 200px;display: inline-block;margin-right: 20px">
+            <label for="gender">Loyalty Level</label>
+            <select class="form-control" id="loyalty">
+              <option selected>NORMAL</option>
+              <option selected="gold">GOLD</option>
+              <option selected="silver">SILVER</option>
+              <option selected="bronze">BRONZE</option>
+            </select>
+          </div>
+          <div class="form-group"style="width: 200px; display: inline-block;">
+            <label for="totalPoints">Total Points</label>
+            <input type="number" class="form-control" id="totalPoints" placeholder="Enter total points">
+          </div>
+          <div class="form-group" style="width:200px">
+            <label for="birthday">Birthday</label>
+            <input type="text" class="form-control" id="birthday">
+          </div>
+          <div class="form-group" style="width: 300px">
+            <label for="contactNo">Contact Number</label>
+            <input type="tel" class="form-control" id="contactNo" placeholder="Enter contact number">
+          </div>
+        </form>
+      </div>
+      <div class="form-feel">
+        <form action="">
+          <div class="form-group" style="width: 350px">
+            <label for="email">Email Address</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter email">
+          </div>
+          <div class="form-group" style="width: 300px">
+            <label for="addressNoOrName">Address Number or Name</label>
+            <input type="text" class="form-control" id="addressNoOrName" placeholder="Enter address number or name">
+          </div>
+          <div class="form-group" style="width: 300px">
+            <label for="addressLane">Address Lane</label>
+            <input type="text" class="form-control" id="addressLane" placeholder="Enter address lane">
+          </div>
+          <div class="form-group " style="width: 300px">
+            <label for="addressCity">City</label>
+            <input type="text" class="form-control" id="addressCity" placeholder="Enter city">
+          </div>
+          <div class="form-group" style="width: 250px">
+            <label for="addressState">State</label>
+            <input type="text" class="form-control" id="addressState" placeholder="Enter state">
+          </div>
+          <div class="form-group" style="width: 200px">
+            <label for="postalCode">Postal Code</label>
+            <input type="text" class="form-control" id="postalCode" placeholder="Enter postal code">
+          </div>
+
+        </form>
+      </div>
+
+      <div id="cus-btn-area"class="d-grid gap-2 col-6 mx-auto">
+        <button type="button" id="customerSave" class="btn btn-primary" >Save</button>
+        <button type="button" id="customerUpdate" class="btn btn-success" >update</button>
+      </div>
+
+    </div>
+
+    <!-- ============= [03] Employee service =============-->
+    <div id="employee-page">
+
+      <!--   ===========  select employee =========== -->
+      <div id="emp-select-option">
+
+        <div class="emp-select">
+          <span class="select-name">Access Role</span>
+          <select class="form-select" aria-label="Default select example" id="systemAccess">
+            <option selected>Employee</option>
+            <option value="USER">USER</option>
+            <option value="ADMIN">ADMIN</option>
+          </select>
+        </div>
+
+        <div class="emp-select" id="emp-select">
+          <div class="form-group" >
+            <input id="emp-date-piker" type="text" class="form-control">
+          </div>
+        </div>
+
+
+
+      </div>
+
+
+      <div id="emp-btn-option">
+        <button id="emp-add" type="button"  class="btn btn-primary">ADD+</button>
+
+        <form>
+          <fieldset >
+            <div class="mb-3" id="serch-emp-id">
+              <input id="employee-search" type="text"  class="form-control" placeholder="search customer ID or Name ">
+            </div>
+          </fieldset>
+        </form>
+
+      </div>
+
+      <div id="emp-tbl">
+        <table class="table">
+          <thead>
+          <tr>
+            <th scope="col">pic</th>
+            <th scope="col">employeeId</th>
+            <th scope="col">employeeName</th>
+            <th scope="col">Gender</th>
+            <th scope="col">status</th>
+            <th scope="col">joinDate</th>
+            <th scope="col">designation</th>
+            <th scope="col">Role</th>
+            <th scope="col">birthday</th>
+            <th scope="col">contactNo</th>
+            <th scope="col">address</th>
+            <th scope="col">email</th>
+            <th scope="col">option</th>
+          </tr>
+          </thead>
+          <tbody class="table-group-divider" id="employeeTable">
+
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+    <!--    Employee save page -->
+    <div id="employee-form">
+      <h4 id="emp-reg">Employee Rgistation</h4>
+      <div class="form-feel">
+        <form action="">
+          <div class="form-group" style="width: 350px">
+            <label for="employeeId">Employee ID</label>
+            <input type="text" class="form-control" id="employeeId" placeholder="Enter customer ID" >
+          </div>
+          <div class="form-group" style="width: 350px">
+            <label for="employeeName">Customer Name</label>
+            <input type="text" class="form-control" id="employeeName" placeholder="Enter customer name">
+          </div>
+          <div class="form-group" style="width: 200px; display: inline-block; margin-right: 20px">
+            <label for="empGender">Gender</label>
+            <select class="form-control" id="empGender">
+              <option selected>select</option>
+              <option selected="Male">MALE</option>
+              <option selected="Female">FEMALE</option>
+              <option selected="Other">OTHER</option>
+            </select>
+          </div>
+          <div class="form-group" style="width: 200px; display: inline-block;">
+            <label for="empStatus">Status</label>
+            <input type="text" class="form-control" id="empStatus">
+          </div>
+          <div class="form-group" style="width: 200px; display: inline-block; margin-right: 20px">
+            <label for="empDesi">Designation</label>
+            <select class="form-control" id="empDesi">
+              <option selected>Position</option>
+              <option value="CASHIER">CASHIER</option>
+              <option value="MANAGER">MANAGER</option>
+              <option value="OTHER">OTHER</option>
+            </select>
+          </div>
+
+          <div class="form-group" style="width:200px">
+            <label for="empBirthday">Birthday</label>
+            <input type="text" class="form-control" id="empBirthday">
+          </div>
+
+          <div class="form-group" style="width: 200px; display: inline-block;">
+            <label for="empJoinDate">Join Date</label>
+            <input type="text" class="form-control" id="empJoinDate">
+          </div>
+          <div class="form-group" style="width: 200px; display: inline-block; margin-right: 20px">
+            <label for="empRol">Role</label>
+            <select class="form-control" id="empRol">
+              <option selected>Position</option>
+              <option value="USER">USER</option>
+              <option value="ADMIN">ADMIN</option>
+              <option value="OTHER">OTHER</option>
+            </select>
+          </div>
+          <div class="form-group" style="width: 300px">
+            <label for="empBranch">Branch</label>
+            <input type="tel" class="form-control" id="empBranch" placeholder="Enter contact number">
+          </div>
+          <div class="form-group" style="width: 300px">
+            <label for="empContactNo">Contact Number</label>
+            <input type="tel" class="form-control" id="empContactNo" placeholder="Enter contact number">
+          </div>
+        </form>
+      </div>
+
+      <div class="form-feel">
+        <form action="">
+
+          <!--                    <div id="profilePic" style="width: 100px;height: 100px; background-color: #2c3034">-->
+          <!--                      <input type="file"  id="empFileInput" accept="image/png, image/jpeg" style="display: none">-->
+          <!--&lt;!&ndash;                        <input style="display: none" id="employee-profile-pic-file-chooser" type="file"&ndash;&gt;-->
+          <!--&lt;!&ndash;                               accept="image/png, image/jpeg">&ndash;&gt;-->
+          <!--                    </div>-->
+
+
+          <div class="emp-card" style="display:inline-block;">
+            <img src="assets/image/photo-camera.png" alt="" id="profile-pic">
+          </div>
+          <div style="display:inline-block;">
+            <label for="empFileInput" id="emp-pic">upload image
+              <input type="file" accept="image/png, image/jpeg, image/jpg" id="empFileInput" style="display: none">
+            </label>
+          </div>
+
+          <div class="form-group" style="width: 250px;display: block">
+            <label for="empEmail">Email Address</label>
+            <input type="email" class="form-control" id="empEmail" placeholder="Enter email">
+          </div>
+          <div class="form-group" style="width: 200px;display: inline-block">
+            <label for="empAddressNoOrName">Address Number or Name</label>
+            <input type="text" class="form-control" id="empAddressNoOrName" placeholder="Enter address number or name">
+          </div>
+          <div class="form-group" style="width: 200px;">
+            <label for="empAddressLane">Address Lane</label>
+            <input type="text" class="form-control" id="empAddressLane" placeholder="Enter address lane">
+          </div>
+          <div class="form-group " style="width: 150px;display: inline-block">
+            <label for="empCity">City</label>
+            <input type="text" class="form-control" id="empCity" placeholder="Enter city">
+          </div>
+          <div class="form-group" style="width: 150px; display: inline-block">
+            <label for="empState">State</label>
+            <input type="text" class="form-control" id="empState" placeholder="Enter state">
+          </div>
+          <div class="form-group" style="width: 150px;display: inline-block">
+            <label for="empPostalCode">Postal Code</label>
+            <input type="text" class="form-control" id="empPostalCode" placeholder="Enter postal code">
+          </div>
+          <div class="form-group" style="width: 200px">
+            <label for="empPassword">Password</label>
+            <input type="password" class="form-control" id="empPassword" placeholder="Enter Password">
+          </div>
+          <div class="form-group" style="width: 200px;display: inline-block">
+            <label for="emp_con_per">Emergency Contact Person</label>
+            <input type="text" class="form-control" id="emp_con_per" placeholder="Enter postal code">
+          </div>
+          <div class="form-group" style="width: 200px;display: inline-block">
+            <label for="emp_con_num">Emergency Contact Number</label>
+            <input type="text" class="form-control" id="emp_con_num" placeholder="Enter postal code">
+          </div>
+
+        </form>
+      </div>
+
+      <div id="emp-btn-area"class="d-grid gap-2 col-6 mx-auto">
+        <button type="button" class="btn btn-primary" id="saveEmployee"  >Save</button>
+        <button type="button mo" class="btn btn-success" id="updateEmployee">update</button>
+      </div>
+
+    </div>
+
+
+    <!-- ============= [04] supplier service =============-->
+
+    <div id="supplier-save-section">
+
+      <!--   supplier search bar-->
+      <div id="supplier-search">
+        <div class="mb-3">
+          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Search Supplier ...">
+        </div>
+      </div>
+
+      <!--   supplier form -->
+      <div id="supplier-form">
+
+        <!--  part 01-->
+        <div class="form-part">
+
+          <form action="">
+
+            <div class="form-group">
+              <label for="supplierId">Supplier ID</label>
+              <input type="text" class="form-control" id="supplierId" placeholder="Enter Supplier ID" style="width: 200px;" >
+            </div>
+
+            <div class="form-group">
+              <label for="supplierName">Supplier Name</label>
+              <input type="text" class="form-control" id="supplierName" placeholder="Enter Supplier Name">
+            </div>
+
+            <div class="form-group">
+              <label for="supplierCategory">Supplier Category</label>
+              <select class="form-control" id="supplierCategory">
+                <option selected="LOCAL">LOCAL</option>
+                <option selected="INTERNATIONAL">INTERNATIONAL</option>
+                <option selected>Category</option>
+              </select>
+            </div>
+
+          </form>
+
+        </div>
+
+        <!--  part 02-->
+        <div class="form-part">
+
+          <form action="">
+
+            <div class="form-group">
+              <label for="mobileNo">Mobile Number</label>
+              <input type="text" class="form-control" id="mobileNo" placeholder="Enter Mobile Number" style="width: 200px">
+            </div>
+            <div class="form-group">
+              <label for="landLineNo">Landline Number</label>
+              <input type="text" class="form-control" id="landLineNo" placeholder="Enter Landline Number" style="width: 200px">
+            </div>
+            <div class="form-group">
+              <label for="supp-email">Email</label>
+              <input type="email" class="form-control" id="supp-email" placeholder="Enter Email" style="width: 250px">
+            </div>
+
+
+          </form>
+
+        </div>
+
+        <!--  part 03-->
+        <div class="form-part">
+
+          <form action="">
+            <div class="form-group">
+              <label for="address">Address</label>
+              <input type="text" class="form-control" id="address" placeholder="Enter Address" style="width: 200px">
+            </div>
+            <div class="form-group">
+              <label for="city">City</label>
+              <input type="text" class="form-control" id="city" placeholder="Enter City" style="width: 150px">
+            </div>
+            <div class="form-group">
+              <label for="state">State</label>
+              <input type="text" class="form-control" id="state" placeholder="Enter State" style="width: 150px">
+            </div>
+          </form>
+
+        </div>
+
+        <!--  part 05-->
+        <div class="form-part" id="form-part05">
+
+          <form action="">
+            <div class="form-group" style="display: inline-block">
+              <label for="supp-postalCode">Postal Code</label>
+              <input type="text" class="form-control" id="supp-postalCode" placeholder="Enter Postal Code" style="width: 110px">
+            </div>
+            <div class="form-group" style="display: inline-block">
+              <label for="country">Country</label>
+              <input type="text" class="form-control" id="country" placeholder="Enter Country" style="width: 120px">
+            </div>
+          </form>
+
+        </div>
+
+
+        <div>
+
+          <div class="form-part" id="form-part06">
+
+            <button type="submit"  class="btn btn-primary" id="supp-save-btn" >Save</button>
+            <button type="submit"  class="btn btn-primary" id="supp-update-btn">Update</button>
+          </div>
+
+        </div>
+
+        <div>
+
+        </div>
+
+      </div>
+
+      <!-- supp-table-->
+
+      <div id="supplier-table">
+        <div id="supp-tbl">
+          <table class="table table-hover item-table">
+            <thead>
+            <tr>
+              <th scope="col">Supplier Name</th>
+              <th scope="col">Contact</th>
+              <th scope="col">Email</th>
+              <th scope="col">Category</th>
+              <th scope="col">Country</th>
+            </tr>
+            </thead>
+            <tbody id="supplierTable">
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- ============= [05] item service =============-->
+
+    <div id="about-item-section">
+
+      <div id="select-itm-option">
+        <button type="button" class="btn btn-outline-primary">Add Items</button>
+        <button type="button"  class="btn btn-outline-primary">Inventory</button>
+      </div>
+
+      <!----------------------------------------------------------------------->
+      <div id="item-form">
+
+        <div id="save-item-form">
+
+          <div id="save-item-form-01">
+            <form action="">
+              <div class="form-group">
+                <label for="itemId">Item ID</label>
+                <input  class="form-control" id="itemId"  style="width: 200px;" aria-label="Default select example">
+              </div>
+
+              <div class="form-group">
+                <label for="item_description">Item Description</label>
+                <input type="text" class="form-control" id="item_description" placeholder="Enter Item Description" style="width: 200px">
+              </div>
+
+            </form>
+          </div>
+
+          <div id="save-item-form-02">
+
+            <div class="form-group">
+              <label for="supp-id">Supplier ID</label>
+              <select type="text" class="form-control" id="supp-id"  style="width: 200px;" >
+                <option value="S001">S001</option>
+              </select>
+            </div>
+
+            <form action="">
+              <div class="form-group" style="display: inline-block">
+                <label for="price_buy">Price Buy</label>
+                <input type="text" class="form-control" id="price_buy" placeholder="Enter Price Buy" style="width: 110px;" >
+              </div>
+
+              <div class="form-group" style="display: inline-block">
+                <label for="price_sale">Price Sale</label>
+                <input type="text" class="form-control" id="price_sale" placeholder="Enter Price Sale" style="width: 110px;" >
+              </div>
+            </form>
+          </div>
+
+          <div id="save-item-form-03" style="width: 250px;">
+            <form action="">
+              <div class="form-group">
+                <label for="itemCategory">Items Category</label>
+                <select class="form-control" id="itemCategory">
+                  <option value="SHOE">SHOE</option>
+                  <option value="SANDALS">SANDALS</option>
+                  <option value="SLIPPERS">SLIPPERS</option>
+                  <option value="HEEL">HEEL</option>
+                  <option value="FLATS">FLATS</option>
+                  <option value="WEDGES">WEDGES</option>
+                  <option value="FLIPFLOPS">FLIPFLOPS</option>
+                </select>
+              </div>
+            </form>
+          </div>
+
+          <div id="itm-img">
+
+            <div class="itm-card">
+              <img src="assets/image/photo-camera.png" alt="" id="itm-profile-pic">
+            </div>
+            <div style="display:inline-block;">
+              <label for="itmFileInput" id="itm-pic">upload image
+                <input type="file" accept="image/png, image/jpeg, image/jpg" id="itmFileInput" style="display: none">
+              </label>
+            </div>
+
+          </div>
+
+          <div id="itm-btn-optin">
+            <div class="d-grid gap-2 col-6 mx-auto">
+              <button id="saveItem" class="btn btn-primary" type="button">Save</button>
+              <button id="updateItem" class="btn btn-primary" type="button">Update</button>
+            </div>
+          </div>
+
+
+
+        </div>
+
+        <!--************************************************************************************* -->
+
+        <div id="save-inventory-form">
+
+          <div id="save-inve-form-01">
+            <form action="">
+              <div class="form-group" style="width: 200px;">
+                <label for="inve-itemId">Select Item ID</label>
+                <select class="form-control" id="inve-itemId">
+
+                </select>
+              </div>
+
+              <div class="form-group" style="width: 140px;display: inline-block">
+                <label for="inve-description">Item name</label>
+                <input type="text" class="form-control" id="inve-description" placeholder="Item Name" >
+              </div>
+
+              <div class="form-group" style="width: 140px;display: inline-block">
+                <label for="inve-item-cataegory">Category</label>
+                <input type="text" class="form-control" id="inve-item-cataegory" placeholder="Cataegory" >
+              </div>
+
+            </form>
+          </div>
+
+          <div id="save-inve-form-02">
+            <form action="">
+              <div class="form-group">
+                <label for="itm-color">color</label>
+                <select class="form-control" id="itm-color">
+                  <option value="BLACK">BLACK </option>
+                  <option value="WHITE">WHITE </option>
+                  <option value="BROWN">BROWN </option>
+                  <option value="GREY">GREY </option>
+                  <option value="PINK">PINK </option>
+                  <option value="RED">RED </option>
+                  <option value="BLUE">BLUE </option>
+                  <option value="GREEN">GREEN </option>
+                  <option value="OTHER">OTHER </option>
+                </select>
+              </div>
+
+              <div class="form-group" style="width: 100px;display: inline-block">
+                <label for="itm-qty">Item Qty</label>
+                <input type="number" class="form-control" id="itm-qty" placeholder="Qty"  >
+              </div>
+
+              <div class="form-group" style="width: 100px;display: inline-block">
+                <label for="itm-size">Item Size</label>
+                <select type="select" class="form-control" id="itm-size" placeholder="Size"  readonly>
+                  <option value="SIZE_5">SIZE 5</option>
+                  <option value="SIZE_6">SIZE 6</option>
+                  <option value="SIZE_7">SIZE 7</option>
+                  <option value="SIZE_8">SIZE 8</option>
+                  <option value="SIZE_9">SIZE 9</option>
+                  <option value="SIZE_10">SIZE 10</option>
+                  <option value="SIZE_11">SIZE 11</option>
+                  <option value="SMALL">SMALL</option>
+                  <option value="MEDIUM">MEDIUM</option>
+                  <option value="LARGE">LARGE</option>
+                </select>
+              </div>
+            </form>
+          </div>
+
+          <div id="save-inve-form-03" style="width: 250px;">
+            <form action="">
+              <div class="form-group" style="width: 140px;display: inline-block">
+                <label for="itm-date">Date</label>
+                <input type="date" class="form-control" id="itm-date" placeholder="date"  >
+              </div>
+              <div class="form-group" style="width: 100px;display: inline-block">
+                <label for="itm-total-value">Total Value</label>
+                <input type="text" class="form-control" id="itm-total-value" placeholder="Total Value"  readonly>
+              </div>
+              <div class="form-group" style="width: 100px;display: inline-block">
+                <label for="itm-total-qty">Total Qty</label>
+                <input type="text" class="form-control" id="itm-total-Qty" placeholder="Total Value"  >
+              </div>
+              <div class="form-group" style="width: 140px;display: inline-block">
+                <label for="inve-item-status">status</label>
+                <input type="text" class="form-control" id="inve-item-status" placeholder="Item status" >
+              </div>
+            </form>
+          </div>
+
+          <div id="inve-img">
+
+            <div class="itm-card">
+              <img src="assets/image/photo-camera.png" alt="" id="inve-profile-pic">
+            </div>
+            <div style="display:inline-block;">
+              <label for="inveFileInput" id="inve-pic">update image
+                <input type="file" accept="image/png, image/jpeg, image/jpg" id="inveFileInput" style="display: none">
+              </label>
+            </div>
+
+          </div>
+
+
+
+
+
+
+          <div id="inve-btn-optin">
+            <div class="d-grid gap-2 col-6 mx-auto">
+              <button id="inveSaveBtn" class="btn btn-primary" type="button">Save</button>
+              <button id="inveUpdateBtn" class="btn btn-primary" type="button">Update</button>
+            </div>
+          </div>
+
+
+
+        </div>
+
+      </div>
+
+
+      <!----------------------------------------------------------------------->
+
+      <div id="select-itm-tbl-option">
+        <button type="button" class="btn btn-outline-primary">View Add Items Table </button>
+        <button type="button" class="btn btn-outline-primary">view Inventory Table</button>
+      </div>
+
+      <!------------------------------------------------------------------------>
+
+      <div id="item-section-tbls">
+
+        <div id="items-tbl">
+          <table class="table table-striped table-hover">
+            <thead >
+            <tr>
+              <th scope="col">Item</th>
+              <th scope="col">Item Id</th>
+              <th scope="col">Description</th>
+              <th scope="col">category</th>
+              <th scope="col">priceBuy</th>
+              <th scope="col">priceSell</th>
+              <th scope="col">Supplier Id</th>
+            </tr>
+            </thead>
+            <tbody id="itemTable">
+
+            </tbody>
+          </table>
+        </div>
+
+        <!------------------------------------------------------------------------>
+
+        <div id="inve-tbl">
+          <table class="table table-striped table-hover">
+            <thead >
+            <tr>
+              <th scope="col">image</th>
+              <th scope="col">Item ID</th>
+              <th scope="col">Item Name</th>
+              <th scope="col">Category</th>
+              <th scope="col">Color</th>
+              <th scope="col">Size</th>
+              <th scope="col">Qty</th>
+              <th scope="col">Buy Price</th>
+              <th scope="col">Sell Price</th>
+            </tr>
+            </thead>
+            <tbody id="inventoryTable">
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+
+    </div>
+
+    <!-- ============= [06] sale service =============-->
+
+    <div id="sale-section">
+
+      <!--            <div id="purchase-order-section">-->
+
+      <!--            </div>-->
+
+      <div id="sale-item-section">
+        <div id="customer-data">
+          <div class="mb-3 feeld">
+            <label for="order_id" class="form-label">Order ID</label>
+            <input type="text" class="form-control" id="order_id" placeholder="Select ID" style="width: 200px;border-color: #0a58ca; " >
+          </div>
+          <div class="mb-3 feeld">
+            <label for="ordr-cust-id" class="form-label">Customer ID</label>
+            <select type="select" class="form-control" id="ordr-cust-id"  style="width: 200px;">
+
+            </select>
+          </div>
+          <div class="mb-3 feeld">
+            <label for="order-cust-name" class="form-label">Customer Name</label>
+            <input type="text" class="form-control" id="order-cust-name" placeholder="" style="width: 200px;">
+          </div>
+          <div class="mb-3 feeld">
+            <label for="order-cust-loyalty" class="form-label">Loyalty</label>
+            <input type="text" class="form-control" id="order-cust-loyalty" placeholder="" style="width: 200px;">
+          </div>
+        </div>
+
+        <div id="main-order-itm-data">
+
+          <div id="order-itm-data01">
+
+            <div id="order-itm-pic">
+
+              <div class="itm-card">
+                <img src="assets/image/photo-camera.png" alt="" id="order-itm-profile-pic">
+              </div>
+              <div style="display:inline-block;">
+                <label for="order-itm-FileInput" id="order-item-pic">
+                  <input type="file" accept="image/png, image/jpeg, image/jpg" id="order-itm-FileInput" style="display: none">
+                </label>
+              </div>
+
+            </div>
+
+
+            <div class="mb-3 feeld">
+              <label for="order-select-itm-id" class="form-label"> Item Id</label>
+              <select type="text" class="form-control" id="order-select-itm-id" placeholder="Select Item" style="width: 200px;"></select>
+            </div>
+          </div>
+
+          <div id="order-itm-data06" >
+
+            <div class="mb-3 feeld" style="display: inline-block">
+              <label for="order-itm-size" class="form-label">Size</label>
+              <select type="text" class="form-control" id="order-itm-size" placeholder="Select Item" style="width: 80px;margin-left: 5px" style="width: 200px;">
+                <option value="Select_Item">Select Item</option>
+                <option value="SIZE_5">SIZE 5</option>
+                <option value="SIZE_6">SIZE 6</option>
+                <option value="SIZE_7">SIZE 7</option>
+                <option value="SIZE_8">SIZE 8</option>
+                <option value="SIZE_9">SIZE 9</option>
+                <option value="SIZE_10">SIZE 10</option>
+                <option value="SIZE_11">SIZE 11</option>
+                <option value="SMALL">SMALL</option>
+                <option value="MEDIUM">MEDIUM</option>
+                <option value="LARGE">LARGE</option>
+              </select>
+            </div>
+            <div class="mb-3 feeld" style="display: inline-block">
+              <label for="order-itm-color" class="form-label">Color</label>
+              <select type="text" class="form-control" id="order-itm-color" placeholder="Color" style="width: 100px;margin-left: 5px">
+                <option value="Color">Color </option>
+                <option value="BLACK">BLACK </option>
+                <option value="WHITE">WHITE </option>
+                <option value="BROWN">BROWN </option>
+                <option value="GREY">GREY </option>
+                <option value="PINK">PINK </option>
+                <option value="RED">RED </option>
+                <option value="BLUE">BLUE </option>
+                <option value="GREEN">GREEN </option>
+                <option value="OTHER">OTHER </option>
+
+              </select>
+            </div>
+
+            <div class="mb-3 feeld" style="left: 0;right: 0;margin: auto;display: table;margin-top: 50px">
+              <button  id="itm-Search-Btn" type="button" class="btn btn-outline-success"><img src="assets/image/magnifying-glass.png"
+                                                                                              alt=""></button>
+            </div>
+
+          </div>
+
+          <div id="order-itm-data02">
+            <div class="mb-3 feeld">
+              <label for="order-itm-catagory" class="form-label">Catagory</label>
+              <input type="text" class="form-control" id="order-itm-catagory" placeholder="Select Item" style="width: 150px;">
+            </div>
+            <div class="mb-3 feeld">
+              <label for="order-itm-price" class="form-label">Price</label>
+              <input type="text" class="form-control" id="order-itm-price" placeholder="Select Item" style="width: 150px;">
+            </div>
+            <div class="mb-3 feeld">
+              <label for="order-itm-available-qty" class="form-label">Available Qty</label>
+              <input type="text" class="form-control" id="order-itm-available-qty" placeholder="Select Item" style="width: 150px;">
+            </div>
+          </div>
+
+          <div id="order-itm-data03">
+            <div class="mb-3 feeld" style="margin-left: 5px">
+              <label for="order-qty" class="form-label">Order Qty</label>
+              <input type="text" class="form-control" id="order-qty" placeholder="Select Item" style="width: 80px;margin-left: 5px">
+            </div>
+            <div class="mb-3 feeld" style="margin-left: 5px">
+              <label for="order-qty" class="form-label">Discount</label>
+              <input type="text" class="form-control" id="discount" placeholder="%" style="width: 80px;">
+            </div>
+            <div class="mb-3 feeld" style="left: 0;right: 0;margin: auto;padding-bottom: 46px">
+              <button  id="orderBtn" type="button" class="btn btn-outline-success">Order</button>
+            </div>
+          </div>
+
+
+
+          <div id="order-itm-data04">
+            <div class="total-wrapper">
+              <h4 class="sub-total">Total</h4>
+              <h4 class="sub-total-value" id="total-value">  </h4>
+              <h4 class="discount" >Price :</h4>
+              <h4 class="discount-value" id="price"> </h4>
+              <h4 class="total-amount" style="font-size: 20px">Total Amount</h4>
+              <h4 class="total-amount-value" id="sub-total-value" style="font-size: 25px"> </h4>
+            </div>
+          </div>
+
+          <div id="order-itm-data05">
+            <div class="mb-3 feeld" style="margin-left: 5px">
+              <label for="order-date" class="form-label">Date</label>
+              <input type="text" class="form-control" id="order-date" placeholder="" style="width: 200px;margin-bottom: 20px;font-size: 25px">
+            </div>
+
+            <div id="select-pemant-option">
+              <button type="button" class="pament-img" id="monyPayment" >
+                <img src="assets/image/money.png" alt="" style="width: 40px;height: 40px">
+              </button>
+              <button class="pament-img" id="cardPayment">
+                <img src="assets/image/credit-card.png" alt="" style="width: 40px;height: 40px">
+              </button>
+            </div>
+
+            <button id="purchase-btn">Purchase</button>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+      <div id="sale-tbl-section">
+
+        <!--        table   -->
+        <div class="row">
+
+          <div class="col table_card">
+
+            <table class="table caption-top">
+              <thead>
+              <th class="col">Items Pic</th>
+              <th class="col">Items ID</th>
+              <th class="col">Name</th>
+              <th class="col">Category</th>
+              <th class="col">Order Qty</th>
+              <th class="col">Color</th>
+              <th class="col">Size</th>
+              <th class="col">Price</th>
+              <th class="col">Total</th>
+              <th class="col">Discount</th>
+              <th class="col">Action</th>
+              </thead>
+
+              <tbody  id="order-tbl-body">
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ============= [07] resupply service =============-->
+
+    <div id="resupply-section">
+
+      <div id="select-resup-tbl-option">
+        <input class="form-control" id="resup-select-date" placeholder="Search Date...." style="width: 300px">
+        <input class="form-control" id="resup-select-id" placeholder="Search Date...." style="width: 300px;margin-left: 20px">
+      </div>
+
+      <!--***********************************************************************************-->
+
+      <div id="resup-section-tbls">
+
+
+        <!------------------------------------------------------------------------>
+
+        <div id="resup-tbl">
+          <table class="table table-striped table-hover">
+            <thead >
+            <tr>
+              <th scope="col">Resupply Id</th>
+              <th scope="col">Date</th>
+              <th scope="col">TotalValue</th>
+              <th scope="col">Total Qty</th>
+            </tr>
+            </thead>
+            <tbody id="resupplyTable">
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ============= [08] Sale History =============-->
+
+    <div id="sale-history-section">
+
+
+      <div class="row" style="padding-left: 10px">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+          <div class="d-block p-2 custom-height" style="background-color: white; width: 80vw">
+            <form class="d-flex" role="search" style="width: 400px;padding-left: 50px">
+              <input class="form-control me-2" type="search" placeholder="Search Date" aria-label="Search" id="saleDate">
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="row" style="margin: 10px;background-color: #e3fc76;width: 81vw;height: 83vh">
+
+        <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 col-xxl-8">
+          <div class="row" style="background-color: #ffffff;width: 100%;height: 83vh">
+
+            <div>
+              <table class="table table-striped">
+                <thead>
+                <tr>
+                  <th scope="col">Order ID</th>
+                  <th scope="col">Date</th>
+                  <th scope="col">CAD/CASH</th>
+                  <th scope="col">Net Price</th>
+                  <th scope="col">Customer  ID</th>
+                  <th scope="col">Employee  ID</th>
+                  <th scope="col">Sale Items</th>
+                </tr>
+                </thead>
+                <tbody  id="saleHistoryTable">
+
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
+          <div class="row" style="background-color: #ffffff;width: 100%;height: 83vh">
+
+            <div>
+              <table class="table table-bordered">
+                <thead>
+                <tr>
+                  <th style="position: relative; text-align: center;" scope="col">Item</th>
+                  <th scope="col">Item Info</th>
+                </tr>
+                </thead>
+                <tbody id="saleItemInfo_Table">
+
+                </tbody>
+              </table>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+</main>
+</body>
+</html>

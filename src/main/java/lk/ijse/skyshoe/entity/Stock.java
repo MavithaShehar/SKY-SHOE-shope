@@ -35,4 +35,5 @@ public class Stock {
     @Column(columnDefinition = "LONGTEXT")
     private String itemImage;
 
+
 }

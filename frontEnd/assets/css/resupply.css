@@ -6,7 +6,7 @@
 }
 
 #resupply-section{
-    background-color: #fce86a;
+    /*background-color: #fce86a;*/
     width: 100vw;
     height: 100vh;
     position: relative;
@@ -23,7 +23,7 @@
     margin-top: 20px;
 }
 #resup-section-tbls{
-    background-color: #a2fae5;
+    /*background-color: #a2fae5;*/
     width: 81vw;
     height: calc(100vh - 140px);
     position: relative;

@@ -7,10 +7,10 @@
 
 #sale-section{
 
-    background-color: #dea41c;
+    /*background-color: #dea41c;*/
     width:100%;
     height: 100vh;
-    position: absolute;
+    position: relative;
     padding: 20px;
 }
 
@@ -18,7 +18,7 @@
     width: 275px;
     height: 97.5%;
     position: absolute;
-    background-color: #0a53be;
+    /*background-color: #0a53be;*/
     right: 0;
     z-index: 5;
 
@@ -26,9 +26,9 @@
 
 #sale-item-section{
     width: 100%;
-    height: 300px;
+    height: 350px;
     position: relative;
-    background-color: #2fd4e8;
+    /*background-color: #2fd4e8;*/
     margin-top: 20px;
     padding-top: 15px;
 
@@ -37,7 +37,7 @@
     width: 100vw;
     height: 440px;
     position: relative;
-    background-color: #bbfc76;
+    /*background-color: #bbfc76;*/
 
 }
 /*-------------------------------------------customer feel-------------------------------------------------*/
@@ -45,7 +45,7 @@
 #customer-data{
     position: relative;
     width: 100%;
-    height: 65px;
+    height:fit-content;
     background-color: #eaefd9;
     display: flex;
     justify-content: space-around;
@@ -58,7 +58,7 @@
 }
 
 .mb-3.feeld label[for="order_id"] {
-    color: #0742af;
+    /*color: #0742af;*/
     font-weight: bold;
 }
 #order_id{
@@ -70,24 +70,25 @@
 #main-order-itm-data{
     position: relative;
     width: 100%;
-    height: 220px;
-    background-color: #fdbcff;
+    height: 280px;
+    border: 3px solid #0b5ed7 !important;
     display: flex;
     flex-wrap: nowrap;
+    padding: 10px;
 
 }
 #order-itm-data01{
     margin-top: 5px;
     width: 205px;
-    height: 220px;
-    background-color: #e0f696;
+    height: 200px;
+    /*background-color: #e0f696;*/
     flex-direction: column;
 }
 #order-itm-data02{
     margin-top: 5px;
-    width: 205px;
+    width: 150px;
     height: 220px;
-    background-color: #e0f696;
+    /*background-color: #e0f696;*/
     flex-direction: column;
     margin-left: 10px;
 }
@@ -95,19 +96,28 @@
     margin-top: 5px;
     width: 205px;
     height: 220px;
-    background-color: #e0f696;
+    /*background-color: #e0f696;*/
     display: flex;
     flex-wrap: wrap;
     margin-left: 10px;
 }
 #order-itm-data04{
     margin-top: 5px;
-    width: 300px;
+    width: 250px;
     height: 220px;
-    background-color: #a5d1d7;
+    /*background-color: #a5d1d7;*/
     margin-left: 30px;
     position: relative;
 
+}
+
+#order-itm-data06{
+    margin-top: 5px;
+    width: 200px;
+    height: 220px;
+    /*background-color: #e0f696;*/
+    flex-direction: column;
+    margin-left: 10px;
 }
 
 .total-wrapper h4{
@@ -129,7 +139,7 @@
 }
 .line{
     font-size: 40px;
-    color: rgba(7, 17, 0, 0.32);
+    /*color: rgba(7, 17, 0, 0.32);*/
     position: absolute;
     margin-top: 80px;
 }
@@ -140,7 +150,7 @@
 .total-amount-value{
     right: 0;
     margin-top: 150px;
-    color: #0a53be;
+    /*color: #0a53be;*/
 }
 
 #order-itm-pic{
@@ -155,9 +165,9 @@
 
 #order-itm-data05{
     margin-top: 5px;
-    width: 300px;
+    width: 220px;
     height: 220px;
-    background-color: #e8cf93;
+    /*background-color: #e8cf93;*/
     margin-left: 30px;
     position: relative;
 
@@ -167,7 +177,7 @@
     width: 200px;
     height: 50px;
     position: relative;
-    background-color: rgba(255, 0, 0, 0.44);
+    /*background-color: rgba(255, 0, 0, 0.44);*/
     left: 0;
     right: 0;
     margin: auto;
@@ -179,13 +189,13 @@
 .pament-img{
     width: 50px;
     height: 50px;
-    background-color: #0a53be;
+    /*background-color: #0a53be;*/
     display: flex;
     justify-content: center;
     border-radius: 10px;
 }
 .pament-img:hover{
-    background-color: #3e8e41
+    /*background-color: #3e8e41*/
 }
 .pament-img:active {
     background-color: #3e8e41;
@@ -208,9 +218,17 @@
 }
 
 .table_card{
-    margin-top: 20px;
-    background-color: red;
+    margin-top: 100px;
+    /*background-color: red;*/
+    height: 410px;
+    width: 500px;
+    overflow-y: scroll;
+
 }
 .row{
     width: 77vw;
+}
+
+.table>tbody {
+    vertical-align: baseline;
 }

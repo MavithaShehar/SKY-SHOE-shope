@@ -16,7 +16,7 @@ import java.util.List;
 @Entity
 public class Sale {
     @Id
-    private String oId;
+    private String orderId;
     private String itemQty;
     private double totalPrice;
     private Date date;

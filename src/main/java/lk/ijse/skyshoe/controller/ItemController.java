@@ -26,8 +26,6 @@ public class ItemController {
     @PostMapping("saveItem")
     public ResponseEntity saveItem(@RequestBody ItemDTO itemDTO) {
 
-        System.out.println("new item is :"+itemDTO);
-
         try {
             String req = itemService.save(itemDTO);
             if (req.equals("00")) {
@@ -60,7 +58,6 @@ public class ItemController {
 
     @PutMapping(value = "updateItem")
     public ResponseEntity updateItem(@RequestBody ItemDTO itemDTO){
-        System.out.println(itemDTO);
         try {
             String req = itemService.update(itemDTO);
             if (req.equals("00")){
@@ -100,7 +97,6 @@ public class ItemController {
 //                System.out.println(dto);
 //            }
 
-            System.out.println("**************"+itemDTOList);
 
             responseDTO.setCode(VarList.RSP_SUCCESS);
             responseDTO.setMessage("SUCCESS");

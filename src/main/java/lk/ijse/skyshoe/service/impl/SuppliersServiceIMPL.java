@@ -39,7 +39,6 @@ public class SuppliersServiceIMPL implements SuppliersService {
     @Override
     public String update(SuppliersDTO suppliersDTO) {
         if (suppliersRepo.existsById(suppliersDTO.getSupplierId())){
-            System.out.println("////////////////"+suppliersDTO);
             suppliersRepo.save(modelMapper.map(suppliersDTO, Suppliers.class));
             return VarList.RSP_SUCCESS;
         }else {

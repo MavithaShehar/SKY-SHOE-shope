@@ -5,18 +5,22 @@ import {getAllItems} from "./itemController.js";
 getAllCustomer();
 getAllItems();
 
+export let employe_id;
+
 $(document).ready(function() {
     $('#loginBtn').on('click', function(event) {
         let userEmail = $('#userEmail').val();
         let userPassword = $('#password').val();
 
-        // Find the user in the employee_db
+
         let selectedUser = employee_db.find(item => item.email === userEmail);
 
-        // Check if the user exists and if the password matches
         if (selectedUser.email === userEmail && selectedUser.password === userPassword) {
-            event.preventDefault(); // Prevents the form from submitting
+            event.preventDefault();
             $('#loginSection').css("display", "none");
+            $('#syst-user02').text(selectedUser.employeeName);
+            $('#syst-user01').text(selectedUser.accessRole);
+            employe_id = selectedUser.employeeId;
 
             console.log(employee_db);
         } else {

@@ -1,0 +1,10 @@
+#sale-history-section{
+    padding-top: 60px;
+    background-color: rgba(30, 32, 32, 0.06);
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+#saleItemInfo_Table td {
+    text-align: center;
+}

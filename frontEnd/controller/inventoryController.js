@@ -1,10 +1,11 @@
 //-------------------------inventory----------------------------------
 
 import {InventoryModel} from "../modeule/inventoryModel.js";
-import {inventory_db} from "../db/db.js";
+import {customer_db, inventory_db} from "../db/db.js";
 
 getAllInventory();
 
+console.log("inventory_db is ",inventory_db);
 
 let inve_profilePic = document.getElementById("inve-profile-pic");
 let inve_inputFile = document.getElementById("inveFileInput");
@@ -25,6 +26,35 @@ inve_inputFile.addEventListener("change",e =>{
     reader.readAsDataURL(file);
 });
 
+async function selectLoadItemsId() {
+    const orderItemIdSelect = $("#order-select-itm-id");
+    orderItemIdSelect.empty(); // Clear existing options
+    orderItemIdSelect.append(`<option selected hidden>Select Item</option>`); // Add default hidden option
+
+    // Use a Set to store unique item codes
+    const uniqueItemCodes = new Set();
+
+    inventory_db.forEach((itm) => {
+        uniqueItemCodes.add(itm.itemCode);
+    });
+
+    // Append each unique item code to the select element
+    uniqueItemCodes.forEach((itemCode) => {
+        orderItemIdSelect.append(`<option value="${itemCode}">${itemCode}</option>`);
+    });
+}
+
+
+function inventoryEmpty(){
+     $('#itm-size').val("");
+     $('#itm-qty').val("");
+     $('#itm-color').val("");
+     $('#inve-itemId').val("");
+    //   var itemImage= $('#inve-profile-pic').val();
+     $('#itm-date').val("");
+     $('#itm-total-value').val("");
+    $('#inve-profile-pic').attr('src','assets/image/emplyIMG.jpg');
+}
 
 
  async function getAllInventory() {
@@ -56,14 +86,14 @@ inve_inputFile.addEventListener("change",e =>{
 
                 var row = `<tr>
                     <td class="col01">${img.prop('outerHTML')}</td>
-                    <td class="col02">${inve.item.itemCode}</td>
-                    <td class="col03">${inve.item.description}</td>
-                    <td class="col04">${inve.item.category}</td>
+                    <td class="col02">${inve.itemCode}</td>
+                    <td class="col03">${inve.itemDescription}</td>
+                    <td class="col04">${inve.itemCategory}</td>
                     <td class="col05">${inve.colour}</td>
                     <td class="col06">${inve.size}</td>
                     <td class="col07">${inve.qty}</td>
-                    <td class="col08">${inve.item.priceBuy}</td>
-                    <td class="col09">${inve.item.priceSell}</td>
+                    <td class="col08">${inve.itemPriceBuy}</td>
+                    <td class="col09">${inve.itemPriceSell}</td>
                 </tr>`;
                 $('#inventoryTable').append(row);
 
@@ -73,17 +103,19 @@ inve_inputFile.addEventListener("change",e =>{
                     inve.maxQty,
                     inve.colour,
                     inve.status,
-                    inve.item,
+                    inve.itemCode,
+                    inve.itemDescription,
+                    inve.itemCategory,
+                    inve.itemPriceBuy,
+                    inve.itemPriceSell,
                     inve.itemImage,
-                    inve.date,
-                    inve.totalValue,
-                    inve.totalQty,
 
                 );
 
                 inventory_db.push(inventory);
 
             }
+            selectLoadItemsId()
             console.log(inventory_db)
             return data;  // Return the data if needed for further processing
         } else {
@@ -124,6 +156,7 @@ $('#inveSaveBtn').on('click', () => {
         }),
         success: function(data) {
             alert("save")
+            inventoryEmpty();
             getAllInventory();
         },
         error: function(xhr, exception) {
@@ -163,7 +196,8 @@ $('#inveUpdateBtn').on('click', () => {
 
         }),
         success: function(data) {
-            alert("save")
+            alert("save");
+            inventoryEmpty();
             getAllInventory();
         },
         error: function(xhr, exception) {
