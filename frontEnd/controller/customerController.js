@@ -1,5 +1,6 @@
 import {customer_db, items_db, supplier_db} from "../db/db.js";
 import { loadCustomerId} from "./salesController.js";
+import {getCookie} from "./login.js";
 
 
 function generateShortUUID() {
@@ -12,6 +13,15 @@ function generateShortUUID() {
    return shortUUID;
 }
 
+const getToken = () =>{
+   const token = getCookie('authToken');  // Retrieve the auth token
+
+   if (!token) {
+      alert("No authentication token found. Please log in.");
+      return;
+   }
+   return token;
+}
 
 function CustomerNullField() {
    $('#customerId').val("");
@@ -101,6 +111,9 @@ $('#customerSave').on('click', () => {
       method: "POST",
       contentType: "application/json",
       url: "http://localhost:8080/api/v1/customer/saveCustomer",
+      headers: {
+         'Authorization': 'Bearer ' + getToken()
+      },
       data: JSON.stringify({
          customerId: customerId,
          customerName: customerName,
@@ -163,10 +176,15 @@ $('#customerUpdate').on('click', () => {
       return;
    }
 
+
+
    $.ajax({
       method: "PUT",
       contentType: "application/json",
       url: "http://localhost:8080/api/v1/customer/updateCustomer",
+      headers: {
+         'Authorization': 'Bearer ' + getToken()
+      },
       data: JSON.stringify({
          customerId: customerId,
          customerName: customerName,
@@ -195,11 +213,25 @@ $('#customerUpdate').on('click', () => {
 
 })
 
+
+
 export function getAllCustomer(){
+
+   // const token = getCookie('authToken');  // Retrieve the auth token
+   //
+   // if (!token) {
+   //    alert("No authentication token found. Please log in.");
+   //    return;
+   // }
+
+   customer_db.length=0;
 
    $.ajax({
       method: "GET",
       url: "http://localhost:8080/api/v1/customer/getAllCustomer",
+      headers: {
+         'Authorization': 'Bearer ' + getToken()
+      },
       async:true,
       success: function(data) {
          if (data.code === "00"){
@@ -288,6 +320,9 @@ function getCustomer(customer_id){
    $.ajax({
       method: "GET",
       url: "http://localhost:8080/api/v1/customer/getCustomer/"+customer_id,
+      headers: {
+         'Authorization': 'Bearer ' + getToken()
+      },
       async:true,
       success: function(data) {
          if (data.code === "00"){
@@ -328,6 +363,9 @@ $('#customerTable').on('click', '.selection button', function () {
    $.ajax({
       method: "DELETE",
       url: "http://localhost:8080/api/v1/customer/deleteCustomer/"+cust_ID,
+      headers: {
+         'Authorization': 'Bearer ' + getToken()
+      },
       async:true,
       success: function(data) {
          alert("success")
@@ -344,6 +382,7 @@ $('#customerTable').on('click', '.selection button', function () {
 
 // serch customer
 $('#customer-search').on('input', () => {
+   $('#customerTable').empty();
    let search_term = $('#customer-search').val();
 
    let results = customer_db.filter((item) =>
@@ -358,7 +397,7 @@ $('#customer-search').on('input', () => {
 
    $('#customerTable').empty();
    results.map((item, index) => {
-
+      $('#customerTable').empty();
       let levelColor = '';
 
       if (item.level === 'GOLD') {
@@ -393,25 +432,22 @@ $('#customer-search').on('input', () => {
 // Filter customer level
 $('#select-loyalty').on('change', () => {
 
+   // Clear the table before filtering or displaying customers
    $('#customerTable').empty();
 
    let search_term = $('#select-loyalty').val().toUpperCase();
 
-   console.log(search_term);
-
-   if (search_term === "ALLCUSTOMER"){
-      $('#customerTable').empty();
-      displayAllCustomers()
-   }else {
-
-      $('#customerTable').empty();
+   if (search_term === "ALLCUSTOMER") {
+      displayAllCustomers();  // Display all customers if "All Customers" is selected
+   } else {
 
       let results = customer_db.filter((item) =>
           item.level.toUpperCase().startsWith(search_term)
       );
 
-
+      // Now we append the filtered results
       results.forEach((item, index) => {
+
          let levelColor = '';
 
          if (item.level === 'GOLD') {
@@ -425,29 +461,29 @@ $('#select-loyalty').on('change', () => {
          }
 
          let tbl_row = `<tr>
-                            <td class="col01" >${item.customerId}</td>
-                            <td class="col02" >${item.customerName}</td>
-                            <td class="col03" >${item.gender}</td>
-                            <td class="col04" >${item.joinDate}</td>
-                            <td class="col05"  class="level-cell" style="background-color: ${levelColor}; font-weight: bold;">${item.level}</td>
-                            <td class="col06" >${item.totalPoints}</td>
-                            <td class="col07" >${item.birthday}</td>
-                            <td class="col08" >${item.contactNo}</td>
-                            <td class="col09" >${item.email}</td>
-                            <td class="col10" >${item.addressNoOrName}</td>
-                            <td class="selection"><button type="button"  class="btn btn-danger">X</button></i></td>
-                        </tr>`;
+                                <td class="col01">${item.customerId}</td>
+                                <td class="col02">${item.customerName}</td>
+                                <td class="col03">${item.gender}</td>
+                                <td class="col04">${item.joinDate}</td>
+                                <td class="col05 level-cell" style="background-color: ${levelColor}; font-weight: bold;">${item.level}</td>
+                                <td class="col06">${item.totalPoints}</td>
+                                <td class="col07">${item.birthday}</td>
+                                <td class="col08">${item.contactNo}</td>
+                                <td class="col09">${item.email}</td>
+                                <td class="col10">${item.addressNoOrName}</td>
+                                <td class="selection"><button type="button" class="btn btn-danger">X</button></td>
+                            </tr>`;
 
-         $('#customerTable').append(tbl_row);
-
-
-
+         $('#customerTable').append(tbl_row);  // Append row after determining level color
       });
    }
-
 });
 
+// Function to display all customers
 function displayAllCustomers() {
+   // Clear the table before appending all customers
+   $('#customerTable').empty();
+
    // Display all customers from the original list
    customer_db.forEach((item, index) => {
       let levelColor = '';

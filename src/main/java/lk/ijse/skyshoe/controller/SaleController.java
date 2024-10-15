@@ -27,7 +27,7 @@ public class SaleController {
 
 
     @PostMapping("save")
-    public ResponseEntity saveOrders(@RequestBody SaleOrderDTO saleOrderDTO) {
+    public String saveOrders(@RequestBody SaleOrderDTO saleOrderDTO) {
 
         System.out.println("sale controller is "+saleOrderDTO);
 
@@ -46,32 +46,18 @@ public class SaleController {
             String req01 = saleService.save(orderDTO);
             if (req01.equals("00")) {
                 String req02 = itemSaleService.save(saleOrderDTO);
-                System.out.println("req02 is :" + req02);
-                responseDTO.setCode(VarList.RSP_SUCCESS);
-                responseDTO.setMessage("SUCCESS");
-                responseDTO.setContent(saleOrderDTO);
-                return new ResponseEntity<>(responseDTO, HttpStatus.CREATED);
+
+                return "success  "+req02;
 
             } else if (req01.equals("06")) {
 
-                responseDTO.setCode(VarList.RSP_DUPLICATED);
-                responseDTO.setMessage("NOT SUCCESS");
-                responseDTO.setContent(orderDTO);
-                return new ResponseEntity(responseDTO, HttpStatus.BAD_REQUEST);
+                return "not success  "+req01;
 
             } else {
-                responseDTO.setCode(VarList.RSP_FAIL);
-                responseDTO.setMessage("ERROR");
-                responseDTO.setContent(null);
-                return new ResponseEntity(responseDTO, HttpStatus.BAD_REQUEST);
+                return "ERROR";
             }
         } catch (Exception ex) {
-            System.out.println(orderDTO);
-            responseDTO.setCode(VarList.RSP_ERROR);
-            responseDTO.setMessage(ex.getMessage());
-            responseDTO.setContent("wrone Id");
-            return new ResponseEntity(responseDTO, HttpStatus.INTERNAL_SERVER_ERROR);
-
+            return "ERROR Exception";
         }
     }
 

@@ -1,7 +1,17 @@
 import {supplier_db} from "../db/db.js";
 import {Supplier} from "../modeule/supplierModel.js";
+import {getCookie} from "./login.js";
 
-getAllSupplier();
+
+const getToken = () =>{
+    const token = getCookie('authToken');  // Retrieve the auth token
+
+    if (!token) {
+        alert("No authentication token found. Please log in.");
+        return;
+    }
+    return token;
+}
 
 $('#supp-save-btn').on('click', () => {
     var supplierId = $('#supplierId').val();
@@ -21,6 +31,9 @@ $('#supp-save-btn').on('click', () => {
         method: "POST",
         contentType: "application/json",
         url: "http://localhost:8080/api/v1/suppliers/saveSuppliers",
+        headers: {
+            'Authorization': 'Bearer ' + getToken()
+        },
         data: JSON.stringify({
             supplierId: supplierId,
             supplierName: supplierName,
@@ -46,11 +59,22 @@ $('#supp-save-btn').on('click', () => {
     });
 })
 
-function getAllSupplier() {
+export function getAllSupplier() {
+
+    const token = getCookie('authToken');  // Retrieve the auth token
+
+    if (!token) {
+        alert("No authentication token found. Please log in.");
+        return;
+    }
+
     $.ajax({
         method: "GET",
         url: "http://localhost:8080/api/v1/suppliers/getAllSuppliers",
         async: true,
+        headers: {
+            'Authorization': 'Bearer ' + token
+        },
         success: function(data) {
             if (data.code === "00") {
                 $('#supplierTable').empty();
@@ -69,7 +93,6 @@ function getAllSupplier() {
                     $('#supplierTable').append(row);
 
                     let newSupplier = new Supplier(
-
                         sup.supplierId,
                         sup.supplierName,
                         sup.supplierCategory,
@@ -113,6 +136,9 @@ function getSupplier(sup_id) {
     $.ajax({
         method: "GET",
         url: "http://localhost:8080/api/v1/suppliers/getSuppliers/" + sup_id,
+        headers: {
+            'Authorization': 'Bearer ' + getToken()
+        },
         async: true,
         success: function (data) {
             if (data.code === "00") {
@@ -141,45 +167,48 @@ function getSupplier(sup_id) {
 }
 
 $('#supp-update-btn').on('click', () => {
-        var supplierId = $('#supplierId').val();
-        var supplierName = $('#supplierName').val();
-        var supplierCategory = $('#supplierCategory').val();
-        var mobileNo = $('#mobileNo').val();
-        var landLineNo = $('#landLineNo').val();
-        var email = $('#supp-email').val();
-        var addressNoOrName = $('#address').val();
-        var addressCity = $('#city').val();
-        var addressState = $('#state').val();
-        var postalCode = $('#supp-postalCode').val();
-        var country = $('#country').val();
+    var supplierId = $('#supplierId').val();
+    var supplierName = $('#supplierName').val();
+    var supplierCategory = $('#supplierCategory').val();
+    var mobileNo = $('#mobileNo').val();
+    var landLineNo = $('#landLineNo').val();
+    var email = $('#supp-email').val();
+    var addressNoOrName = $('#address').val();
+    var addressCity = $('#city').val();
+    var addressState = $('#state').val();
+    var postalCode = $('#supp-postalCode').val();
+    var country = $('#country').val();
 
-        $.ajax({
-            method: "PUT",
-            contentType: "application/json",
-            url: "http://localhost:8080/api/v1/suppliers/updateSuppliers",
-            data: JSON.stringify({
-                supplierId: supplierId,
-                supplierName: supplierName,
-                supplierCategory: supplierCategory,
-                mobileNo: mobileNo,
-                landLineNo: landLineNo,
-                email: email,
-                addressNoOrName: addressNoOrName,
-                addressState: addressState,
-                addressCity: addressCity,
-                postalCode: postalCode,
-                country: country
-            }),
-            success: function (data) {
-                getAllSupplier();
-                alert("Saved successfully");
-            },
-            error: function (xhr, status, error) {
-                alert("Error occurred while saving");
-                console.log(error);
-            }
-        });
-    })
+    $.ajax({
+        method: "PUT",
+        contentType: "application/json",
+        url: "http://localhost:8080/api/v1/suppliers/updateSuppliers",
+        headers: {
+            'Authorization': 'Bearer ' + getToken()
+        },
+        data: JSON.stringify({
+            supplierId: supplierId,
+            supplierName: supplierName,
+            supplierCategory: supplierCategory,
+            mobileNo: mobileNo,
+            landLineNo: landLineNo,
+            email: email,
+            addressNoOrName: addressNoOrName,
+            addressState: addressState,
+            addressCity: addressCity,
+            postalCode: postalCode,
+            country: country
+        }),
+        success: function (data) {
+            getAllSupplier();
+            alert("Saved successfully");
+        },
+        error: function (xhr, status, error) {
+            alert("Error occurred while saving");
+            console.log(error);
+        }
+    });
+})
 
 // search supplier
 $('#formGroupExampleInput').on('input', () => {

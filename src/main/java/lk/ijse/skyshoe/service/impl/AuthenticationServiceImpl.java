@@ -51,7 +51,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 
         String token = jwtService.generateToken(employee);
 
-        return new JWTAuthResponse(token + " " + employee.getAccessRole() +" " + employee.getEmployeeId());
+        return new JWTAuthResponse(token);
 
     }
 

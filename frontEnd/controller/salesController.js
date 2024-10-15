@@ -1,7 +1,8 @@
-import { customer_db, inventory_db } from "../db/db.js";
+import {customer_db, inventory_db, items_db} from "../db/db.js";
 import { OrderModel } from "../modeule/orderModel.js";
-import { employe_id } from "./login.js";
+//import { employe_id } from "./login.js";
 import {loadItemsId} from "./itemController.js";
+import {getCookie} from "./login.js";
 
 loadItemsId();
 
@@ -15,14 +16,15 @@ $('#total-value').text("00");
 $('#sub-total-value').text("00");
 
 function generateUUID6() {
-    let characters = '0A1B2C3D4E5F6G7H8I9J0K8L7M6N5O4P3Q2R1STUVWXYZ';
-    let uuid = 'O'; // Set the first character to 'O'
-    for (let i = 1; i < 6; i++) { // Start from index 1 to add the remaining characters
+    let characters = '0123456789'; // Only numbers
+    let uuid = '';
+    for (let i = 0; i < 10; i++) { // Generate 10 digits
         let randomIndex = Math.floor(Math.random() * characters.length);
         uuid += characters[randomIndex];
     }
     $('#order_id').val(uuid);
 }
+
 
 let order_profilePic = document.getElementById("order-itm-profile-pic");
 let order_inputFile = document.getElementById("order-itm-FileInput");
@@ -43,15 +45,34 @@ order_inputFile.addEventListener("change", e => {
     reader.readAsDataURL(file);
 });
 
+const getToken = () =>{
+    const token = getCookie('authToken');  // Retrieve the auth token
+
+    if (!token) {
+        alert("No authentication token found. Please log in.");
+        return;
+    }
+    return token;
+}
+
 export function loadCustomerId() {
     const customerSelect = $("#ordr-cust-id");
     customerSelect.empty(); // Clear existing options
     customerSelect.append('<option selected hidden>Select Customer</option>'); // Add default hidden option
 
-    customer_db.map((itm) => {
-        customerSelect.append(`<option value="${itm.customerId}">${itm.customerId}</option>`); // Append customer options
+    const uniqueCustomerCodes = new Set();
+
+    // Add unique customer IDs to the Set
+    customer_db.forEach((itm) => {
+        uniqueCustomerCodes.add(itm.customerId);
+    });
+
+    // Iterate over the unique customer IDs and append them to the dropdown
+    uniqueCustomerCodes.forEach((customerId) => {
+        customerSelect.append(`<option value="${customerId}">${customerId}</option>`); // Append customer options
     });
 }
+
 
 $('#ordr-cust-id').on('input', () => {
     let order_cust_id = $('#ordr-cust-id').val();
@@ -69,7 +90,7 @@ function datePic() {
     let formattedDate = `${year}-${month}-${day}`;
     $('#order-date').val(formattedDate);
 
-    console.log("datePic",datePic)
+
 
 }
 
@@ -87,9 +108,10 @@ $('#itm-Search-Btn').on('click', () => {
 
     );
 
-
-
     if (selectedItemData) {
+        if (selectedItemData.qty <= 0){
+            alert("select item out of stock")
+        }
         orderItemName = selectedItemData.itemDescription;
         $('#order-itm-catagory').val(selectedItemData.itemCategory);
         $('#order-itm-price').val(selectedItemData.itemPriceSell);
@@ -108,15 +130,34 @@ $('#itm-Search-Btn').on('click', () => {
         $('#order-itm-color').val(' EMPTY');
         $('#order-itm-profile-pic').attr('src', "");
         $('#discount').val(0);
+        $('#order-itm-profile-pic').attr('src','assets/image/emplyIMG.jpg');
     }
 });
 
-$('#orderBtn').on('click', async () => {
-    console.log("orderbtn");
-    await createOrderItem();
-    await OrderItemsManeg();
-    loadSelectedItems();
+async function clearSelectOrders(){
+    $('#order-itm-catagory').val(' ');
+    $('#order-itm-price').val(' ');
+    $('#order-itm-available-qty').val(' ');
+    $('#order-itm-size').val(' ');
+    $('#order-itm-color').val(' ');
+    $('#order-itm-profile-pic').attr('src', "");
+    $('#discount').val(0);
+    $('#order-itm-profile-pic').attr('src','assets/image/emplyIMG.jpg');
+}
 
+$('#orderBtn').on('click', async () => {
+
+    if (parseInt($('#order-itm-available-qty').val()) <= 0) {
+        alert("The selected item is out of stock");
+        return; // Stop function execution
+    }else {
+        await createOrderItem();
+        await OrderItemsManeg();
+        loadSelectedItems();
+
+        await clearSelectOrders();
+
+    }
 });
 
 async function OrderItemsManeg() {
@@ -145,7 +186,7 @@ async function OrderItemsManeg() {
 
     console.log(size, qty, colour, item, itemImg, date, totalValue);
 
-//    UpdateInventoryItm(size, qty, colour, item, itemImg, date, totalValue);
+    UpdateInventoryItm(size, qty, colour, item, itemImg, date, totalValue);
 }
 
 
@@ -153,6 +194,10 @@ async function createOrderItem() {
     let orderId = $('#order_id').val();
     let customerId = $('#ordr-cust-id').val();
 
+    if (parseInt($('#order-itm-available-qty').val()) <= 0) {
+        alert("you select item out of stock")
+
+    }else {
     let orderItemId = $('#order-select-itm-id').val();
     let orderItemCategory = $('#order-itm-catagory').val();
     let orderItemPrice = parseFloat($('#order-itm-price').val());
@@ -163,7 +208,6 @@ async function createOrderItem() {
     let orderItmPic = itemImg;
     let discount = parseFloat($('#discount').val());
 
-    console.log("order-itm-profile-pic is ",itemImg);
 
     let price = orderQty * orderItemPrice;
     let subTotalMount = await calculateMount(discount, orderQty, orderItemPrice);
@@ -182,11 +226,11 @@ async function createOrderItem() {
         itemImg
     );
 
-    console.log("orderModel is ",orderModel);
 
     orders_db.push(orderModel);
 
     updateTotalValues();
+}
 }
 
 var total = 0;
@@ -242,24 +286,31 @@ let paymentType = "";
 // Handle the purchase button click event
 
 $('#purchase-btn').on('click', () => {
-        let order_id = $('#order_id').val();
-        let date = $('#order-date').val();
-        let employee_id = employe_id; // Ensure this variable is defined somewhere
-        let customer_id = $('#ordr-cust-id').val();
-        let total = $('#sub-total-value').text();
-        let itemQty = orders_db.length;
-        let paymentOption = paymentType;
+    let order_id = $('#order_id').val();
+    let date = $('#order-date').val();
+    let employee_id = "E001"; // Ensure this variable is defined somewhere
+    let customer_id = $('#ordr-cust-id').val();
+    let total = $('#sub-total-value').text();
+    let itemQty = orders_db.length;
+    let paymentOption = paymentType;
 
-        let itemData = orders_db.map(item => ({
-            itemSaleId: item.itemSaleId,
-            itemCode: {
-                itemCode: item.itemCode
-            },
-            colour: item.colour,
-            qty: item.qty,
-            size: item.size,
-            itemImg:item.itemImg
-        }));
+    let itemData = orders_db.map(item => ({
+        itemSaleId: item.itemSaleId,
+        itemCode: {
+            itemCode: item.itemCode
+        },
+        colour: item.colour,
+        qty: item.qty,
+        size: item.size,
+        itemImg:item.itemImg
+    }));
+
+    const token = getCookie('authToken');
+
+    if (!token) {
+        alert("Authentication token not found. Please log in again.");
+        return;
+    }
 
     if(paymentOption !== null && paymentOption !== "") {
 
@@ -267,6 +318,9 @@ $('#purchase-btn').on('click', () => {
             method: "POST",
             contentType: "application/json",
             url: "http://localhost:8080/api/v1/sale/save",
+            headers: {
+                'Authorization': 'Bearer ' + token
+            },
             data: JSON.stringify({
                 orderId: {
                     orderId: order_id
@@ -280,7 +334,7 @@ $('#purchase-btn').on('click', () => {
                     customerId: customer_id
                 },
                 employeeId: {
-                    employeeId: "E001"
+                    employeeId: employee_id
                 },
                 itemData: itemData
             }),
@@ -289,9 +343,11 @@ $('#purchase-btn').on('click', () => {
                 $('#order-tbl-body').empty();
                 resetValues();
                 clearFields();
+                clearSelectOrders();
             },
             error: function (xhr, exception) {
                 alert("Error");
+                console.log(this.data)
                 console.log("Error details:", xhr.responseText);
                 console.log(exception);
             }
@@ -299,6 +355,7 @@ $('#purchase-btn').on('click', () => {
 
         orders_db = [];
         updateTotalValues();
+
 
     } else {
         alert("Payment type is required");
@@ -360,7 +417,7 @@ $('#order-tbl-body').on('click', '.col10 button', function () {
 
 
         let stockQty  = inventory_db[indexIncesItm].qty;
-     //   let removeQty  = orders_db[indexToRemove].orderModel.order;
+        //   let removeQty  = orders_db[indexToRemove].orderModel.order;
         let newQty = parseFloat(stockQty)+parseFloat(removeItmQty);
 
 
@@ -393,7 +450,10 @@ function UpdateInventoryItm(size,qty,colour,item,itemImg,date,totalValue){
     $.ajax({
         method: "PUT",
         contentType: "application/json",
-        url: "http://localhost:8080/api/v1/inventory/updateInventory",
+        url: "http://localhost:8080/api/v1/inventory/updateSellInventory",
+        headers: {
+            'Authorization': 'Bearer ' + getToken()
+        },
         data: JSON.stringify({
             size:size,
             qty:qty,
@@ -411,7 +471,7 @@ function UpdateInventoryItm(size,qty,colour,item,itemImg,date,totalValue){
         },
         error: function(xhr, exception) {
             alert("Error")
-            console.log(this.data)
+           // console.log(this.data)
             console.log(exception)
         }
     });
@@ -433,7 +493,6 @@ function clearFields() {
     $('#order-qty').val("");
     $('#order-itm-size').val("");
     $('#order-itm-color').val("");
-    $('#order-date').val("");
     $('#order-itm-profile-pic').attr('src', img.attr('src'));
     $('#discount').val("");
 

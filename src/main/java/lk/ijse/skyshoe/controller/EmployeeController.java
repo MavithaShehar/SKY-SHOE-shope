@@ -157,6 +157,35 @@ public class EmployeeController {
         }
     }
 
+    @GetMapping("/getSelectEmployee/{email}")
+    public ResponseEntity getSelectEmployee(@PathVariable String email) {
+        System.out.println("i am hear");
+
+        try {
+            EmployeeDTO employeeDTO = employeeService.getSelectEmployee(email);
+
+            System.out.println("employeeDTO "+employeeDTO);
+
+            if (employeeDTO != null) {
+                responseDTO.setCode(VarList.RSP_SUCCESS);
+                responseDTO.setMessage("SUCCESS");
+                responseDTO.setContent(employeeDTO);
+                return new ResponseEntity(responseDTO, HttpStatus.ACCEPTED);
+
+            } else {
+                responseDTO.setCode(VarList.RSP_FAIL);
+                responseDTO.setMessage("ERROR");
+                responseDTO.setContent(null);
+                return new ResponseEntity(responseDTO, HttpStatus.BAD_REQUEST);
+            }
+        } catch (Exception ex) {
+            responseDTO.setCode(VarList.RSP_ERROR);
+            responseDTO.setMessage(ex.getMessage());
+            responseDTO.setContent(null);
+            return new ResponseEntity(responseDTO, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+
+    }
 }
 
 

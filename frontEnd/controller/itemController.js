@@ -1,9 +1,10 @@
 import {Items} from "../modeule/itemModel.js";
 import {supplier_db,items_db} from "../db/db.js";
 import {Supplier} from "../modeule/supplierModel.js";
+import {getAllSupplier} from "./supplierController.js";
+import {getCookie} from "./login.js";
 
-getAllItems();
-loadSupplierId();
+
 getAllSupplier();
 
 // Ensure the DOM is fully loaded before calling the function
@@ -12,41 +13,51 @@ $(document).ready(() => {
     loadSupplierId();
 });
 
-function getAllSupplier() {
-    $.ajax({
-        method: "GET",
-        url: "http://localhost:8080/api/v1/suppliers/getAllSuppliers",
-        async: true,
-        success: function(data) {
-            if (data.code === "00") {
-                $('#supplierTable').empty();
-                for (let sup of data.content ) {
+const getToken = () =>{
+    const token = getCookie('authToken');  // Retrieve the auth token
 
-                    let newSupplier = new Supplier(
-
-                        sup.supplierId,
-                        sup.supplierName,
-                        sup.supplierCategory,
-                        sup.mobileNo,
-                        sup.landLineNo,
-                        sup.email,
-                        sup.addressNoOrName,
-                        sup.addressCity,
-                        sup.addressState,
-                        sup.postalCode,
-                        sup.country
-                    );
-                    supplier_db.push(newSupplier);
-
-                }
-                loadSupplierId();
-            }
-        },
-        error: function(xhr, exception) {
-            alert("Error");
-        }
-    });
+    if (!token) {
+        alert("No authentication token found. Please log in.");
+        return;
+    }
+    return token;
 }
+
+// function getAllSupplier() {
+//     $.ajax({
+//         method: "GET",
+//         url: "http://localhost:8080/api/v1/suppliers/getAllSuppliers",
+//         async: true,
+//         success: function(data) {
+//             if (data.code === "00") {
+//                 $('#supplierTable').empty();
+//                 for (let sup of data.content ) {
+//
+//                     let newSupplier = new Supplier(
+//
+//                         sup.supplierId,
+//                         sup.supplierName,
+//                         sup.supplierCategory,
+//                         sup.mobileNo,
+//                         sup.landLineNo,
+//                         sup.email,
+//                         sup.addressNoOrName,
+//                         sup.addressCity,
+//                         sup.addressState,
+//                         sup.postalCode,
+//                         sup.country
+//                     );
+//                     supplier_db.push(newSupplier);
+//
+//                 }
+//                 loadSupplierId();
+//             }
+//         },
+//         error: function(xhr, exception) {
+//             alert("Error");
+//         }
+//     });
+// }
 
 $("#select-itm-option>button").eq(0).on("click", () => {
 
@@ -134,12 +145,12 @@ export function loadItemsId() {
     });
 }
 
- function loadSupplierId() {
+export function loadSupplierId() {
     const SupplierSelect = $("#supp-id");
-     SupplierSelect.empty(); // Clear existing options
-     SupplierSelect.append('<option selected hidden>Select Supplier</option>'); // Add default hidden option
+    SupplierSelect.empty(); // Clear existing options
+    SupplierSelect.append('<option selected hidden>Select Supplier</option>'); // Add default hidden option
 
-         supplier_db.map((itm) => {
+    supplier_db.map((itm) => {
         SupplierSelect.append(`<option value="${itm.supplierId}">${itm.supplierId}</option>`); // Append customer options
     });
 }
@@ -148,40 +159,43 @@ export function loadItemsId() {
 
 $('#saveItem').on('click', () => {
 
-        var itemCode = $('#itemId').val();
-        var description = $('#item_description').val();
-        var supplierId = $('#supp-id').val();
-        var priceBuy = $('#price_buy').val();
-        var priceSell = $('#price_sale').val();
-        var category = $('#itemCategory').val();
+    var itemCode = $('#itemId').val();
+    var description = $('#item_description').val();
+    var supplierId = $('#supp-id').val();
+    var priceBuy = $('#price_buy').val();
+    var priceSell = $('#price_sale').val();
+    var category = $('#itemCategory').val();
 
-        $.ajax({
-            method: "POST",
-            contentType: "application/json",
-            url: "http://localhost:8080/api/v1/item/saveItem",
-            data: JSON.stringify({
-                itemCode: itemCode,
-                description: description,
-                category: category,
-                priceBuy: priceBuy,
-                priceSell: priceSell,
-                itemImg:"",
-                suppliers: {
-                    supplierId: supplierId
-                }
-            }),
-
-            success: function(data) {
-                getAllItems();
-                alert("Saved successfully");
-            },
-            error: function(xhr, status, error) {
-                alert("Error occurred while saving");
-                console.log(error);
+    $.ajax({
+        method: "POST",
+        contentType: "application/json",
+        url: "http://localhost:8080/api/v1/item/saveItem",
+        headers: {
+            'Authorization': 'Bearer ' + getToken()
+        },
+        data: JSON.stringify({
+            itemCode: itemCode,
+            description: description,
+            category: category,
+            priceBuy: priceBuy,
+            priceSell: priceSell,
+            itemImg:"",
+            suppliers: {
+                supplierId: supplierId
             }
-        });
+        }),
 
-    })
+        success: function(data) {
+            getAllItems();
+            alert("Saved successfully");
+        },
+        error: function(xhr, status, error) {
+            alert("Error occurred while saving");
+            console.log(error);
+        }
+    });
+
+})
 
 $('#updateItem').on('click', () => {
 
@@ -196,6 +210,9 @@ $('#updateItem').on('click', () => {
         method: "PUT",
         contentType: "application/json",
         url: "http://localhost:8080/api/v1/item/updateItem",
+        headers: {
+            'Authorization': 'Bearer ' + getToken()
+        },
         data: JSON.stringify({
             itemCode: itemCode,
             description: description,
@@ -303,16 +320,25 @@ async function getAllItems() {
 }
 */
 export async function getAllItems() {
+    const token = getCookie('authToken');
+
+    if (!token) {
+        alert("Authentication token not found. Please log in again.");
+        return;
+    }
     try {
         const response = await $.ajax({
             method: "GET",
             url: "http://localhost:8080/api/v1/item/getAllItem",
+            headers: {
+                'Authorization': 'Bearer ' + token
+            },
             async: true
         });
 
         if (response.code === '00') {
             const data = response.content;
-           // console.log('data::: ', JSON.stringify(data, null, 2));  // Log the data properly
+            // console.log('data::: ', JSON.stringify(data, null, 2));  // Log the data properly
 
             $('#itemTable').empty();
 
@@ -347,8 +373,8 @@ export async function getAllItems() {
                 items_db.push(items);
                 loadItemsId();
             }
-           // console.log(items_db)
-             return data;  // Return the data if needed for further processing
+            // console.log(items_db)
+            return data;  // Return the data if needed for further processing
         } else {
             throw new Error("Error fetching items: " + response.message);
         }
@@ -370,10 +396,19 @@ $('#itemTable').on('click', 'tr' , function() {
 });
 
 function getItem(itm_id) {
+    const token = getCookie('authToken');
+
+    if (!token) {
+        alert("Authentication token not found. Please log in again.");
+        return;
+    }
 
     $.ajax({
         method: "GET",
         url: "http://localhost:8080/api/v1/item/getItem/" + itm_id,
+        headers: {
+            'Authorization': 'Bearer ' + token
+        },
         async: true,
         success: function (data) {
             if (data.code === "00") {

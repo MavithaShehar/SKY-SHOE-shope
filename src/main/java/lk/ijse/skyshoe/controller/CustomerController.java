@@ -23,7 +23,7 @@ public class CustomerController {
     private final CustomerService customerService;
 
 
-    @GetMapping("/abc")
+    @PostMapping("/abc")
     public String getMessage() {
         return "Hello";
     }
@@ -53,7 +53,7 @@ public class CustomerController {
                 return new ResponseEntity(responseDTO, HttpStatus.BAD_REQUEST);
             }
         } catch (Exception ex) {
-            System.out.println(customerDTO);
+
             responseDTO.setCode(VarList.RSP_ERROR);
             responseDTO.setMessage(ex.getMessage());
             responseDTO.setContent("wrone Id");
@@ -65,7 +65,7 @@ public class CustomerController {
 
     @PutMapping(value = "updateCustomer")
     public ResponseEntity updateCustomer(@RequestBody CustomerDTO customerDTO){
-        System.out.println(customerDTO);
+
         try {
             String req = customerService.update(customerDTO);
             if (req.equals("00")){
@@ -99,7 +99,7 @@ public class CustomerController {
     public ResponseEntity getAllCustomer() {
         try {
             List<CustomerDTO> customerDTOList = customerService.getAll();
-            System.out.println("============="+customerDTOList);
+
 
             responseDTO.setCode(VarList.RSP_SUCCESS);
             responseDTO.setMessage("SUCCESS");

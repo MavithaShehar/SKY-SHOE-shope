@@ -1,57 +1,96 @@
-2024-10-07T12:28:16.457+05:30  INFO 5604 --- [sky-shoe] [main] lk.ijse.skyshoe.SkyShoeApplication       : Starting SkyShoeApplication using Java 17.0.12 with PID 5604 (C:\Projects\projects\GDSE Sem 02\01 SEM 02 API\SKY SHOES Shope\sky-shoe\target\classes started by Danuja Greru in C:\Projects\projects\GDSE Sem 02\01 SEM 02 API\SKY SHOES Shope\sky-shoe)
-2024-10-07T12:28:16.466+05:30  INFO 5604 --- [sky-shoe] [main] lk.ijse.skyshoe.SkyShoeApplication       : No active profile set, falling back to 1 default profile: "default"
-2024-10-07T12:28:19.167+05:30  INFO 5604 --- [sky-shoe] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-10-07T12:28:19.351+05:30  INFO 5604 --- [sky-shoe] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 166 ms. Found 8 JPA repository interfaces.
-2024-10-07T12:28:20.812+05:30  INFO 5604 --- [sky-shoe] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-10-07T12:28:20.837+05:30  INFO 5604 --- [sky-shoe] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-10-07T12:28:20.840+05:30  INFO 5604 --- [sky-shoe] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2024-10-07T12:28:20.978+05:30  INFO 5604 --- [sky-shoe] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-10-07T12:28:20.979+05:30  INFO 5604 --- [sky-shoe] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4332 ms
-2024-10-07T12:28:21.357+05:30  INFO 5604 --- [sky-shoe] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-10-07T12:28:21.510+05:30  INFO 5604 --- [sky-shoe] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2024-10-07T12:28:21.601+05:30  INFO 5604 --- [sky-shoe] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-10-07T12:28:22.336+05:30  INFO 5604 --- [sky-shoe] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-10-07T12:28:22.428+05:30  INFO 5604 --- [sky-shoe] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-10-07T12:28:23.355+05:30  INFO 5604 --- [sky-shoe] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2037f12b
-2024-10-07T12:28:23.358+05:30  INFO 5604 --- [sky-shoe] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-10-07T12:28:23.444+05:30  WARN 5604 --- [sky-shoe] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-10-07T12:28:28.523+05:30  INFO 5604 --- [sky-shoe] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-10-07T12:28:28.745+05:30  INFO 5604 --- [sky-shoe] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-10-07T12:28:29.960+05:30  INFO 5604 --- [sky-shoe] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-10-07T12:28:30.339+05:30  WARN 5604 --- [sky-shoe] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-10-07T12:28:31.081+05:30  INFO 5604 --- [sky-shoe] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@58397dd, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@620260ad, org.springframework.security.web.context.SecurityContextHolderFilter@16df0ebd, org.springframework.security.web.header.HeaderWriterFilter@2b68c59b, org.springframework.web.filter.CorsFilter@216c6825, org.springframework.security.web.authentication.logout.LogoutFilter@76e4df53, lk.ijse.skyshoe.config.JWTConfigurationFilter$$SpringCGLIB$$0@46067a74, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@628b1538, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@36995784, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@56ece9c, org.springframework.security.web.session.SessionManagementFilter@33319df0, org.springframework.security.web.access.ExceptionTranslationFilter@24facb47, org.springframework.security.web.access.intercept.AuthorizationFilter@232899d1]
-2024-10-07T12:28:31.539+05:30  INFO 5604 --- [sky-shoe] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-2024-10-07T12:28:31.566+05:30  INFO 5604 --- [sky-shoe] [main] lk.ijse.skyshoe.SkyShoeApplication       : Started SkyShoeApplication in 16.333 seconds (process running for 18.253)
-2024-10-07T12:29:47.157+05:30  INFO 5604 --- [sky-shoe] [http-nio-8080-exec-4] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-10-07T12:29:47.158+05:30  INFO 5604 --- [sky-shoe] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-10-07T12:29:47.162+05:30  INFO 5604 --- [sky-shoe] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2024-10-07T12:29:53.088+05:30  INFO 5604 --- [sky-shoe] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-10-07T12:29:53.103+05:30  INFO 5604 --- [sky-shoe] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-10-07T12:29:53.112+05:30  INFO 5604 --- [sky-shoe] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-10-07T12:30:08.553+05:30  INFO 12028 --- [sky-shoe] [main] lk.ijse.skyshoe.SkyShoeApplication       : Starting SkyShoeApplication using Java 17.0.12 with PID 12028 (C:\Projects\projects\GDSE Sem 02\01 SEM 02 API\SKY SHOES Shope\sky-shoe\target\classes started by Danuja Greru in C:\Projects\projects\GDSE Sem 02\01 SEM 02 API\SKY SHOES Shope\sky-shoe)
-2024-10-07T12:30:08.575+05:30  INFO 12028 --- [sky-shoe] [main] lk.ijse.skyshoe.SkyShoeApplication       : No active profile set, falling back to 1 default profile: "default"
-2024-10-07T12:30:13.089+05:30  INFO 12028 --- [sky-shoe] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-10-07T12:30:13.267+05:30  INFO 12028 --- [sky-shoe] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 158 ms. Found 8 JPA repository interfaces.
-2024-10-07T12:30:14.583+05:30  INFO 12028 --- [sky-shoe] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-10-07T12:30:14.621+05:30  INFO 12028 --- [sky-shoe] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-10-07T12:30:14.621+05:30  INFO 12028 --- [sky-shoe] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2024-10-07T12:30:14.760+05:30  INFO 12028 --- [sky-shoe] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-10-07T12:30:14.761+05:30  INFO 12028 --- [sky-shoe] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5860 ms
-2024-10-07T12:30:15.106+05:30  INFO 12028 --- [sky-shoe] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-10-07T12:30:15.229+05:30  INFO 12028 --- [sky-shoe] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2024-10-07T12:30:15.296+05:30  INFO 12028 --- [sky-shoe] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-10-07T12:30:15.833+05:30  INFO 12028 --- [sky-shoe] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-10-07T12:30:15.882+05:30  INFO 12028 --- [sky-shoe] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-10-07T12:30:16.300+05:30  INFO 12028 --- [sky-shoe] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5922cff3
-2024-10-07T12:30:16.300+05:30  INFO 12028 --- [sky-shoe] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-10-07T12:30:16.384+05:30  WARN 12028 --- [sky-shoe] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-10-07T12:30:18.953+05:30  INFO 12028 --- [sky-shoe] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-10-07T12:30:19.169+05:30  INFO 12028 --- [sky-shoe] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-10-07T12:30:19.866+05:30  INFO 12028 --- [sky-shoe] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-10-07T12:30:20.112+05:30  WARN 12028 --- [sky-shoe] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-10-07T12:30:20.514+05:30  INFO 12028 --- [sky-shoe] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@289d9f0d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@39aaa7db, org.springframework.security.web.context.SecurityContextHolderFilter@42718ebf, org.springframework.security.web.header.HeaderWriterFilter@4a234e1f, org.springframework.web.filter.CorsFilter@14a3a66c, org.springframework.security.web.authentication.logout.LogoutFilter@5f113867, lk.ijse.skyshoe.config.JWTConfigurationFilter$$SpringCGLIB$$0@373fb666, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@c7008b4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3f54fabc, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1738d3b2, org.springframework.security.web.session.SessionManagementFilter@5cc28282, org.springframework.security.web.access.ExceptionTranslationFilter@23c0fcf0, org.springframework.security.web.access.intercept.AuthorizationFilter@72fc6b5e]
-2024-10-07T12:30:20.866+05:30  INFO 12028 --- [sky-shoe] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-2024-10-07T12:30:20.884+05:30  INFO 12028 --- [sky-shoe] [main] lk.ijse.skyshoe.SkyShoeApplication       : Started SkyShoeApplication in 14.454 seconds (process running for 19.671)
-2024-10-07T12:30:28.375+05:30  INFO 12028 --- [sky-shoe] [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-10-07T12:30:28.375+05:30  INFO 12028 --- [sky-shoe] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-10-07T12:30:28.379+05:30  INFO 12028 --- [sky-shoe] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-10-15T02:38:47.920+05:30  INFO 7588 --- [sky-shoe] [http-nio-8080-exec-8] l.i.s.s.impl.AuthenticationServiceImpl   : Sign in
+2024-10-15T02:38:48.153+05:30  INFO 7588 --- [sky-shoe] [http-nio-8080-exec-8] l.i.skyshoe.service.impl.JWTServiceImpl  : token generated
+2024-10-15T03:54:45.552+05:30  INFO 7588 --- [sky-shoe] [http-nio-8080-exec-8] l.i.s.s.impl.AuthenticationServiceImpl   : Sign in
+2024-10-15T03:54:45.678+05:30  INFO 7588 --- [sky-shoe] [http-nio-8080-exec-8] l.i.skyshoe.service.impl.JWTServiceImpl  : token generated
+2024-10-15T03:55:04.229+05:30  WARN 7588 --- [sky-shoe] [http-nio-8080-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.lang.String` from Object value (token `JsonToken.START_OBJECT`)]
+2024-10-15T03:55:22.188+05:30  WARN 7588 --- [sky-shoe] [http-nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.lang.String` from Object value (token `JsonToken.START_OBJECT`)]
+2024-10-15T04:00:08.368+05:30  INFO 7588 --- [sky-shoe] [http-nio-8080-exec-8] l.i.s.s.impl.AuthenticationServiceImpl   : Sign in
+2024-10-15T04:00:08.583+05:30  INFO 7588 --- [sky-shoe] [http-nio-8080-exec-8] l.i.skyshoe.service.impl.JWTServiceImpl  : token generated
+2024-10-15T04:01:11.203+05:30  INFO 7588 --- [sky-shoe] [http-nio-8080-exec-5] l.i.s.s.impl.AuthenticationServiceImpl   : Sign in
+2024-10-15T04:01:11.354+05:30  INFO 7588 --- [sky-shoe] [http-nio-8080-exec-5] l.i.skyshoe.service.impl.JWTServiceImpl  : token generated
+2024-10-15T04:01:23.578+05:30  WARN 7588 --- [sky-shoe] [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.lang.String` from Object value (token `JsonToken.START_OBJECT`)]
+2024-10-15T04:02:46.880+05:30  INFO 7588 --- [sky-shoe] [http-nio-8080-exec-2] l.i.s.s.impl.AuthenticationServiceImpl   : Sign in
+2024-10-15T04:02:52.364+05:30  INFO 7588 --- [sky-shoe] [http-nio-8080-exec-4] l.i.s.s.impl.AuthenticationServiceImpl   : Sign in
+2024-10-15T04:02:52.522+05:30  INFO 7588 --- [sky-shoe] [http-nio-8080-exec-4] l.i.skyshoe.service.impl.JWTServiceImpl  : token generated
+2024-10-15T04:09:12.850+05:30  INFO 7588 --- [sky-shoe] [http-nio-8080-exec-5] l.i.s.s.impl.AuthenticationServiceImpl   : Sign in
+2024-10-15T04:09:13.007+05:30  INFO 7588 --- [sky-shoe] [http-nio-8080-exec-5] l.i.skyshoe.service.impl.JWTServiceImpl  : token generated
+2024-10-15T04:10:21.802+05:30  INFO 7588 --- [sky-shoe] [http-nio-8080-exec-1] l.i.s.s.impl.AuthenticationServiceImpl   : Sign in
+2024-10-15T04:10:21.943+05:30  INFO 7588 --- [sky-shoe] [http-nio-8080-exec-1] l.i.skyshoe.service.impl.JWTServiceImpl  : token generated
+2024-10-15T04:11:12.521+05:30  INFO 7588 --- [sky-shoe] [http-nio-8080-exec-3] l.i.s.s.impl.AuthenticationServiceImpl   : Sign in
+2024-10-15T04:11:12.739+05:30  INFO 7588 --- [sky-shoe] [http-nio-8080-exec-3] l.i.skyshoe.service.impl.JWTServiceImpl  : token generated
+2024-10-15T04:12:35.178+05:30  INFO 7588 --- [sky-shoe] [http-nio-8080-exec-1] l.i.s.s.impl.AuthenticationServiceImpl   : Sign in
+2024-10-15T04:12:35.314+05:30  INFO 7588 --- [sky-shoe] [http-nio-8080-exec-1] l.i.skyshoe.service.impl.JWTServiceImpl  : token generated
+2024-10-15T04:13:17.371+05:30  INFO 7588 --- [sky-shoe] [http-nio-8080-exec-7] l.i.s.s.impl.AuthenticationServiceImpl   : Sign in
+2024-10-15T04:13:17.495+05:30  INFO 7588 --- [sky-shoe] [http-nio-8080-exec-7] l.i.skyshoe.service.impl.JWTServiceImpl  : token generated
+2024-10-15T04:22:39.057+05:30  INFO 7588 --- [sky-shoe] [http-nio-8080-exec-1] l.i.s.s.impl.AuthenticationServiceImpl   : Sign in
+2024-10-15T04:22:39.179+05:30  INFO 7588 --- [sky-shoe] [http-nio-8080-exec-1] l.i.skyshoe.service.impl.JWTServiceImpl  : token generated
+2024-10-15T04:22:52.241+05:30  INFO 7588 --- [sky-shoe] [http-nio-8080-exec-9] l.i.s.s.impl.AuthenticationServiceImpl   : Sign in
+2024-10-15T04:22:52.371+05:30  INFO 7588 --- [sky-shoe] [http-nio-8080-exec-9] l.i.skyshoe.service.impl.JWTServiceImpl  : token generated
+2024-10-15T04:23:37.500+05:30  INFO 7588 --- [sky-shoe] [http-nio-8080-exec-3] l.i.s.s.impl.AuthenticationServiceImpl   : Sign in
+2024-10-15T04:23:37.622+05:30  INFO 7588 --- [sky-shoe] [http-nio-8080-exec-3] l.i.skyshoe.service.impl.JWTServiceImpl  : token generated
+2024-10-15T04:32:49.775+05:30  INFO 7588 --- [sky-shoe] [http-nio-8080-exec-4] l.i.s.s.impl.AuthenticationServiceImpl   : Sign in
+2024-10-15T04:32:49.898+05:30  INFO 7588 --- [sky-shoe] [http-nio-8080-exec-4] l.i.skyshoe.service.impl.JWTServiceImpl  : token generated
+2024-10-15T04:33:24.337+05:30  INFO 7588 --- [sky-shoe] [http-nio-8080-exec-2] l.i.s.s.impl.AuthenticationServiceImpl   : Sign in
+2024-10-15T04:33:24.458+05:30  INFO 7588 --- [sky-shoe] [http-nio-8080-exec-2] l.i.skyshoe.service.impl.JWTServiceImpl  : token generated
+2024-10-15T04:34:12.553+05:30  INFO 7588 --- [sky-shoe] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-15T04:34:12.557+05:30  INFO 7588 --- [sky-shoe] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-15T04:34:12.564+05:30  INFO 7588 --- [sky-shoe] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-15T04:34:21.816+05:30  INFO 6064 --- [sky-shoe] [main] lk.ijse.skyshoe.SkyShoeApplication       : Starting SkyShoeApplication using Java 17.0.12 with PID 6064 (C:\Projects\projects\GDSE Sem 02\01 SEM 02 API\SKY SHOES Shope\sky-shoe\target\classes started by Danuja Greru in C:\Projects\projects\GDSE Sem 02\01 SEM 02 API\SKY SHOES Shope\sky-shoe)
+2024-10-15T04:34:21.820+05:30  INFO 6064 --- [sky-shoe] [main] lk.ijse.skyshoe.SkyShoeApplication       : No active profile set, falling back to 1 default profile: "default"
+2024-10-15T04:34:23.541+05:30  INFO 6064 --- [sky-shoe] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-15T04:34:23.819+05:30  INFO 6064 --- [sky-shoe] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 262 ms. Found 8 JPA repository interfaces.
+2024-10-15T04:34:24.831+05:30  INFO 6064 --- [sky-shoe] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-15T04:34:24.848+05:30  INFO 6064 --- [sky-shoe] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-15T04:34:24.849+05:30  INFO 6064 --- [sky-shoe] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-10-15T04:34:24.956+05:30  INFO 6064 --- [sky-shoe] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-15T04:34:24.956+05:30  INFO 6064 --- [sky-shoe] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3039 ms
+2024-10-15T04:34:25.452+05:30  INFO 6064 --- [sky-shoe] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-15T04:34:25.672+05:30  INFO 6064 --- [sky-shoe] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-10-15T04:34:25.782+05:30  INFO 6064 --- [sky-shoe] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-15T04:34:26.285+05:30  INFO 6064 --- [sky-shoe] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-15T04:34:26.334+05:30  INFO 6064 --- [sky-shoe] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-15T04:34:26.922+05:30  INFO 6064 --- [sky-shoe] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@224e6e88
+2024-10-15T04:34:26.926+05:30  INFO 6064 --- [sky-shoe] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-15T04:34:27.037+05:30  WARN 6064 --- [sky-shoe] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-15T04:34:29.131+05:30  INFO 6064 --- [sky-shoe] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-15T04:34:29.308+05:30  INFO 6064 --- [sky-shoe] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-15T04:34:29.706+05:30  INFO 6064 --- [sky-shoe] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-15T04:34:30.211+05:30  WARN 6064 --- [sky-shoe] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-15T04:34:30.726+05:30  INFO 6064 --- [sky-shoe] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2250deae, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@49e8548d, org.springframework.security.web.context.SecurityContextHolderFilter@4c364a9d, org.springframework.security.web.header.HeaderWriterFilter@6d4bb60f, org.springframework.web.filter.CorsFilter@3fb920d9, org.springframework.security.web.authentication.logout.LogoutFilter@32a541a8, lk.ijse.skyshoe.config.JWTConfigurationFilter$$SpringCGLIB$$0@117be84a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@59ebe484, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7fd624f5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5d3a147f, org.springframework.security.web.session.SessionManagementFilter@372c428, org.springframework.security.web.access.ExceptionTranslationFilter@1ff65426, org.springframework.security.web.access.intercept.AuthorizationFilter@1c3eeda4]
+2024-10-15T04:34:31.060+05:30  INFO 6064 --- [sky-shoe] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-10-15T04:34:31.075+05:30  INFO 6064 --- [sky-shoe] [main] lk.ijse.skyshoe.SkyShoeApplication       : Started SkyShoeApplication in 10.132 seconds (process running for 11.642)
+2024-10-15T04:34:57.828+05:30  INFO 6064 --- [sky-shoe] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-15T04:34:57.829+05:30  INFO 6064 --- [sky-shoe] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-15T04:34:57.833+05:30  INFO 6064 --- [sky-shoe] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2024-10-15T04:34:58.503+05:30  INFO 6064 --- [sky-shoe] [http-nio-8080-exec-2] l.i.s.s.impl.AuthenticationServiceImpl   : Sign in
+2024-10-15T04:34:59.104+05:30  INFO 6064 --- [sky-shoe] [http-nio-8080-exec-3] l.i.s.s.impl.AuthenticationServiceImpl   : Sign in
+2024-10-15T04:34:59.372+05:30  INFO 6064 --- [sky-shoe] [http-nio-8080-exec-2] l.i.skyshoe.service.impl.JWTServiceImpl  : token generated
+2024-10-15T04:34:59.392+05:30  INFO 6064 --- [sky-shoe] [http-nio-8080-exec-3] l.i.skyshoe.service.impl.JWTServiceImpl  : token generated
+2024-10-15T04:44:47.000+05:30  INFO 6064 --- [sky-shoe] [http-nio-8080-exec-4] l.i.s.s.impl.AuthenticationServiceImpl   : Sign in
+2024-10-15T04:44:47.125+05:30  INFO 6064 --- [sky-shoe] [http-nio-8080-exec-4] l.i.skyshoe.service.impl.JWTServiceImpl  : token generated
+2024-10-15T04:47:33.082+05:30  INFO 6064 --- [sky-shoe] [http-nio-8080-exec-5] l.i.s.s.impl.AuthenticationServiceImpl   : Sign in
+2024-10-15T04:47:33.208+05:30  INFO 6064 --- [sky-shoe] [http-nio-8080-exec-5] l.i.skyshoe.service.impl.JWTServiceImpl  : token generated
+2024-10-15T04:51:59.927+05:30  INFO 6064 --- [sky-shoe] [http-nio-8080-exec-4] l.i.s.s.impl.AuthenticationServiceImpl   : Sign in
+2024-10-15T04:52:00.058+05:30  INFO 6064 --- [sky-shoe] [http-nio-8080-exec-4] l.i.skyshoe.service.impl.JWTServiceImpl  : token generated
+2024-10-15T04:54:47.701+05:30  INFO 6064 --- [sky-shoe] [http-nio-8080-exec-1] l.i.s.s.impl.AuthenticationServiceImpl   : Sign in
+2024-10-15T04:54:47.827+05:30  INFO 6064 --- [sky-shoe] [http-nio-8080-exec-1] l.i.skyshoe.service.impl.JWTServiceImpl  : token generated
+2024-10-15T05:01:36.970+05:30  INFO 6064 --- [sky-shoe] [http-nio-8080-exec-1] l.i.s.s.impl.AuthenticationServiceImpl   : Sign in
+2024-10-15T05:01:37.091+05:30  INFO 6064 --- [sky-shoe] [http-nio-8080-exec-1] l.i.skyshoe.service.impl.JWTServiceImpl  : token generated
+2024-10-15T05:03:41.553+05:30  INFO 6064 --- [sky-shoe] [http-nio-8080-exec-6] l.i.s.s.impl.AuthenticationServiceImpl   : Sign in
+2024-10-15T05:03:41.674+05:30  INFO 6064 --- [sky-shoe] [http-nio-8080-exec-6] l.i.skyshoe.service.impl.JWTServiceImpl  : token generated
+2024-10-15T05:07:46.578+05:30  INFO 6064 --- [sky-shoe] [http-nio-8080-exec-1] l.i.s.s.impl.AuthenticationServiceImpl   : Sign in
+2024-10-15T05:07:46.702+05:30  INFO 6064 --- [sky-shoe] [http-nio-8080-exec-1] l.i.skyshoe.service.impl.JWTServiceImpl  : token generated
+2024-10-15T05:09:17.417+05:30  INFO 6064 --- [sky-shoe] [http-nio-8080-exec-3] l.i.s.s.impl.AuthenticationServiceImpl   : Sign in
+2024-10-15T05:09:17.543+05:30  INFO 6064 --- [sky-shoe] [http-nio-8080-exec-3] l.i.skyshoe.service.impl.JWTServiceImpl  : token generated
+2024-10-15T05:10:24.768+05:30  INFO 6064 --- [sky-shoe] [http-nio-8080-exec-8] l.i.s.s.impl.AuthenticationServiceImpl   : Sign in
+2024-10-15T05:10:24.888+05:30  INFO 6064 --- [sky-shoe] [http-nio-8080-exec-8] l.i.skyshoe.service.impl.JWTServiceImpl  : token generated
+2024-10-15T05:13:32.530+05:30  INFO 6064 --- [sky-shoe] [http-nio-8080-exec-2] l.i.s.s.impl.AuthenticationServiceImpl   : Sign in
+2024-10-15T05:13:32.652+05:30  INFO 6064 --- [sky-shoe] [http-nio-8080-exec-2] l.i.skyshoe.service.impl.JWTServiceImpl  : token generated
+2024-10-15T05:17:23.897+05:30  INFO 6064 --- [sky-shoe] [http-nio-8080-exec-7] l.i.s.s.impl.AuthenticationServiceImpl   : Sign in
+2024-10-15T05:17:24.021+05:30  INFO 6064 --- [sky-shoe] [http-nio-8080-exec-7] l.i.skyshoe.service.impl.JWTServiceImpl  : token generated
+2024-10-15T05:18:05.343+05:30  INFO 6064 --- [sky-shoe] [http-nio-8080-exec-5] l.i.s.s.impl.AuthenticationServiceImpl   : Sign in
+2024-10-15T05:18:05.464+05:30  INFO 6064 --- [sky-shoe] [http-nio-8080-exec-5] l.i.skyshoe.service.impl.JWTServiceImpl  : token generated
+2024-10-15T05:21:29.269+05:30  INFO 6064 --- [sky-shoe] [http-nio-8080-exec-9] l.i.s.s.impl.AuthenticationServiceImpl   : Sign in
+2024-10-15T05:21:29.466+05:30  INFO 6064 --- [sky-shoe] [http-nio-8080-exec-9] l.i.skyshoe.service.impl.JWTServiceImpl  : token generated
+2024-10-15T05:25:21.512+05:30  INFO 6064 --- [sky-shoe] [http-nio-8080-exec-3] l.i.s.s.impl.AuthenticationServiceImpl   : Sign in
+2024-10-15T05:25:21.634+05:30  INFO 6064 --- [sky-shoe] [http-nio-8080-exec-3] l.i.skyshoe.service.impl.JWTServiceImpl  : token generated

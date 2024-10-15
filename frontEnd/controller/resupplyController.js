@@ -1,14 +1,22 @@
 import {resupply_db} from "../db/db.js";
 import {ResupplyModel} from "../modeule/resupplyModel.js";
+import {getCookie} from "./login.js";
 
-getAllResupply();
+export const getAllResupply = () =>{
 
- function getAllResupply(){
+    const token = getCookie('authToken');
 
+    if (!token) {
+        alert("Authentication token not found. Please log in again.");
+        return;
+    }
 
     $.ajax({
         method: "GET",
         url: "http://localhost:8080/api/v1/resupply/getAllResupply",
+        headers: {
+            'Authorization': 'Bearer ' + token
+        },
         async:true,
         success: function(data) {
             if (data.code === "00"){

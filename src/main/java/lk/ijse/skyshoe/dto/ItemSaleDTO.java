@@ -27,4 +27,6 @@ public class ItemSaleDTO {
 
     private int qty;
 
+    private String itemImg;
+
 }

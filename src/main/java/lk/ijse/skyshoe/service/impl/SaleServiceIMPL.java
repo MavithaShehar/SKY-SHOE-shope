@@ -98,7 +98,8 @@ public class SaleServiceIMPL implements SaleService {
                 null,
                 itemSale.getSize(),
                 itemSale.getColour(),
-                itemSale.getQty()
+                itemSale.getQty(),
+                itemSale.getItemImg()
 
                 );
 

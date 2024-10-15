@@ -1,18 +1,12 @@
-//-------------------------inventory----------------------------------
-
 import {InventoryModel} from "../modeule/inventoryModel.js";
-import {customer_db, inventory_db} from "../db/db.js";
-
-getAllInventory();
-
-console.log("inventory_db is ",inventory_db);
+import {inventory_db} from "../db/db.js";
+import {getCookie} from "./login.js";
 
 let inve_profilePic = document.getElementById("inve-profile-pic");
 let inve_inputFile = document.getElementById("inveFileInput");
 
 inve_inputFile.onchange = function (){
     inve_profilePic.src = URL.createObjectURL(inve_inputFile.files[0]);
-    console.log(profilePic)
 }
 var itemImg;
 inve_inputFile.addEventListener("change",e =>{
@@ -21,10 +15,19 @@ inve_inputFile.addEventListener("change",e =>{
 
     reader.addEventListener("load", () =>{
         itemImg = reader.result
-        console.log(reader.result);
     });
     reader.readAsDataURL(file);
 });
+
+const getToken = () =>{
+    const token = getCookie('authToken');  // Retrieve the auth token
+
+    if (!token) {
+        alert("No authentication token found. Please log in.");
+        return;
+    }
+    return token;
+}
 
 async function selectLoadItemsId() {
     const orderItemIdSelect = $("#order-select-itm-id");
@@ -46,31 +49,39 @@ async function selectLoadItemsId() {
 
 
 function inventoryEmpty(){
-     $('#itm-size').val("");
-     $('#itm-qty').val("");
-     $('#itm-color').val("");
-     $('#inve-itemId').val("");
+    $('#itm-size').val("");
+    $('#itm-qty').val("");
+    $('#itm-color').val("");
+    $('#inve-itemId').val("");
     //   var itemImage= $('#inve-profile-pic').val();
-     $('#itm-date').val("");
-     $('#itm-total-value').val("");
+    $('#itm-date').val("");
+    $('#itm-total-value').val("");
     $('#inve-profile-pic').attr('src','assets/image/emplyIMG.jpg');
 }
 
 
- async function getAllInventory() {
+export async function getAllInventory() {
 
-    console.log("getAllInventory");
+    const token = getCookie('authToken');
+
+    if (!token) {
+        alert("Authentication token not found. Please log in again.");
+        return;
+    }
 
     try {
         const response = await $.ajax({
             method: "GET",
             url: "http://localhost:8080/api/v1/inventory/getAllInventory",
+            headers: {
+                'Authorization': 'Bearer ' + token
+            },
             async: true
         });
 
         if (response.code === '00') {
             const data = response.content;
-        //    console.log('data::: ', JSON.stringify(data, null, 2));  // Log the data properly
+            //    console.log('data::: ', JSON.stringify(data, null, 2));  // Log the data properly
 
             $('#inventoryTable').empty();
 
@@ -81,8 +92,6 @@ function inventoryEmpty(){
                     alt: 'Profile Picture',
                     style: 'border-radius: 50%; width: 50px; height: 50px;',
                 });
-
-                console.log(inve)
 
                 var row = `<tr>
                     <td class="col01">${img.prop('outerHTML')}</td>
@@ -116,7 +125,6 @@ function inventoryEmpty(){
 
             }
             selectLoadItemsId()
-            console.log(inventory_db)
             return data;  // Return the data if needed for further processing
         } else {
             throw new Error("Error fetching items: " + response.message);
@@ -129,11 +137,18 @@ function inventoryEmpty(){
 
 $('#inveSaveBtn').on('click', () => {
 
+    const token = getCookie('authToken');
+
+    if (!token) {
+        alert("Authentication token not found. Please log in again.");
+        return;
+    }
+
     var size= $('#itm-size').val();
     var qty= $('#itm-qty').val();
     var colour = $('#itm-color').val();
     var item= $('#inve-itemId').val();
- //   var itemImage= $('#inve-profile-pic').val();
+    //   var itemImage= $('#inve-profile-pic').val();
     var date= $('#itm-date').val();
     var totalValue= $('#itm-total-value').val();
 
@@ -142,9 +157,13 @@ $('#inveSaveBtn').on('click', () => {
         method: "POST",
         contentType: "application/json",
         url: "http://localhost:8080/api/v1/inventory/saveInventory",
+        headers: {
+            'Authorization': 'Bearer ' + token
+        },
         data: JSON.stringify({
             size:size,
             qty:qty,
+            maxQty: 0,
             colour:colour,
             item:{
                 itemCode:item
@@ -161,7 +180,6 @@ $('#inveSaveBtn').on('click', () => {
         },
         error: function(xhr, exception) {
             alert("Error")
-            console.log(this.data)
             console.log(exception)
         }
     });
@@ -183,6 +201,9 @@ $('#inveUpdateBtn').on('click', () => {
         method: "PUT",
         contentType: "application/json",
         url: "http://localhost:8080/api/v1/inventory/updateInventory",
+        headers: {
+            'Authorization': 'Bearer ' + getToken
+        },
         data: JSON.stringify({
             size:size,
             qty:qty,
@@ -202,7 +223,6 @@ $('#inveUpdateBtn').on('click', () => {
         },
         error: function(xhr, exception) {
             alert("Error")
-            console.log(this.data)
             console.log(exception)
         }
     });

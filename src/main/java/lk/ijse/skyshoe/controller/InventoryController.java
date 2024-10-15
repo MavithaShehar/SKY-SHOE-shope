@@ -25,10 +25,8 @@ public class InventoryController {
     public ResupplyDTO resupplyDTO;
 
     @PostMapping("/saveInventory")
-    public ResponseEntity saveInventory(@RequestBody InventoryDTO inventoryDTO) {
-
-        System.out.println("save inventory hear");
-
+    public String saveInventory(@RequestBody InventoryDTO inventoryDTO) {
+        System.out.println("inventoryDTO 01 is "+inventoryDTO);
         stockDTO = new StockDTO(
                 inventoryDTO.getSize(),
                 inventoryDTO.getQty(),
@@ -38,47 +36,33 @@ public class InventoryController {
                 inventoryDTO.getItem(),
                 inventoryDTO.getItemImage()
                 );
-        resupplyDTO =new ResupplyDTO(
-                null,
-                inventoryDTO.getDate(),
-                inventoryDTO.getTotalValue(),
-                inventoryDTO.getQty()
-        );
+
+        System.out.println("Stock DTO 01 is "+stockDTO);
+//        resupplyDTO =new ResupplyDTO(
+//                null,
+//                inventoryDTO.getDate(),
+//                inventoryDTO.getTotalValue(),
+//                inventoryDTO.getQty()
+//        );
 
         try {
 
              String req01 = stockService.save(stockDTO);
-            System.out.println("req02 is Success ");
+
             if (req01.equals("00")) {
-               String req02 = resuplyService.save(resupplyDTO);
-               System.out.println("req02 is :"+req02);
-                responseDTO.setCode(VarList.RSP_SUCCESS);
-                responseDTO.setMessage("SUCCESS");
-                responseDTO.setContent(inventoryDTO);
-                return new ResponseEntity(responseDTO, HttpStatus.CREATED);
+              // String req02 = resuplyService.save(resupplyDTO);
+               return "SUCCESS "+req01;
             } else if (req01.equals("06")) {
-
-                responseDTO.setCode(VarList.RSP_DUPLICATED);
-                responseDTO.setMessage("NOT SUCCESS");
-                responseDTO.setContent(inventoryDTO);
-                return new ResponseEntity(responseDTO, HttpStatus.BAD_REQUEST);
-
+                return "NOT SUCCESS "+req01 ;
             } else {
-                responseDTO.setCode(VarList.RSP_FAIL);
-                responseDTO.setMessage("ERROR");
-                responseDTO.setContent(null);
-                return new ResponseEntity(responseDTO, HttpStatus.BAD_REQUEST);
+               return "ERROR";
             }
         } catch (Exception ex) {
-            responseDTO.setCode(VarList.RSP_ERROR);
-            responseDTO.setMessage(ex.getMessage());
-            responseDTO.setContent("wrone Id");
-            return new ResponseEntity(responseDTO, HttpStatus.INTERNAL_SERVER_ERROR);
-
+            return "wrone Id";
         }
     }
 
-    @PutMapping("/updateInventory")
+    @PostMapping("/updateInventory")
     public ResponseEntity updateInventory(@RequestBody InventoryDTO inventoryDTO) {
 
         System.out.println("save inventory hear");
@@ -158,10 +142,58 @@ public class InventoryController {
     }
 
 
-    @GetMapping("/getInventory")
-    public String saveInventory() {
+    @PutMapping("/updateSellInventory")
+    public ResponseEntity updateSellInventory(@RequestBody InventoryDTO inventoryDTO) {
 
-        return "Inventory is hear";
+        System.out.println("save inventory hear");
+
+        stockDTO = new StockDTO(
+                inventoryDTO.getSize(),
+                inventoryDTO.getQty(),
+                inventoryDTO.getMaxQty(),
+                inventoryDTO.getColour(),
+                inventoryDTO.getStatus(),
+                inventoryDTO.getItem(),
+                inventoryDTO.getItemImage()
+        );
+
+
+        try {
+
+            String req01 = stockService.save(stockDTO);
+            if (req01.equals("00")) {
+                responseDTO.setCode(VarList.RSP_SUCCESS);
+                responseDTO.setMessage("SUCCESS");
+                responseDTO.setContent(inventoryDTO);
+                return new ResponseEntity(responseDTO, HttpStatus.CREATED);
+            } else if (req01.equals("06")) {
+
+                responseDTO.setCode(VarList.RSP_DUPLICATED);
+                responseDTO.setMessage("NOT SUCCESS");
+                responseDTO.setContent(inventoryDTO);
+                return new ResponseEntity(responseDTO, HttpStatus.BAD_REQUEST);
+
+            } else {
+                responseDTO.setCode(VarList.RSP_FAIL);
+                responseDTO.setMessage("ERROR");
+                responseDTO.setContent(null);
+                return new ResponseEntity(responseDTO, HttpStatus.BAD_REQUEST);
+            }
+        } catch (Exception ex) {
+            responseDTO.setCode(VarList.RSP_ERROR);
+            responseDTO.setMessage(ex.getMessage());
+            responseDTO.setContent("wrone Id");
+            return new ResponseEntity(responseDTO, HttpStatus.INTERNAL_SERVER_ERROR);
+
+        }
     }
 
+    @PostMapping("/healthCheck")
+    public String healthCheck(@RequestBody InventoryDTO inventoryDTO) {
+        System.out.println("InventoryDTO is "+inventoryDTO);
+        return "success";
+    }
+
+
 }
+

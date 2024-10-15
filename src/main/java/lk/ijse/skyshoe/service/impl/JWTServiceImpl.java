@@ -69,7 +69,7 @@ public class JWTServiceImpl implements JWTService {
 
         Date now = new Date();
 
-        Date expire = new Date(now.getTime() + (1000 * 60 * 60 * 8));
+        Date expire = new Date(now.getTime() + (1000 * 60 * 60 * 24));
 
         String accessToken = Jwts.builder().setClaims(extractClaims)
                 .setSubject(userDetails.getUsername())

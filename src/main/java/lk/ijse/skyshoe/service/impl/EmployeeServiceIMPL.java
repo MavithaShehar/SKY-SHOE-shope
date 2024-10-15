@@ -71,4 +71,15 @@ public class EmployeeServiceIMPL implements EmployeeService {
             return VarList.RSP_NO_DATA_FOUND;
         }
     }
+
+    @Override
+    public EmployeeDTO getSelectEmployee(String email) {
+
+        System.out.println("service i am hear");
+
+        Employee employee = employeeRepo.getSelectEmployee(email);
+        System.out.println("service i am hear and "+employee);
+            return modelMapper.map(employee, EmployeeDTO.class);
+
+    }
 }

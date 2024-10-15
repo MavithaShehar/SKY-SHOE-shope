@@ -1,6 +1,6 @@
 import {employee_db} from "../db/db.js";
+import {getCookie} from "./login.js";
 
-getAllEmployee();
 
 let profilePic = document.getElementById("profile-pic");
 let inputFile = document.getElementById("empFileInput");
@@ -25,6 +25,16 @@ inputFile.addEventListener("change",e =>{
 export function splitDate(date) {
     let datePart = date.split('T')[0];
     return datePart;
+}
+
+const getToken = () =>{
+    const token = getCookie('authToken');  // Retrieve the auth token
+
+    if (!token) {
+        alert("No authentication token found. Please log in.");
+        return;
+    }
+    return token;
 }
 
 function EmployeeNullField() {
@@ -91,7 +101,7 @@ $('#saveEmployee').on('click', () => {
 
     var employeeId= $('#employeeId').val();
     var employeeName= $('#employeeName').val();
-  //  var profilePic= $('#empFileInput').val();
+    //  var profilePic= $('#empFileInput').val();
     var gender = $('#empGender').val().toUpperCase();
     var status= $('#empStatus').val();
     var designation= $('#empDesi').val();
@@ -115,6 +125,9 @@ $('#saveEmployee').on('click', () => {
         method: "POST",
         contentType: "application/json",
         url: "http://localhost:8080/api/v1/employee/saveEmployee",
+        headers: {
+            'Authorization': 'Bearer ' + getToken()
+        },
         data: JSON.stringify({
             employeeId: employeeId,
             employeeName: employeeName,
@@ -154,20 +167,33 @@ function accessRoleCheck(select) {
     let userColor = '';
 
     if (select === 'USER') {
-        userColor = '#A1F1F1FF'; // orange
+        userColor = '#A1F1F1FF';
     } else if (select === 'ADMIN') {
-        userColor = '#50e72d'; // bronze
+        userColor = '#50e72d';
     } else {
-        userColor = '#e3fc76'; // default color
+        userColor = '#e3fc76';
     }
 
-    return userColor; // Return the userColor value
+    return userColor;
 }
 
-function getAllEmployee() {
+export function getAllEmployee() {
+
+
+    const token = getCookie('authToken');
+
+    if (!token) {
+        alert("Authentication token not found. Please log in again.");
+        return;
+    }
+
+
     $.ajax({
         method: "GET",
         url: "http://localhost:8080/api/v1/employee/getAllEmployee",
+        headers: {
+            'Authorization': 'Bearer ' + token
+        },
         async: true,
         success: function(data) {
             if (data.code === "00") {
@@ -182,7 +208,7 @@ function getAllEmployee() {
                         style: 'border-radius: 50%; width: 50px; height: 50px;',
                     });
 
-                  //  console.log("dfdf", emp.profilePic)
+                    //  console.log("dfdf", emp.profilePic)
 
                     var row = `<tr>
                         <td class="col01">${img.prop('outerHTML')}</td>
@@ -276,17 +302,19 @@ function getEmployee(employee_id){
     $.ajax({
         method: "GET",
         url: "http://localhost:8080/api/v1/employee/getEmployee/"+employee_id,
+        headers: {
+            'Authorization': 'Bearer ' + getToken()
+        },
         async:true,
         success: function(data) {
             if (data.code === "00"){
                 let emp = data.content;
 
-
-                console.log('gender is ',emp.gender.toUpperCase())
-
                 // Populate other form fields with employee information
                 $('#employeeId').val(emp.employeeId);
                 $('#employeeName').val(emp.employeeName);
+
+                profileImg =  emp.profilePic
                 // Update the profile picture
                 $('#profile-pic').attr('src', emp.profilePic);
                 $('#empGender').val(emp.gender); // Assign the uppercase value
@@ -319,11 +347,9 @@ function getEmployee(employee_id){
 // update Employee
 $('#updateEmployee').on('click', () => {
 
-    console.log("employee update")
-
     var employeeId= $('#employeeId').val();
     var employeeName= $('#employeeName').val();
-   // var profilePic= $('#empFileInput').val();
+    // var profilePic= $('#empFileInput').val();
     var gender = $('#empGender').val().toUpperCase();
     var status= $('#empStatus').val();
     var designation= $('#empDesi').val();
@@ -347,6 +373,9 @@ $('#updateEmployee').on('click', () => {
         method: "PUT",
         contentType: "application/json",
         url: "http://localhost:8080/api/v1/employee/updateEmployee",
+        headers: {
+            'Authorization': 'Bearer ' + getToken()
+        },
         data: JSON.stringify({
             employeeId: employeeId,
             employeeName: employeeName,
@@ -376,18 +405,18 @@ $('#updateEmployee').on('click', () => {
         },
         error: function(xhr, exception) {
             alert("Error")
-            console.log(exception)
+
         }
     });
 
 })
 
-// user selector
+// employee selector
 $('#systemAccess').on('change', () => {
-    // $('#employeeTable').empty();
-    let search_term = $('#systemAccess').val().toUpperCase();
 
-    console.log(search_term);
+    $('#employeeTable').empty();
+
+    let search_term = $('#systemAccess').val().toUpperCase();
 
     if (search_term === "EMPLOYEE"){
         $('#employeeTable').empty();
@@ -399,6 +428,8 @@ $('#systemAccess').on('change', () => {
         );
 
         results.forEach((item) => {
+
+            $('#employeeTable').empty();
 
             var img = $('<img />', {
                 src: item.profilePic,
@@ -431,7 +462,6 @@ $('#systemAccess').on('change', () => {
 $('#emp-date-piker').on('input', () => {
     let search_term = $('#emp-date-piker').val();
 
-    console.log(search_term)
     let results = employee_db.filter((item) =>
 
         item.joinDate.toLowerCase().startsWith(search_term.toLowerCase())||
@@ -471,13 +501,9 @@ $('#emp-date-piker').on('input', () => {
 
 });
 
-// serch customer
+// serch employee
 $('#employee-search').on('input', () => {
     let search_term = $('#employee-search').val();
-
-    console.log(search_term);
-
-    console.log(search_term)
 
     let results = employee_db.filter((item) =>
 
