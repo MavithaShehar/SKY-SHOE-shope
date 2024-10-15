@@ -49,6 +49,7 @@ public class SaleController {
 
                 return "success  "+req02;
 
+
             } else if (req01.equals("06")) {
 
                 return "not success  "+req01;
